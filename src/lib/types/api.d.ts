@@ -1,0 +1,26 @@
+declare type DatabaseFields = {
+  _id: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+declare type SuccessfulResponse<T> = {
+  message: "success";
+} & T;
+
+declare type ErrorResponse = {
+  error: string;
+  statusCode: number;
+};
+
+declare type APIResponse<T> = SuccessfulResponse<T> | ErrorResponse;
+
+declare type Metadata = {
+  currentPage: number;
+  totalExercises: number;
+  totalPages: number;
+};
+
+declare type PaginatedResponse<T> = {
+  metadata: Metadata;
+} & T;
