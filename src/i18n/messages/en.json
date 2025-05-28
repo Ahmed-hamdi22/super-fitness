@@ -1,5 +1,12 @@
 {
   "about-us": "about us",
   "welcome-to-classes": "welcome to classes",
-  "welcome-to-healthy": "welcome to healthy"
+  "welcome-to-healthy": "welcome to healthy",
+  "you-can-reset-your-password": "You can reset your password",
+  "code-must-be-exactly-6-characters": "Code must be exactly 6 characters",
+  "enter-the-otp-you-have-received": "Enter the OTP you have received",
+  "didnt-receive-verification-code": "didn’t receive verification code?",
+  "resend-code": "Resend Code",
+  "confirm": "Confirm",
+  "verifying": "Verifying..."
 }
