@@ -31,11 +31,3 @@ declare interface RegisterResponse {
   user: User;
   token: string;
 }
-
-declare type VerifyOTPFields = {
-  resetCode: string;
-};
-
-declare type VerifyOTPResponse = {
-  status: string;
-};
