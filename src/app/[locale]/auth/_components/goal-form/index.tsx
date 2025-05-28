@@ -1,28 +1,37 @@
 import { useState } from "react";
+import { useTranslations } from "use-intl";
 
 export default function GoalForm() {
+  // Translations
+  const t = useTranslations();
+
+  // State
   const [selectedOption, setSelectedOption] = useState<string>("");
 
+  // Variables
   const options = [
-    "Gain Weight",
-    "Lose Weight",
-    "Get Fitter",
-    "Gain More Flexible",
-    "Learn The Basic",
+    t("gain-weight"),
+    t("lose-weight"),
+    t("get-fitter"),
+    t("gain-more-flexible"),
+    t("learn-the-basic"),
   ];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-8">
       <div className="w-full max-w-md space-y-4">
+        {/* Title */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-white mb-2">
-            What's Your Goal?
+          <h1 className="text-5xl text-white mb-2 font-extrabold capitalize">
+            {t("what-is-your-goal")}
           </h1>
-          <p className="text-gray-400">Choose your fitness objective</p>
+          <p className="text-white capitalize text-lg">
+            {t("this-helps-us-create-your-personalized-plan")}
+          </p>
         </div>
 
-        {/* Radio Group */}
-        <div className="space-y-3">
+        {/* Radio group */}
+        <div className="space-y-4 flex flex-col items-center">
           {options.map((option, index) => (
             <label
               key={index}
@@ -31,42 +40,35 @@ export default function GoalForm() {
                 ${
                   selectedOption === option
                     ? "border-customOrange text-customOrange"
-                    : "border-customGreyWhite text-customGreyWhite hover:border-gray-500 hover:bg-gray-800/70"
+                    : "border-white text-white hover:border-gray-500 hover:bg-gray-800/70"
                 }
               `}
               onClick={() => setSelectedOption(option)}
             >
+              {/* Option text */}
               <span className="text-base font-bold">{option}</span>
 
-              {/* Custom Radio Button */}
+              {/* Radio button */}
               <div
                 className={`
-                w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200
+                w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-200
                 ${
                   selectedOption === option
-                    ? "border-customOrange bg-customOrange"
+                    ? " border-gray-400 bg-transparent"
                     : "border-gray-400 bg-transparent"
                 }
               `}
               >
+                {/* Inner circle for selected option */}
                 {selectedOption === option && (
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
+                  <div className="w-2 h-2 rounded-full bg-customOrange"></div>
                 )}
               </div>
-
-              {/* Hidden native radio input for accessibility */}
-              <input
-                type="radio"
-                name="fitness-goal"
-                value={option}
-                checked={selectedOption === option}
-                onChange={(e) => setSelectedOption(e.target.value)}
-                className="absolute opacity-0 w-0 h-0"
-              />
             </label>
           ))}
         </div>
 
+        {/* NOTE: to be removed when merging */}
         {/* Selected value display */}
         <div className="text-center mt-8">
           <p className="text-gray-400 text-sm">
@@ -77,13 +79,10 @@ export default function GoalForm() {
           </p>
         </div>
 
-        {/* Action button */}
+        {/* Next button */}
         <div className="flex justify-center mt-8">
-          <button
-            className="bg-customOrange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors"
-            onClick={() => alert(`Goal selected: ${selectedOption}`)}
-          >
-            Next
+          <button className="bg-customOrange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors">
+            {t("next")}
           </button>
         </div>
       </div>
