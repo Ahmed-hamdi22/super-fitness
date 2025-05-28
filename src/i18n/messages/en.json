@@ -1,14 +1,5 @@
 {
   "about-us": "about us",
   "welcome-to-classes": "welcome to classes",
-  "welcome-to-healthy": "welcome to healthy",
-  "email-is-required": "Email is required",
-  "email-is-invalid": "Email is invalid",
-  "email": "Email",
-  "email-0": "Email",
-  "sent-otp": "Sent OTP",
-  "otp-sent-your-email": "OTP sent your email",
-  "otp-sent-your-email-0": "OTP sent your email",
-  "enter-your-email": "Enter Your Email",
-  "sent-faild": "Sent faild"
+  "welcome-to-healthy": "welcome to healthy"
 }
