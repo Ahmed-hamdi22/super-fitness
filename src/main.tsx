@@ -8,6 +8,8 @@ import HealthyPage from "./app/[locale]/healthy/page";
 import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import Provider from "./i18n/provider";
+import ForgotPasswordpage from "./app/[locale]/forgotpassword/page";
+import OTPPage from "./app/[locale]/otp/page";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -36,6 +38,12 @@ createRoot(document.getElementById("root")!).render(
 
           {/* Classes */}
           <Route path="classes" element={<ClassesPage />} />
+
+          {/* Forgot password */}
+          <Route path="forgotpassword" element={<ForgotPasswordpage />} />
+
+          {/* OTP */}
+          <Route path="otp" element={<OTPPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

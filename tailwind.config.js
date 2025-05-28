@@ -72,6 +72,7 @@ const config = {
 					'5': 'hsl(var(--chart-5))'
 				},
 				"customOrange": "#FF4100",
+				"customGray":"#D3D3D3",
 				"darkGray1": "#242424",
 				"darkGray2": "#232425",
 				"transparentOrange": "#FF6A0080",
