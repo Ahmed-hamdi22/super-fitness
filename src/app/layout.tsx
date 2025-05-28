@@ -14,6 +14,7 @@ export default function RootLayout() {
         <main>
           <Outlet />
         </main>
+        <Toaster position="top-center" />
       </>
     </QueryClientProvider>
   );
