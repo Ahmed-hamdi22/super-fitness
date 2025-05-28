@@ -1,5 +1,12 @@
 {
   "about-us": "معلومات عنا",
   "welcome-to-classes": "مرحبا بكم في الفصول",
-  "welcome-to-healthy": "مرحبا بكم في صحة جيدة"
+  "welcome-to-healthy": "مرحبا بكم في صحة جيدة",
+  "email-is-required": "الرجاء ادخال ايميلك",
+  "email-is-invalid": "الايميل غير صالح",
+  "email": "الايميل",
+  "sent-otp": "ارسل الرمز الخاص بك",
+  "otp-sent-your-email": "لقد ارسل الرمز الي الايميل",
+  "enter-your-email": "ادخل الايميل الخاص بك",
+  "sent-faild": "خطا في ارسال الرمز"
 }
