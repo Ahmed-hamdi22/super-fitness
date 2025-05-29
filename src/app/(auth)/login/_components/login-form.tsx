@@ -62,7 +62,7 @@ export default function LoginForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-5 min-w-96 border-2 px-14 py-5 rounded-3xl "
+            className="space-y-5 min-w-96 border-2 border-soft-gray-500 px-14 py-5 rounded-3xl "
           >
             {/* Title */}
             <div className="text-center mb-6">
@@ -79,14 +79,14 @@ export default function LoginForm() {
                     {/* Icon */}
 
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <Mail className="w-5 h-5 text-soft-gray-200" />
+                      <Mail className="w-5 h-5 text-soft-gray-500" />
                     </div>
                     <FormControl>
                       {/* Input*/}
                       <Input
                         type="email"
                         placeholder={t("email")}
-                        className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-100"
+                        className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-500"
                         {...field}
                       />
                     </FormControl>
@@ -113,7 +113,7 @@ export default function LoginForm() {
                       <Input
                         type="password"
                         placeholder={t("password")}
-                        className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-100"
+                        className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-500"
                         {...field}
                       />
                     </FormControl>
