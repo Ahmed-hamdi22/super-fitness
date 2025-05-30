@@ -12,11 +12,12 @@ export function useLogin() {
     onSuccess: (data) => {
       //   Store token in localStorage
       localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      toast.success(data.message);
 
       navigate("/");
     },
     onError: (error: Error) => {
+      console.error(error);
       toast.error(error.message);
     },
   });

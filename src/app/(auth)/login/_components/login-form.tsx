@@ -11,11 +11,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import { Loader, Lock, Mail } from "lucide-react";
+import { Loader, Lock, Mail, Eye, EyeOff } from "lucide-react";
 import { useTranslations } from "use-intl";
 import Heading from "@/components/common/heading";
 import { useLogin } from "@/hooks/use-login";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function LoginForm() {
   // Translations
@@ -23,6 +24,9 @@ export default function LoginForm() {
 
   // Navigate
   const navigate = useNavigate();
+
+  //  State
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   // Mutation
   const { login, isLoading, error, isPending } = useLogin();
@@ -68,7 +72,7 @@ export default function LoginForm() {
             <div className="text-center mb-6">
               <Heading mainTitle={t("login")} />
             </div>
-            {/* Email Filed */}
+            {/* Email filed */}
             <FormField
               control={form.control}
               name="email"
@@ -77,9 +81,8 @@ export default function LoginForm() {
                   <FormLabel className="sr-only">{t("email")}</FormLabel>
                   <div className="relative">
                     {/* Icon */}
-
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <Mail className="w-5 h-5 text-soft-gray-500" />
+                      <Mail className="w-5 h-5 text-soft-gray-500 rtl:left-0" />
                     </div>
                     <FormControl>
                       {/* Input*/}
@@ -91,7 +94,9 @@ export default function LoginForm() {
                       />
                     </FormControl>
                   </div>
-                  <FormMessage />
+
+                  {/* Message */}
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -111,18 +116,33 @@ export default function LoginForm() {
                     <FormControl>
                       {/* Input*/}
                       <Input
-                        type="password"
+                        type={isPasswordHidden ? "password" : "text"}
                         placeholder={t("password")}
                         className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-500"
                         {...field}
                       />
                     </FormControl>
+
+                    {/* Eye icon  */}
+                    <div
+                      className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                      onClick={() => setIsPasswordHidden(!isPasswordHidden)}
+                    >
+                      {isPasswordHidden ? (
+                        <Eye className="w-5 h-5 text-soft-gray-500 hover:text-flame-orange-500 " />
+                      ) : (
+                        <EyeOff className="w-5 h-5 text-soft-gray-500 hover:text-flame-orange-500" />
+                      )}
+                    </div>
                   </div>
-                  <FormMessage />
+
+                  {/* Message */}
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
-            {/* Forget Button */}
+
+            {/* Forget button */}
             <div className="flex">
               <Button
                 variant="link"
@@ -134,7 +154,7 @@ export default function LoginForm() {
             </div>
 
             <div className="flex flex-col gap-8">
-              {/* Error Message */}
+              {/* Error message */}
               {error && (
                 <p className="text-red-500 text-sm font-semibold text-center">
                   {error.message}
@@ -142,7 +162,7 @@ export default function LoginForm() {
               )}
             </div>
 
-            {/* Login Button */}
+            {/* Login button */}
             <Button
               disabled={isPending}
               type="submit"

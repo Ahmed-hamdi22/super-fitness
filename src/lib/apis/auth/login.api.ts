@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 export type LoginForm = {
   email: string;
@@ -7,7 +7,7 @@ export type LoginForm = {
 
 export async function loginAction(data: LoginForm): Promise<LoginSuccess> {
   try {
-    const response = await axios.post<APIResponse<LoginSuccess>>(
+    const response = await axios.post<LoginSuccess>(
       `${import.meta.env.VITE_API_URL}/auth/signin`,
       data,
       {
@@ -16,14 +16,11 @@ export async function loginAction(data: LoginForm): Promise<LoginSuccess> {
         },
       }
     );
+    return response.data;
+  } catch (err) {
+    const error = err as AxiosError<{ error?: string }>;
 
-    if ("error" in response.data) {
-      throw new Error((response.data as ErrorResponse).error || "Login failed");
-    }
-    return response.data as LoginSuccess;
-  } catch (error: any) {
-    const message =
-      error.response?.data?.error || "Login failed Please try again.";
+    const message = error.response?.data?.error;
 
     throw new Error(message);
   }

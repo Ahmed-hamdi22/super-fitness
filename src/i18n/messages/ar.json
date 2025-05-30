@@ -2,12 +2,12 @@
   "email-invalid": "البريد الإلكتروني غير صالح",
   "password-required": "كلمة المرور المطلوبة",
   "email-reqired": "البريد الإلكتروني مطلوب",
-  "hey-there": "مرحبًا يا من هناك، ",
-  "welcome-back": " مرحبًا بعودتك!",
+  "hey-there": "مرحبًا",
+  "welcome-back": "!مرحبًا بعودتك",
   "login": "تسجيل الدخول",
   "email": "بريد إلكتروني",
   "password": "كلمة المرور",
-  "forgot-password": "نسيان كلمة المرور؟",
-  "register": "يسجل",
+  "forgot-password": "هل نسيت  كلمة المرور؟",
+  "register": "تسجيل",
   "dont-have-an-account": "ليس لديك حساب بعد؟"
 }
