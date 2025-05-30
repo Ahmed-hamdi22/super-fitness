@@ -7,6 +7,7 @@ export function useLogin() {
   // Navigate
   const navigate = useNavigate();
 
+  // Mutation
   const { mutate, isPending, error } = useMutation({
     mutationFn: loginAction,
     onSuccess: (data) => {
@@ -17,7 +18,6 @@ export function useLogin() {
       navigate("/");
     },
     onError: (error: Error) => {
-      console.error(error);
       toast.error(error.message);
     },
   });
