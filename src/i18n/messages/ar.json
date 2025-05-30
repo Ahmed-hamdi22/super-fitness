@@ -1,5 +1,13 @@
 {
   "about-us": "معلومات عنا",
   "welcome-to-classes": "مرحبا بكم في الفصول",
-  "welcome-to-healthy": "مرحبا بكم في صحة جيدة"
+  "welcome-to-healthy": "مرحبا بكم في صحة جيدة",
+  "this-helps-us-create-your-personalized-plan": "هذا يساعدنا على إنشاء خطتك الشخصية",
+  "next": "التالي",
+  "how-old-are-you": "كم عمرك",
+  "years-old": "سنوات",
+  "what-is-your-weight": "ما هو وزنك",
+  "what-is-your-height": "ما هو طولك",
+  "kg": "كجم",
+  "cm": "سم"
 }
