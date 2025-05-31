@@ -15,5 +15,7 @@
   "new-password": "كلمة المرور الجديدة",
   "create-new-password": "إنشاء كلمة مرور جديدة",
   "new-password-is-created": "تم إنشاء كلمة المرور الجديدة",
-  "create-password-is-failed": "فشل إنشاء كلمة المرور"
+  "create-password-is-failed": "فشل إنشاء كلمة المرور",
+  "confirm-password": "تاكيد كلمه المرور",
+  "make-sure-to-create-a-strong-password": "تاكد بانك قمت بانشاء كلمه مرور قويه"
 }

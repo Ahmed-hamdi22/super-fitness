@@ -5,7 +5,7 @@ import { useTranslations } from "use-intl";
 
 type NewPasswordInput = {
   email: string;
-  password: string;
+  newPassword: string;
 };
 
 export function useNewPassword() {

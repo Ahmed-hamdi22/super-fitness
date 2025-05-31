@@ -15,5 +15,7 @@
   "new-password": "New Password",
   "create-new-password": "Create New Password",
   "new-password-is-created": "New password is created",
-  "create-password-is-failed": "Create password is failed"
+  "create-password-is-failed": "Create password is failed",
+  "confirm-password": "Confirm password",
+  "make-sure-to-create-a-strong-password": "Make sure to create a strong password!"
 }
