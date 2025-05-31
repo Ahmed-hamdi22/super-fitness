@@ -10,7 +10,7 @@ export const authContext = createContext<authContextType | undefined>(
 );
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
 
   return (
     <authContext.Provider value={{ email, setEmail }}>

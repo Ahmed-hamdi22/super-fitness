@@ -8,5 +8,7 @@
   "sent-otp": "ارسل الرمز الخاص بك",
   "otp-sent-your-email": "لقد ارسل الرمز الي الايميل",
   "enter-your-email": "ادخل الايميل الخاص بك",
-  "sent-faild": "خطا في ارسال الرمز"
+  "sent-faild": "خطا في ارسال الرمز",
+  "sending-failed": "فشل الإرسال",
+  "forgotpasswordform-must-be-used-within-an-authprovider": "يجب استخدام نموذج استعادة كلمة المرور داخل AuthProvider"
 }

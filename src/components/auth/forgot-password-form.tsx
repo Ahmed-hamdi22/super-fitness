@@ -29,7 +29,9 @@ export default function ForgotPasswordForm() {
   const auth = useContext(authContext);
 
   if (!auth) {
-    throw new Error("ForgotPasswordForm must be used within an AuthProvider");
+    throw new Error(
+      t("forgotpasswordform-must-be-used-within-an-authprovider")
+    );
   }
 
   // Mutation
@@ -44,7 +46,7 @@ export default function ForgotPasswordForm() {
       .email({ message: t("email-is-invalid") }),
   });
 
-  // Variables
+  // Form
   const emailForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,7 +63,9 @@ export default function ForgotPasswordForm() {
     forgotPasswordMutate(values.email, {
       onSuccess: () => {
         navigate("/otp");
-        console.log("SUCESS");
+      },
+      onError: () => {
+        throw new Error(t("sending-failed"));
       },
     });
   };
@@ -75,6 +79,7 @@ export default function ForgotPasswordForm() {
           onSubmit={emailForm.handleSubmit(handleSubmit)}
           className="w-[486px] h-[235px] bg-transparent flex flex-col  gap-8 justify-center items-center  border-[1px] rounded-[50px] border-customGray"
         >
+          {/* Email */}
           <FormField
             control={emailForm.control}
             name="email"

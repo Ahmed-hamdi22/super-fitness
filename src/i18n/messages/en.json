@@ -9,5 +9,7 @@
   "otp-sent-your-email": "OTP sent your email",
   "otp-sent-your-email-0": "OTP sent your email",
   "enter-your-email": "Enter Your Email",
-  "sent-faild": "Sent faild"
+  "sent-faild": "Sent faild",
+  "sending-failed": "Sending Failed",
+  "forgotpasswordform-must-be-used-within-an-authprovider": "ForgotPasswordForm must be used within an AuthProvider"
 }

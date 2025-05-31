@@ -8,7 +8,7 @@ import HealthyPage from "./app/[locale]/healthy/page";
 import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import Provider from "./i18n/provider";
-import ForgotPasswordpage from "./app/[locale]/forgotpassword/page";
+import ForgotPasswordpage from "./app/[locale]/forgot-password/page";
 import OTPPage from "./app/[locale]/otp/page";
 
 createRoot(document.getElementById("root")!).render(
