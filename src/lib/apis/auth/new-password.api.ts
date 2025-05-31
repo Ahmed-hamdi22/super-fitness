@@ -11,6 +11,6 @@ export const newPassword = async ({ email, newPassword }: NewPasswordInput) => {
     { email, newPassword }
   );
 
-  const payload: NewPasswordResponse = await response.data;
+  const payload: APIResponse<NewPasswordResponse> = await response.data;
   return payload;
 };
