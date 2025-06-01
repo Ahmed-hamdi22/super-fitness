@@ -13,6 +13,7 @@ const config = {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        baloo: ["'Baloo Thambi 2'", "cursive"],
       },
       container: {
         center: true,

@@ -13,12 +13,18 @@ export default function Heading({
     <div className="mb-8  text-center space-y-2">
       {/* Welcome text and subtitle */}
       <div className="flex flex-col items-center">
-        <span className="text-xl font-normal  text-white">{welcomeText}</span>
-        <h2 className="text-2xl font-extrabold mt-1  text-white">{subtitle}</h2>
+        <span className="text-[24px] font-normal  text-white font-baloo">
+          {welcomeText}
+        </span>
+        <h2 className="text-lg font-extrabold mt-1  text-white font-baloo">
+          {subtitle}
+        </h2>
       </div>
 
       {/* Main title */}
-      <h1 className="text-4xl font-bold text-white">{mainTitle}</h1>
+      <h1 className="text-[24px] font-bold text-white font-baloo">
+        {mainTitle}
+      </h1>
     </div>
   );
 }
