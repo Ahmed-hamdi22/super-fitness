@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Loader, Lock, Mail, Eye, EyeOff } from "lucide-react";
-import { useTranslations } from "use-intl";
+import { useLocale, useTranslations } from "use-intl";
 import Heading from "@/components/common/heading";
 import { useLogin } from "@/hooks/use-login";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +24,9 @@ export default function LoginForm() {
 
   // Navigate
   const navigate = useNavigate();
+
+  // Locale
+  const locale = useLocale();
 
   //  State
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
@@ -66,7 +69,8 @@ export default function LoginForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-5 min-w-96 border-2 border-soft-gray-500 px-14 py-5 rounded-3xl "
+            className="space-y-5 min-w-96 border-2 border-soft-gray-400 px-14 py-5 rounded-3xl "
+            dir={locale === "ar" ? "rtl" : "ltr"}
           >
             {/* Title */}
             <div className="text-center mb-6">
@@ -81,15 +85,16 @@ export default function LoginForm() {
                   <FormLabel className="sr-only">{t("email")}</FormLabel>
                   <div className="relative">
                     {/* Icon */}
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <Mail className="w-5 h-5 text-soft-gray-500 rtl:left-0" />
+                    <div className="absolute inset-y-0 left-0 rtl:right-0 flex items-center ps-3  pointer-events-none">
+                      {" "}
+                      <Mail className="w-5 h-5 text-soft-gray-400 " />
                     </div>
                     <FormControl>
                       {/* Input*/}
                       <Input
                         type="email"
                         placeholder={t("email")}
-                        className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-500"
+                        className="ps-10  bg-transparent border-2 rounded-2xl text-white placeholder:text-soft-gray-300 border-soft-gray-400"
                         {...field}
                       />
                     </FormControl>
@@ -110,7 +115,7 @@ export default function LoginForm() {
                   <FormLabel className="sr-only">{t("password")}</FormLabel>
                   <div className="relative">
                     {/* Icon */}
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 rtl:right-0 flex items-center ps-3 pointer-events-none  ">
                       <Lock className="w-5 h-5 text-soft-gray-500" />
                     </div>
                     <FormControl>
@@ -118,20 +123,20 @@ export default function LoginForm() {
                       <Input
                         type={isPasswordHidden ? "password" : "text"}
                         placeholder={t("password")}
-                        className="w-full pl-10 bg-transparent border-2 rounded-2xl text-white border-soft-gray-500"
+                        className="ps-10  bg-transparent border-2 rounded-2xl text-white placeholder:text-soft-gray-300 border-soft-gray-400"
                         {...field}
                       />
                     </FormControl>
 
                     {/* Eye icon  */}
                     <div
-                      className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                      className="absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center pe-3  cursor-pointer"
                       onClick={() => setIsPasswordHidden(!isPasswordHidden)}
                     >
                       {isPasswordHidden ? (
-                        <Eye className="w-5 h-5 text-soft-gray-500 hover:text-flame-orange-500 " />
+                        <Eye className="w-5 h-5 text-soft-gray-400 hover:text-flame-orange-500 " />
                       ) : (
-                        <EyeOff className="w-5 h-5 text-soft-gray-500 hover:text-flame-orange-500" />
+                        <EyeOff className="w-5 h-5 text-soft-gray-400 hover:text-flame-orange-500" />
                       )}
                     </div>
                   </div>
