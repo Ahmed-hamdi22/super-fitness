@@ -24,16 +24,16 @@ export default function RegisterForm() {
 
   // Validation
   const formSchema = z.object({
-    firstName: z.string().nonempty(t("first-name-is-required")),
-    lastName: z.string().nonempty(t("last-name-is-required")),
+    firstName: z.string().nonempty(t('first-name-is-required')),
+    lastName: z.string().nonempty(t('last-name-is-required')),
     email: z
       .string()
-      .nonempty(t("email-is-required"))
-      .email({ message: t("email-is-invalid") }),
+      .nonempty(t('email-is-required'))
+      .email({ message: t('email-is-invalid') }),
     password: z
       .string()
-      .nonempty(t("password-is-required"))
-      .min(8, { message: t("password-is-too-short") }),
+      .nonempty(t('password-is-required'))
+      .min(8, { message: t('password-is-too-short')}),
   });
 
   // Form
@@ -52,16 +52,16 @@ export default function RegisterForm() {
       <div className="container bg-gray-400 mx-auto flex flex-col gap-5 justify-center items-center">
         {/* Headline */}
         <div className="flex flex-col justify-center items-center gap-3">
-          <p className="text-white text-lg font-normal">Hey There</p>
+          <p className="text-white text-lg font-normal">{t("hey-there")}</p>
           <h1 className="font-extrabold text-5xl  text-white">
-            Create An Account
+            {t("create-an-account")}
           </h1>
         </div>
 
         {/* Register form */}
         <form className="w-[486px] h-[592px] bg-transparent flex flex-col  gap-5 justify-center items-center  border-[1px] rounded-[50px] border-customGray">
           <h2 className="text-white  font-extrabold text-2xl  text-center">
-            Register
+            {t("register")}
           </h2>
           {/* First name field */}
           <FormField
@@ -79,7 +79,7 @@ export default function RegisterForm() {
                     {/* First name input */}
                     <Input
                       className="w-full h-full pl-12  border-[1px] placeholder:text-customlightGray text-customGray rounded-[20px] border-customGray bg-transparent"
-                      placeholder="First Name"
+                      placeholder={t("first-name")}
                       {...field}
                     />
                   </div>
@@ -105,7 +105,7 @@ export default function RegisterForm() {
                     {/* Last name */}
                     <Input
                       className="w-full h-full pl-12  border-[1px] placeholder:text-customlightGray text-customGray rounded-[20px] border-customGray bg-transparent"
-                      placeholder="Last Name"
+                      placeholder={t("last-name")}
                       {...field}
                     />
                   </div>
@@ -131,7 +131,7 @@ export default function RegisterForm() {
                     {/* Email input */}
                     <Input
                       className="w-full h-full pl-12  border-[1px] placeholder:text-customlightGray text-customGray rounded-[20px] border-customGray bg-transparent"
-                      placeholder="Email"
+                      placeholder={t("email")}
                       {...field}
                     />
                   </div>
@@ -158,7 +158,7 @@ export default function RegisterForm() {
                     <Input
                       type={hidePassword ? "password" : "text"}
                       className="w-full h-full pl-12  border-[1px] placeholder:text-customlightGray text-customGray rounded-[20px] border-customGray bg-transparent"
-                      placeholder="Password"
+                      placeholder={t("password")}
                       {...field}
                     />
 
@@ -186,7 +186,7 @@ export default function RegisterForm() {
               to="/forgotpassword"
               className="text-base font-bold underline text-customdarkOrange"
             >
-              Forget Password?
+              {t("forget-password")}
             </Link>
           </div>
 
@@ -194,7 +194,7 @@ export default function RegisterForm() {
           <div className="flex items-center w-[311px] my-2">
             <div className="flex-grow border-t border-customlightGray"></div>
             <span className="px-3 text-sm font-normal text-customlightGray">
-              Or
+              {t("or")}
             </span>
             <div className="flex-grow border-t border-customlightGray"></div>
           </div>
@@ -204,17 +204,17 @@ export default function RegisterForm() {
             className="w-[311px] h-[38px] bg-customOrange hover:bg-customOrange rounded-[20px] py-6 text-white font-extrabold text-base"
             type="submit"
           >
-            Register
+            {t("register")}
           </Button>
 
           {/* Login link */}
           <div className="text-center text-base text-white font-bold">
-            Already Have An Account?
+            {t("already-have-an-account")}
             <Link
               to="/login"
               className="text-customdarkOrange text-base font-bold underline"
             >
-              Login
+              {t("login")}
             </Link>
           </div>
         </form>

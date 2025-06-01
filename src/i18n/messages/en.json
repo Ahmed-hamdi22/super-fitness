@@ -1,5 +1,22 @@
 {
   "about-us": "about us",
   "welcome-to-classes": "welcome to classes",
-  "welcome-to-healthy": "welcome to healthy"
+  "welcome-to-healthy": "welcome to healthy",
+  "hey-there": "Hey There",
+  "create-an-account": "Create An Account",
+  "register": "Register",
+  "first-name": "First Name",
+  "last-name": "Last Name",
+  "email": "Email",
+  "password": "Password",
+  "forget-password": "Forget Password?",
+  "or": "Or",
+  "already-have-an-account": "Already Have An Account?",
+  "login": "Login",
+  "first-name-is-required": "first name is required",
+  "last-name-is-required": "last name is required",
+  "email-is-required": "email is required",
+  "email-is-invalid": "email is invalid",
+  "password-is-required": "password is required",
+  "password-is-too-short": "password is too short"
 }

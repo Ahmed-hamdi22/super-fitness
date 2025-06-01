@@ -1,5 +1,22 @@
 {
   "about-us": "معلومات عنا",
   "welcome-to-classes": "مرحبا بكم في الفصول",
-  "welcome-to-healthy": "مرحبا بكم في صحة جيدة"
+  "welcome-to-healthy": "مرحبا بكم في صحة جيدة",
+  "hey-there": "مرحبًا",
+  "create-an-account": "إنشاء حساب",
+  "register": "تسجيل",
+  "first-name": "الاسم الأول",
+  "last-name": "اسم العائلة",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "forget-password": "هل نسيت كلمة المرور؟",
+  "or": "أو",
+  "already-have-an-account": "هل لديك حساب بالفعل؟",
+  "login": "تسجيل الدخول",
+  "first-name-is-required": "الاسم الأول مطلوب",
+  "last-name-is-required": "اسم العائلة مطلوب",
+  "email-is-required": "البريد الإلكتروني مطلوب",
+  "email-is-invalid": "البريد الإلكتروني غير صالح",
+  "password-is-required": "كلمة المرور مطلوبة",
+  "password-is-too-short": "كلمة المرور قصيرة جدًا"
 }
