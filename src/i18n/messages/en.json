@@ -1,5 +1,16 @@
 {
   "about-us": "about us",
   "welcome-to-classes": "welcome to classes",
-  "welcome-to-healthy": "welcome to healthy"
+  "welcome-to-healthy": "welcome to healthy",
+  "email": "Email",
+  "welcome-back": " WELCOME BACK!",
+  "hey-there": "Hey There, ",
+  "login": "login",
+  "email-reqired": "Email Is Reqired",
+  "password": "Password",
+  "forgot-password": "Forget Password ?",
+  "dont-have-an-account": " Dont have an account yet ?",
+  "register": "Register",
+  "email-invalid": "Email Is Invalid",
+  "password-required": "Password Required"
 }

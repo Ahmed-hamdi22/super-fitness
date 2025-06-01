@@ -10,7 +10,6 @@ import RootLayout from "./app/layout";
 import Provider from "./i18n/provider";
 import Formpage from "./app/(auth)/login/page";
 import AuthLayout from "./app/(auth)/layout";
-import Registerpage from "./app/(auth)/register/page";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -43,7 +42,6 @@ createRoot(document.getElementById("root")!).render(
           {/* Auth Routes*/}
           <Route element={<AuthLayout />}>
             <Route path="login" element={<Formpage />} />
-            <Route path="register" element={<Registerpage />} />
           </Route>
         </Route>
       </Routes>
