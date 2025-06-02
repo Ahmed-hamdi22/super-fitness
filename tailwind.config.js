@@ -11,8 +11,9 @@ const config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
-				roboto: ['Roboto', 'sans-serif'],
+				inter: ["var(--font-nter)", "sans-serif"],
+				roboto: ["var(--font-roboto)", "sans-serif"],
+				baloo: ['"var(--font-Baloo Thambi 2)"', "cursive"],
 			},
 			container: {
 				center: true,
