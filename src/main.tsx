@@ -8,6 +8,7 @@ import HealthyPage from "./app/[locale]/healthy/page";
 import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import Provider from "./i18n/provider";
+import AccountModal from "./components/features/account";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -36,6 +37,7 @@ createRoot(document.getElementById("root")!).render(
 
           {/* Classes */}
           <Route path="classes" element={<ClassesPage />} />
+          <Route path="account" element={<AccountModal />} />
         </Route>
       </Routes>
     </BrowserRouter>
