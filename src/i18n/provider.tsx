@@ -1,18 +1,18 @@
 import { IntlProvider } from "use-intl";
 import { useParams } from "react-router-dom";
-import { messages } from "./messages";
-import { locales, type Locale } from "./locales";
+import en from "./messages/en.json";
+import ar from "./messages/ar.json";
+
+const messages = { en, ar };
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const { locale } = useParams();
-
-  if (!locale || !locales.includes(locale as Locale)) {
-    return;
-  }
+  const currentLocale = locale === "ar" ? "ar" : "en";
+  const dir = currentLocale === "ar" ? "rtl" : "ltr";
 
   return (
-    <IntlProvider locale={locale} messages={messages[locale as Locale]}>
-      {children}
+    <IntlProvider locale={currentLocale} messages={messages[currentLocale]}>
+      <div dir={dir}>{children}</div>
     </IntlProvider>
   );
 }
