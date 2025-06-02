@@ -8,6 +8,7 @@ import HealthyPage from "./app/[locale]/healthy/page";
 import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import Provider from "./i18n/provider";
+import NewPasswordPage from "./app/[locale]/new-password/page";
 import Formpage from "./app/(auth)/login/page";
 import AuthLayout from "./app/(auth)/layout";
 import AccountModal from "./components/features/account";
@@ -39,6 +40,9 @@ createRoot(document.getElementById("root")!).render(
 
           {/* Classes */}
           <Route path="classes" element={<ClassesPage />} />
+
+          {/* Newpassword */}
+          <Route path="newpassword" element={<NewPasswordPage />} />
 
           {/* Auth Routes*/}
           <Route element={<AuthLayout />}>
