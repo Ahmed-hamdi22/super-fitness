@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AboutUsPage from "./_components/about-us/page";
 import FitnessClassPage from "./_components/fitness-class/page";
 import HealthyNutrltioPage from "./_components/healthy-nutrltions/page";
@@ -18,6 +19,7 @@ export default function App() {
 
       {/* Healthy nutrltio */}
       <HealthyNutrltioPage />
+      <Link to={"/login"}>login</Link>
 
       {/* Why us */}
       <WhyUsPage />

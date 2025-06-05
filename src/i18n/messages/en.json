@@ -17,11 +17,9 @@
   "new-password-is-created": "New password is created",
   "create-password-is-failed": "Create password is failed",
   "confirm-password": "Confirm password",
-  "make-sure-to-create-a-strong-password": "Make sure to create a strong password!"
-  "welcome-to-healthy": "welcome to healthy",
-  "email": "Email",
-  "welcome-back": " WELCOME BACK!",
-  "hey-there": "Hey There, ",
+  "make-sure-to-create-a-strong-password": "Make sure to create a strong password!",
+  "welcome-back": "WELCOME BACK!",
+  "hey-there": "Hey There,",
   "login": "login",
   "email-reqired": "Email Is Reqired",
   "password": "Password",
