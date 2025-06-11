@@ -27,5 +27,17 @@
   "password": "كلمة المرور",
   "forgot-password": "هل نسيت  كلمة المرور؟",
   "register": "تسجيل",
-  "dont-have-an-account": "ليس لديك حساب بعد؟"
+  "dont-have-an-account": "ليس لديك حساب بعد؟",
+  "your-goal": "هدفك",
+  "level": "مستوى",
+  "weight": "وزن",
+  "tap-to-change": "اضغط للتغيير",
+  "change-password": "تغيير كلمة المرور",
+  "select-language": "حدد اللغة",
+  "security": "حماية",
+  "help": "يساعد",
+  "logout": "تسجيل الخروج",
+  "privacy-policy": "سياسة الخصوصية",
+  "light": "ضوء",
+  "dark": "مظلم"
 }

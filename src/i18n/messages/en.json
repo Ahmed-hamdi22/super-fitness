@@ -27,5 +27,18 @@
   "dont-have-an-account": " Dont have an account yet ?",
   "register": "Register",
   "email-invalid": "Email Is Invalid",
-  "password-required": "Password Required"
+  "password-required": "Password Required",
+  "your-goal": "Your Goal",
+  "level": "Level",
+  "weight": "Weight",
+  "tap-to-change": "TAP TO CHANGE",
+  "change-password": "Change Password",
+  "select-language": "Select Language",
+  "mood": "Mood",
+  "security": "Security",
+  "privacy-policy": "Privacy Policy",
+  "help": "Help",
+  "logout": "Logout",
+  "light": "light",
+  "dark": "dark"
 }

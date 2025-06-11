@@ -18,6 +18,12 @@ declare type ProfileResponse = {
   user: User;
 };
 
+// Profile Response
+declare type ProfileResponse = {
+  message: string;
+  user: User;
+};
+
 declare type NewPasswordResponse =
   | SuccessfulNewPassword
   | NewPasswordErrorResponse;

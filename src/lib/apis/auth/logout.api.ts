@@ -1,56 +1,22 @@
-// import axios from "axios";
+import { API_URL } from "@/lib/constants/api.constant";
+import axios from "axios";
 
-// export const forgotPassword = async (email: string) => {
-  
-//   const response = await axios.post(
+export async function logout(token: string) {
+  const apiUrl = `${API_URL}/auth/logout`;
 
-//     `${import.meta.env.VITE_API_URL}/auth/forgotPassword`,
-//     { email }
-//   );
-
-//   const payload: APIResponse<ForgotPasswordResponse> = await response.data;
-//   return payload;
-// };
-
-// export async function verifyOtp(fields: VerifyOTPFields) {
-//   const apiUrl = import.meta.env.VITE_API_URL;
-//   const response = await fetch(`${apiUrl}/auth/verifyResetCode`, {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(fields),
-//   });
-
-//   const payload: APIResponse<VerifyOTPResponse> = await response.json();
-
-//   return payload;
-// }
-
-/**
- * 
- * "use server";
-
-import { AUTH_COOKIE } from "@/lib/constants/auth.constant";
-import { decode } from "next-auth/jwt";
-import { cookies } from "next/headers";
-
-export async function editProfileAction(fields: ProfileFields) {
-  const tokenCookies = cookies().get(AUTH_COOKIE)?.value;
-  const token = await decode({ token: tokenCookies, secret: process.env.NEXTAUTH_SECRET! });
-
-  const apiUrl = `${process.env.API}/auth/editProfile`;
-
-  const response = await fetch(apiUrl, {
-    method: "PUT",
-    credentials: "include",
+  const response = await axios.get(apiUrl, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token?.token}`,
-    },
-    body: JSON.stringify(fields),
+      Authorization: `Bearer ${token}`,
+    }
   });
+  const payload: APIResponse<object> = await response.data;
 
-  const payload: APIResponse<ProfileResponse> = await response.json();
+  console.log("Logout Payload:", payload)
+
+  if ("error" in payload) {
+    throw new Error(payload.error);
+  }
 
   return payload;
 }
- */

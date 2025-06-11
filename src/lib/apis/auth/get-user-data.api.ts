@@ -1,21 +1,16 @@
-import { useAuth } from "@/context/use-context";
 import { API_URL } from "@/lib/constants/api.constant";
 import axios from "axios";
 
-export async function fetchUserData() {
+export async function getUserData(token: string) {
   const apiUrl = `${API_URL}/auth/profile-data`;
-  const { token } = useAuth();
 
-  const response = await axios(apiUrl, {
-    method: "GET",
-    credentials: "include",
+  const response = await axios.get(apiUrl, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token?.token}`,
-    },
-    cache: "no-store",
+      Authorization: `Bearer ${token}`,
+    }
   });
-  const payload: APIResponse<ProfileResponse> = await response.json();
+  const payload: APIResponse<ProfileResponse> = await response.data;
 
   if ("error" in payload) {
     throw new Error(payload.error);
@@ -23,19 +18,3 @@ export async function fetchUserData() {
 
   return payload.user;
 }
-
-/**
- * 
- * export async function verifyOtp(fields: VerifyOTPFields) {
-  const apiUrl = import.meta.env.VITE_API_URL;
-  const response = await fetch(`${apiUrl}/auth/verifyResetCode`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(fields),
-  });
-
-  const payload: APIResponse<VerifyOTPResponse> = await response.json();
-
-  return payload;
-}
- */
