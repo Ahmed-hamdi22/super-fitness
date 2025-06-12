@@ -30,8 +30,8 @@ export default function AboutUs() {
   ];
 
   return (
-<section className="w-full bg-white py-20 md:py-10 mb-32">
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
+<section className="w-full bg-white  mb-32">
+    <div className="mx-auto px-4 sm:px-6 lg:py-8 max-w-screen-xl">
 
       {/*  Grid  */}
     <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 lg:gap-y-0 gap-y-12 items-center">
@@ -42,7 +42,7 @@ export default function AboutUs() {
             <img
               src="/assets/images/trainer-1.png"
               alt="Trainer 1"
-    className="w-[203.41px] h-[307.96px] rounded-[10.23px] md:w-[300px] md:h-auto md:rounded-xl"
+          className="w-[203.41px] h-[307.96px] rounded-[10.23px] md:w-[300px] md:h-[540px] md:rounded-xl"
             />
           </div>
 
@@ -58,6 +58,8 @@ export default function AboutUs() {
             alt="Trainer 3"
     className="w-[200.57px] h-[256.93px]  md:w-[345px] md:h-[400px] rounded-xl   absolute top-40 md:top-60 -right-1 z-10 rtl:right-60 "          />
         </div>
+
+        
         {/* Text Content */}
         <div className="rtl:text-right mt-8 ">
           <div className="relative mb-8">
@@ -105,7 +107,7 @@ export default function AboutUs() {
         </div>
 
 
-          <Button className="capitalize w-[150px] mr-8 rounded-2xl bg-flame-orange-500 relative rtl:flex-row-reverse">
+          <Button className="capitalize w-[150px] mr-8 mt-8 rounded-2xl bg-flame-orange-500 relative rtl:flex-row-reverse">
             {t("get-started")}
             <ArrowUpRight className="absolute top-3 rtl:-rotate-90 -right-3 rtl:-left-3 rtl:right-36 ml-2 w-9 h-9 text-white bg-flame-orange-500 rounded-full border-2 border-white" />
           </Button>

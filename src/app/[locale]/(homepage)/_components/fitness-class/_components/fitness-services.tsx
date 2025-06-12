@@ -18,17 +18,21 @@ import { useTranslations } from "use-intl";
 
 export default function MuscleGroupList() {
 
-
+// Translations
   const t = useTranslations();
 
+  // State 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [searchParams] = useSearchParams();
-  const [api, setApi] = useState<CarouselApi | null>(null);
+    // Navigate 
+      const [searchParams] = useSearchParams();
+      const [api, setApi] = useState<CarouselApi | null>(null);
 
 
+      // Get selected muscle 
     const selectedMuscleId = searchParams.get("muscleGroup");
 
+    
   const {
     data: muscles = [],
     isLoading,
@@ -74,7 +78,7 @@ const displayedMuscles = selectedMuscleId
                 key={muscle._id}
                 className="pl-4 basis-full sm:basis-1/2 md:basis-1/3"
               >
-                <div className="rounded-xl overflow-hidden shadow-lg border hover:scale-[1.02] transition bg-white">
+                <div className="rounded-xl  hover:scale-[1.02] transition bg-soft-gray-200">
                   <img
                     src={muscle.image}
                     alt={muscle.name}
@@ -84,10 +88,13 @@ const displayedMuscles = selectedMuscleId
                     <h3 className="text-xl font-semibold uppercase  items-start text-darkGray1 mb-2">
                       {muscle.name}
                     </h3>
-                    <button className="text-base font-baloo text-orange-600 flex items-center gap-1">
+                   <div className="flex items-center gap-2 mb-2">
+                     <button className="text-lg  font-medium capitalize font-baloo text-flame-orange-500  gap-1">
                       {t("explore")}
-                      <ArrowUpRight className="w-5 h-5 bg-flame-orange-500 text-darkGray1 rounded-full p-1" />
                     </button>
+                        <ArrowUpRight className="w-5 h-5 bg-flame-orange-500 text-dark-gray-1 rounded-full p-1" />
+
+                   </div>
                   </div>
                 </div>
               </CarouselItem>

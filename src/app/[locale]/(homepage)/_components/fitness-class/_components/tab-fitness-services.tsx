@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
-import { fetchMuscleGroups } from "@/lib/apis/auth/muscle-group.api";
+import {  GetRandomMuscle } from "@/lib/apis/auth/muscle-group.api";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslations } from "use-intl";
 
@@ -32,7 +32,7 @@ export default function TabFitness() {
   // Fetch muscle groups
   const { data, isLoading } = useQuery({
     queryKey: ["muscleGroups"],
-    queryFn: fetchMuscleGroups,
+    queryFn:  GetRandomMuscle,
   });
 
   // Handle button click

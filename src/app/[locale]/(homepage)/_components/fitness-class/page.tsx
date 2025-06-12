@@ -1,6 +1,7 @@
 import { useTranslations } from "use-intl";
 import MuscleGroupList from "./_components/fitness-services";
 import TabFitness from "./_components/tab-fitness-services";
+import { Dumbbell } from "lucide-react";
 
 export default function HealthyNutritionPage() {
 
@@ -15,7 +16,20 @@ export default function HealthyNutritionPage() {
         {/* Content Container */}
         <div className="relative z-10  text-center">
           {/* Header Content */}
-          <div className="bg-light-silver-400/90 h-[420px] backdrop-blur-sm py-16 px-8 ">
+          <div className="bg-light-silver-400/90 h-[380px] backdrop-blur-sm py-16 px-8 ">
+          <div className="absolute -top-6 left-0 right-0 flex justify-center items-center gap-2 mb-8">
+           <h2 className="absolute  text-5xl sm:text-7xl font-extrabold font-montserrat uppercase text-gray-200 opacity-30 ">
+              {t("about-us-title")}
+            </h2>
+
+            <div className="relative z-10 flex items-center gap-2 -bottom-2 ">
+              <Dumbbell className="w-5 h-5 text-flame-orange-500 rotate-45" />
+              <span className="text-sm font-semibold text-flame-orange-500">
+                {t("fitness")}
+              </span>
+            </div>
+          </div>
+
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-white mb-8 leading-tight">
               {t.rich("transform-headline", {
                 span: (v) => <span className="text-orange-500">{v}</span>,
@@ -30,7 +44,7 @@ export default function HealthyNutritionPage() {
         </div>
 
         {/* Muscle Slider  */}
-        <div className="absolute bottom-48 left-0 right-0 transform translate-y-1/2 z-20">
+        <div className="absolute bottom-60 left-0 right-0 transform translate-y-1/2 z-20">
             <MuscleGroupList />
         </div>
       </section>
