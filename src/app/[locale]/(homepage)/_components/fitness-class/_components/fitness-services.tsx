@@ -1,218 +1,120 @@
-// import { Button } from "@/components/ui/button";
-// import { useTranslations } from "use-intl";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { CarouselDots } from "@/components/ui/carousel-dots";
+import { GetRandomMuscle } from "@/lib/apis/auth/muscle-group.api";
+import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ArrowUpRight from "@/components/common/arrow-long-right";
+import { useTranslations } from "use-intl";
 
-// export default function FitnessServices() {
-//   const t = useTranslations();
-//   return (
-//     <div className="min-h-screen bg-gray-100">
-//       {/* Services Section */}
-//       <section className="py-16 bg-white">
-//         <div className="container mx-auto">
-//           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
-//             EMPOWERING YOU TO ACHIEVE{" "}
-//             <span className="text-orange-500">YOUR FITNESS GOALS</span>
-//           </h2>
-//           <p className="text-center text-gray-600 mb-12">
-//             We believe fitness is more than just a workout—it’s a lifestyle.
-//             With top-of-the-line facilities, certified trainers, and a
-//             supportive community, we’re here to inspire and guide you every step
-//             of the way.
-//           </p>
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-1.jpg"
-//                 alt="Personal Trainer"
-//                 className="rounded-lg mx-auto mb-4 w-3/4 h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Personal Trainer
-//               </h3>
-//               <p className="text-gray-600">
-//                 Achieve your fitness goals with the guidance of our certified
-//                 trainers.
-//               </p>
-//             </div>
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-2.jpg"
-//                 alt="Cardio Programs"
-//                 className="rounded-lg mx-auto mb-4 w-3/4 h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Cardio Programs
-//               </h3>
-//               <p className="text-gray-600">
-//                 From steady-state runs to interval sprints, our treadmill
-//                 programs.
-//               </p>
-//             </div>
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-3.jpg"
-//                 alt="Quality Equipment"
-//                 className="rounded-lg mx-auto mb-4 w-3/4 h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Quality Equipment
-//               </h3>
-//               <p className="text-gray-600">
-//                 Our gym is equipped with the latest cardio & strength machines.
-//               </p>
-//             </div>
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-4.jpg"
-//                 alt="Healthy Nutrition"
-//                 className="rounded-lg mx-auto mb-4 w-3/4 h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Healthy Nutrition
-//               </h3>
-//               <p className="text-gray-600">
-//                 Fuel your fitness journey with customized meal plans for you.
-//               </p>
-//             </div>
-//           </div>
-//           <div className="text-center mt-12">
-//             <Button className="bg-orange-500 text-white hover:bg-orange-600">
-//               Get Started
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
 
-//       {/* Workouts Section */}
-//       <section className="py-16 bg-gray-200">
-//         <div className="container mx-auto">
-//           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
-//             TRANSFORM YOUR BODY WITH OUR{" "}
-//             <span className="text-orange-500">DYNAMIC UPCOMING WORKOUTS</span>
-//           </h2>
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-//             <div className="bg-white rounded-lg shadow-lg p-4">
-//               <img
-//                 src="/workout-1.jpg"
-//                 alt="Group Workout"
-//                 className="rounded-lg mb-4 w-full h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Group Workout
-//               </h3>
-//               <Button variant="link" className="text-orange-500">
-//                 Explore
-//               </Button>
-//             </div>
-//             <div className="bg-white rounded-lg shadow-lg p-4">
-//               <img
-//                 src="/workout-2.jpg"
-//                 alt="Personal Training"
-//                 className="rounded-lg mb-4 w-full h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Personal Training
-//               </h3>
-//               <Button variant="link" className="text-orange-500">
-//                 Explore
-//               </Button>
-//             </div>
-//             <div className="bg-white rounded-lg shadow-lg p-4">
-//               <img
-//                 src="/workout-3.jpg"
-//                 alt="Muscle Building"
-//                 className="rounded-lg mb-4 w-full h-auto"
-//               />
-//               <h3 className="text-xl font-semibold text-gray-800">
-//                 Muscle Building
-//               </h3>
-//               <Button variant="link" className="text-orange-500">
-//                 Explore
-//               </Button>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
 
-//       {/* Services Section */}
-//       <section className="py-8 px-4 md:py-16 md:px-8 lg:py-20 lg:px-12 bg-white text-gray-800">
-//         <div className="max-w-6xl mx-auto">
-//           <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center mb-4">
-//             EMPOWERING YOU TO ACHIEVE{" "}
-//             <span className="text-orange-500">YOUR FITNESS GOALS</span>
-//           </h2>
-//           <p className="text-center text-sm md:text-base lg:text-lg mb-6 text-gray-600">
-//             We believe fitness is more than just a workout—it’s a lifestyle.
-//             With top-of-the-line facilities, certified trainers, and a
-//             supportive community, we’re here to inspire and guide you every step
-//             of the way.
-//           </p>
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-1.jpg"
-//                 alt="Personal Trainer"
-//                 className="w-3/4 mx-auto mb-2 rounded-lg"
-//               />
-//               <h3 className="text-base md:text-lg font-semibold">
-//                 Personal Trainer
-//               </h3>
-//               <p className="text-xs md:text-sm text-gray-600">
-//                 Achieve your fitness goals with the guidance of our certified
-//                 trainers.
-//               </p>
-//             </div>
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-2.jpg"
-//                 alt="Cardio Programs"
-//                 className="w-3/4 mx-auto mb-2 rounded-lg"
-//               />
-//               <h3 className="text-base md:text-lg font-semibold">
-//                 Cardio Programs
-//               </h3>
-//               <p className="text-xs md:text-sm text-gray-600">
-//                 From steady-state runs to interval sprints, our treadmill
-//                 programs.
-//               </p>
-//             </div>
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-3.jpg"
-//                 alt="Quality Equipment"
-//                 className="w-3/4 mx-auto mb-2 rounded-lg"
-//               />
-//               <h3 className="text-base md:text-lg font-semibold">
-//                 Quality Equipment
-//               </h3>
-//               <p className="text-xs md:text-sm text-gray-600">
-//                 Our gym is equipped with the latest cardio & strength machines.
-//               </p>
-//             </div>
-//             <div className="text-center">
-//               <img
-//                 src="/trainer-4.jpg"
-//                 alt="Healthy Nutrition"
-//                 className="w-3/4 mx-auto mb-2 rounded-lg"
-//               />
-//               <h3 className="text-base md:text-lg font-semibold">
-//                 Healthy Nutrition
-//               </h3>
-//               <p className="text-xs md:text-sm text-gray-600">
-//                 Fuel your fitness journey with customized meal plans for you.
-//               </p>
-//             </div>
-//           </div>
-//           <div className="mt-6 text-center">
-//             <Button className="bg-orange-500 text-white w-full max-w-xs hover:bg-orange-600">
-//               Get Started
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
+export default function MuscleGroupList() {
 
-export default function FitnessServices() {
-  <div>fitness-services</div>;
+
+  const t = useTranslations();
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [searchParams] = useSearchParams();
+  const [api, setApi] = useState<CarouselApi | null>(null);
+
+
+    const selectedMuscleId = searchParams.get("muscleGroup");
+
+  const {
+    data: muscles = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["randomMuscles"],
+    queryFn: GetRandomMuscle,
+  });
+const displayedMuscles = selectedMuscleId
+  ? muscles.filter((muscle: Muscle) => muscle._id === selectedMuscleId)
+  : muscles;
+
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  if (isLoading) return <p>Loading muscles...</p>;
+  if (isError) return <p>Something went wrong while fetching muscles.</p>;
+  if (!muscles.length) return <p>No muscles found.</p>;
+
+  return (
+    <div className="px-16 py-10">
+      <div className="relative">
+        <Carousel
+          opts={{ align: "start" }}
+          setApi={setApi}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {displayedMuscles.map((muscle: Muscle) => (
+              <CarouselItem
+                key={muscle._id}
+                className="pl-4 basis-full sm:basis-1/2 md:basis-1/3"
+              >
+                <div className="rounded-xl overflow-hidden shadow-lg border hover:scale-[1.02] transition bg-white">
+                  <img
+                    src={muscle.image}
+                    alt={muscle.name}
+                    className="w-full h-[250px] object-cover"
+                  />
+                  <div className="p-4 flex flex-col justify-between h-20">
+                    <h3 className="text-xl font-semibold uppercase  items-start text-darkGray1 mb-2">
+                      {muscle.name}
+                    </h3>
+                    <button className="text-base font-baloo text-orange-600 flex items-center gap-1">
+                      {t("explore")}
+                      <ArrowUpRight className="w-5 h-5 bg-flame-orange-500 text-darkGray1 rounded-full p-1" />
+                    </button>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+            {/* Arrow Left */}
+<CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 rounded-full border border-orange-300 text-orange-500 hover:bg-orange-100" />
+
+    {/* Arrow Right */}
+<CarouselNext className="absolute top-1/2 -translate-y-1/2 right-0 z-10 rounded-full border border-orange-300 text-orange-500 hover:bg-orange-100" />
+  </Carousel>
+
+        {/* Dots under carousel */}
+        <div className="mt-6 flex justify-center">
+          <CarouselDots
+            totalSlides={displayedMuscles.length}
+            currentSlide={currentIndex}
+            onDotClick={(index) => api?.scrollTo(index)}
+            dotClassName={(index) =>
+              `w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-orange-500" : "bg-gray-300"
+              }`
+            }
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
