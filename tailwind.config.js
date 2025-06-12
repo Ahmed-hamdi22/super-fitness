@@ -10,10 +10,18 @@ const config = {
 	],
 	theme: {
 		extend: {
+			      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        scroll: 'scroll 20s linear infinite',
+      },
 			fontFamily: {
-				inter: ["var(--font-nter)", "sans-serif"],
-				roboto: ["var(--font-roboto)", "sans-serif"],
-				baloo: ['"var(--font-Baloo Thambi 2)"', "cursive"],
+				inter: ['Inter', 'sans-serif'],
+				roboto: ['Roboto', 'sans-serif'],
 			},
 			container: {
 				center: true,
@@ -72,14 +80,39 @@ const config = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				},
-				"customOrange": "#FF4100",
+				"flame-orange": {
+					50: "#FFF1E6",
+					200: "#FFB899",
+					300: "#FF9166",
+					400: "#FF6933",
+					500: "#FF4100",
+					600: "#DB3700",
+					700: "#B93000",
+					800: "#8F2400",
+					900: "#661A00",
+					},
+					"flame-orange-alpha": {
+					50: "#FF410033",
+					},
+					"soft-gray": {
+					50: "#F5F5F5",
+					100: "#EDEDED",
+					200: "#E5E5E5",
+					300: "#D9D9D9",
+					400: "#D3D3D3",
+					500: "#BEBEBE",
+					600: "#A8A8A8",
+					700: "#919191",
+					800: "#7B7B7B",
+					900: "#666666",
+				},
 				"darkGray1": "#242424",
 				"darkGray2": "#232425",
 				"transparentOrange": "#FF6A0080",
+				"transparentBlack": "#00000040"
 			}
 		}
 	},
 	plugins: [tailwindcssAnimate, require("tailwindcss-animate")],
 }
 export default config;
-
