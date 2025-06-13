@@ -19,5 +19,6 @@
   "dont-have-an-account": " Dont have an account yet ?",
   "register": "Register",
   "email-invalid": "Email Is Invalid",
-  "password-required": "Password Required"
+  "password-required": "Password Required",
+  "otp-code": "otp code"
 }
