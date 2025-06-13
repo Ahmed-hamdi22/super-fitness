@@ -8,7 +8,7 @@ import Provider from "./i18n/provider";
 import NotFound from "./app/[locale]/not-found";
 import AuthLayout from "./app/(auth)/layout";
 import VerifyOTPForm from "./app/[locale]/auth/_components/verify-otp";
-import LoginForm from "./app/[locale]/auth/_components/verify-otp/login-form";
+import LoginForm from "./app/[locale]/auth/_components/login-form";
 
 const router = createBrowserRouter([
   {
