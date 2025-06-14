@@ -6,9 +6,9 @@ import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import Provider from "./i18n/provider";
 import NotFound from "./app/[locale]/not-found";
-import AuthLayout from "./app/(auth)/layout";
 import VerifyOTPForm from "./app/[locale]/auth/_components/verify-otp";
 import LoginForm from "./app/[locale]/auth/_components/login-form";
+import AuthLayout from "./app/[locale]/auth/layout";
 
 const router = createBrowserRouter([
   {

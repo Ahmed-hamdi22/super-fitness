@@ -5,7 +5,7 @@ export type LoginForm = {
   password: string;
 };
 
-export async function loginAction(data: LoginForm): Promise<LoginSuccess> {
+export async function loginAction(data: LoginForm) {
   try {
     const response = await axios.post<LoginSuccess>(
       `${import.meta.env.VITE_API_URL}/auth/signin`,
