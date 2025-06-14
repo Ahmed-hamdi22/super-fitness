@@ -10,10 +10,14 @@ const config = {
 	],
 	theme: {
 		extend: {
+			backgroundImage: {
+				'text-gradient-gray': 'linear-gradient(to right, #242424, #ffffff)',
+			},
 			fontFamily: {
 				inter: ["var(--font-nter)", "sans-serif"],
 				roboto: ["var(--font-roboto)", "sans-serif"],
-				baloo: ['"var(--font-Baloo Thambi 2)"', "cursive"],
+				baloo: ['"Baloo Thambi 2"', 'cursive'],
+				rubik: ['Rubik', "sans-serif"],
 			},
 			container: {
 				center: true,
@@ -34,6 +38,7 @@ const config = {
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
@@ -72,10 +77,12 @@ const config = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				},
-				"customOrange": "#FF4100",
-				"darkGray1": "#242424",
-				"darkGray2": "#232425",
-				"transparentOrange": "#FF6A0080",
+				"custom-orange": "#FF4100",
+				"custom-gray": '#EAEAEA',
+				"dark-gray-1": "#242424",
+				"dark-gray-2": "#232425",
+				"transparent-orange": "#FF6A0080",
+
 			}
 		}
 	},

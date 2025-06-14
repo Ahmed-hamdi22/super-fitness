@@ -90,3 +90,10 @@ a:hover {
     @apply bg-background text-foreground;
   }
 }
+
+.bg-healthy-nutrltions {
+  background-image: url("/assets/418cb3d22952473ef67f8b1f550941935220e8e6.jpg");
+}
+.bg-healthy {
+  background-image: url("/assets/1c954dadbf9e7afe8a506781f826bc185c5e4deb.png");
+}

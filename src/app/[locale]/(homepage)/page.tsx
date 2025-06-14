@@ -6,7 +6,7 @@ import WhyUsPage from "./_components/why-us/page";
 
 export default function App() {
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className="">
       {/* Hero */}
       <HeroPage />
 
@@ -16,11 +16,11 @@ export default function App() {
       {/* Fitness class */}
       <FitnessClassPage />
 
-      {/* Healthy nutrltio */}
-      <HealthyNutrltioPage />
-
       {/* Why us */}
       <WhyUsPage />
+
+      {/* Healthy nutrltio */}
+      <HealthyNutrltioPage />
     </main>
   );
 }
