@@ -12,10 +12,11 @@ declare type User = {
   photo: string;
 } & DatabaseFields;
 
-// Profile Response
-declare type ProfileResponse = {
-  message: string;
-  user: User;
+// Profile Fields
+declare type ProfileFields = {
+  weight?: number;
+  activityLevel?: string;
+  goal?: string;
 };
 
 // Profile Response
