@@ -10,8 +10,8 @@
   "confirm": "Confirm",
   "verifying": "Verifying...",
   "email": "Email",
-  "welcome-back": " WELCOME BACK!",
-  "hey-there": "Hey There, ",
+  "welcome-back": "WELCOME BACK!",
+  "hey-there": "Hey There,",
   "login": "login",
   "email-reqired": "Email Is Reqired",
   "password": "Password",
@@ -20,5 +20,6 @@
   "register": "Register",
   "email-invalid": "Email Is Invalid",
   "password-required": "Password Required",
-  "otp-code": "otp code"
+  "otp-code": "otp code",
+  "welcome-to-super-fitness": "Welcome to Super Fitness"
 }

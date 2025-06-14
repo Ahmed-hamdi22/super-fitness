@@ -9,6 +9,7 @@ import NotFound from "./app/[locale]/not-found";
 import VerifyOTPForm from "./app/[locale]/auth/_components/verify-otp";
 import LoginForm from "./app/[locale]/auth/_components/login-form";
 import AuthLayout from "./app/[locale]/auth/layout";
+import DummyRegister from "./app/[locale]/auth/_components/dummy-register";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
         children: [
           { path: "login", element: <LoginForm /> },
           { path: "verifyotp", element: <VerifyOTPForm /> },
+          // { path: "register", element: <DummyRegister /> },
         ],
       },
     ],

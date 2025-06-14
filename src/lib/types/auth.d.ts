@@ -1,3 +1,4 @@
+// User type
 declare type User = {
   firstName: string;
   lastName: string;
@@ -11,6 +12,7 @@ declare type User = {
   photo: string;
 } & DatabaseFields;
 
+// Register types
 declare type RegisterFields = {
   firstName: string;
   lastName: string;
@@ -29,12 +31,3 @@ declare interface RegisterResponse {
   user: User;
   token: string;
 }
-
-// Verify otp types
-declare type VerifyOTPFields = {
-  resetCode: string;
-};
-
-declare type VerifyOTPResponse = {
-  status: string;
-};
