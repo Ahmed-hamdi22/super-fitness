@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
-import {  GetRandomMuscle } from "@/lib/apis/auth/muscle-group.api";
+import { GetRandomMuscle } from "@/lib/apis/auth/muscle-group.api";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslations } from "use-intl";
 
@@ -32,14 +32,14 @@ export default function TabFitness() {
   // Fetch muscle groups
   const { data, isLoading } = useQuery({
     queryKey: ["muscleGroups"],
-    queryFn:  GetRandomMuscle,
+    queryFn: GetRandomMuscle,
   });
 
   // Handle button click
   const handleClick = (value: string) => {
-    setValue("muscleGroup",value);
+    setValue("muscleGroup", value);
 
-    // Create new URLSearchParams object
+    // Create new urlsearchparams object
     const params = new URLSearchParams(searchParams.toString());
 
     if (value) {
@@ -59,7 +59,7 @@ export default function TabFitness() {
 
   return (
     <div className="flex flex-wrap gap-2 items-center justify-center py-4">
-      {/* All Body Button */}
+      {/* All body  */}
       <button
         onClick={() => handleClick("")}
         className={`px-4 py-1 rounded-full text-sm font-medium capitalize ${
@@ -68,21 +68,21 @@ export default function TabFitness() {
             : " text-darkGray1"
         }`}
       >
-       {t("all-body")}
+        {t("all-body")}
       </button>
 
-      {/* Muscle Group Buttons */}
-      {data?.slice(0, 6).map((mg: Muscle) => (
+      {/* All muscles */}
+      {data?.slice(0, 6).map((muscle: Muscle) => (
         <button
-          key={mg._id}
-          onClick={() => handleClick(mg._id)}
+          key={muscle._id}
+          onClick={() => handleClick(muscle._id)}
           className={`px-4 py-1.5 rounded-full text-sm font-semibold ${
-            muscleGroup === mg._id
+            muscleGroup === muscle._id
               ? "bg-flame-orange-500 text-white"
               : " text-darkGray1"
           }`}
         >
-          {mg.name}
+          {muscle.name}
         </button>
       ))}
     </div>
