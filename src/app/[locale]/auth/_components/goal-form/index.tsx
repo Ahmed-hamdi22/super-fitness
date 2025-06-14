@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 
-export default function LevelForm() {
+export default function GoalForm() {
   // Translations
   const t = useTranslations();
 
@@ -10,20 +10,20 @@ export default function LevelForm() {
 
   // Variables
   const options = [
-    t("rookie"),
-    t("beginner"),
-    t("intermediate"),
-    t("advance"),
-    t("true-beast"),
+    t("gain-weight"),
+    t("lose-weight"),
+    t("get-fitter"),
+    t("gain-more-flexible"),
+    t("learn-the-basic"),
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-8">
       <div className="w-full max-w-md space-y-4">
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-5xl text-white mb-2 font-extrabold capitalize">
-            {t("your-regular-physical-activity-level")}
+            {t("what-is-your-goal")}
           </h1>
           <p className="text-white capitalize text-lg">
             {t("this-helps-us-create-your-personalized-plan")}
