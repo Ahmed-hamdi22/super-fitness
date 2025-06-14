@@ -9,6 +9,7 @@ import NotFound from "./app/[locale]/not-found";
 import AccountModal from "./components/features/account";
 import AuthLayout from "./app/(auth)/layout";
 import LoginForm from "./app/(auth)/login/_components/login-form";
+import ContactUsPage from "./app/[locale]/(homepage)/_components/contact-us/page";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       { path: "healthy", element: <HealthyPage /> },
       { path: "classes", element: <ClassesPage /> },
       { path: "account", element: <AccountModal /> },
+      { path: "contact-us", element: <ContactUsPage /> },
     {
         element: <AuthLayout />,
         children: [

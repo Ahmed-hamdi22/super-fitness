@@ -67,6 +67,7 @@ export default function MainSettings() {
       value: theme,
       toggle: isDark,
       onClick: toggleTheme,
+      isThemeToggle: true,
     },
     {
       icon: <GiCogLock className="text-customOrange text-2xl" />,
@@ -119,7 +120,7 @@ export default function MainSettings() {
                   className={`w-8 h-5 rounded-full flex justify-start items-center ${item.toggle ? "bg-customOrange" : "bg-darkGray1"} relative transition-colors`}
                 >
                   <div
-                    className={`w-4 h-4 bg-white rounded-full absolute transition-transform ${item.toggle ? "translate-x-3" : "translate-x-0.5"}`}
+                    className={`w-4 h-4 bg-white rounded-full absolute transition-transform ${item.toggle ? "translate-x-3 rtl:-translate-x-3" : "translate-x-0.5 rtl:-translate-x-0.5"}`}
                   ></div>
                 </div>
               </div>

@@ -4,9 +4,9 @@
   "welcome-to-healthy": "مرحبا بكم في صحة جيدة",
   "gain-weight": "زيادة الوزن",
   "lose-weight": "فقدان الوزن",
-  "get-fitter": "احصل على مجرب",
-  "gain-more-flexible": "كسب أكثر مرونة",
-  "learn-the-basic": "تعلم الأساسي",
+  "get-fitter": "لياقة بدنية أفضل",
+  "gain-more-flexible": "مزيد من المرونة",
+  "learn-the-basic": "تعلم الأساسيات",
   "what-is-your-goal": "ما هو هدفك؟",
   "this-helps-us-create-your-personalized-plan": "هذا يساعدنا على إنشاء خطتك الشخصية",
   "next": "التالي",
@@ -53,5 +53,10 @@
   "logout": "تسجيل الخروج",
   "privacy-policy": "سياسة الخصوصية",
   "light": "ضوء",
-  "dark": "مظلم"
+  "dark": "مظلم",
+  "save": "حفظ",
+  "advanced": "متقدم",
+  "what-is-your-level": "ما هو مستواك؟",
+  "expert": "خبير",
+  "master": "متقن"
 }

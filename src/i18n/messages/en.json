@@ -5,7 +5,7 @@
   "gain-weight": "Gain Weight",
   "lose-weight": "Lose Weight",
   "get-fitter": "Get Fitter",
-  "gain-more-flexible": "Gain More Flexible",
+  "gain-more-flexible": "Gain More Flexibility",
   "learn-the-basic": "Learn The Basic",
   "what-is-your-goal": "what is your goal?",
   "this-helps-us-create-your-personalized-plan": "this helps us create Your personalized plan",
@@ -15,8 +15,7 @@
   "intermediate": "Intermediate",
   "advance": "Advance",
   "true-beast": "True Beast",
-  "your-regular-physical-activity-level": "your regular physical activity level ?"
-  "welcome-to-healthy": "welcome to healthy",
+  "your-regular-physical-activity-level": "your regular physical activity level ?",
   "email-is-required": "Email is required",
   "email-is-invalid": "Email is invalid",
   "email": "Email",
@@ -55,5 +54,11 @@
   "help": "Help",
   "logout": "Logout",
   "light": "light",
-  "dark": "dark"
+  "dark": "dark",
+  "save": "Save",
+  "enter-weight": "Enter Weight",
+  "advanced": "Advanced",
+  "what-is-your-level": "what is your level?",
+  "expert": "Expert",
+  "master": "master"
 }
