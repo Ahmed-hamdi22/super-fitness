@@ -14,8 +14,8 @@ const config = {
 				'text-gradient-gray': 'linear-gradient(to right, #242424, #ffffff)',
 			},
 			fontFamily: {
-				inter: ["var(--font-nter)", "sans-serif"],
-				roboto: ["var(--font-roboto)", "sans-serif"],
+				inter: ["font-nter", "sans-serif"],
+				roboto: ["font-roboto", "sans-serif"],
 				baloo: ['"Baloo Thambi 2"', 'cursive'],
 				rubik: ['Rubik', "sans-serif"],
 			},
@@ -82,7 +82,6 @@ const config = {
 				"dark-gray-1": "#242424",
 				"dark-gray-2": "#232425",
 				"transparent-orange": "#FF6A0080",
-
 			}
 		}
 	},
