@@ -11,6 +11,7 @@ import LoginForm from "./app/[locale]/auth/_components/login-form";
 import AuthLayout from "./app/[locale]/auth/layout";
 import DummyRegister from "./app/[locale]/auth/_components/dummy-register";
 import LevelForm from "./app/[locale]/auth/_components/level-form";
+import GoalForm from "./app/[locale]/auth/_components/goal-form";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,8 @@ const router = createBrowserRouter([
           { path: "login", element: <LoginForm /> },
           { path: "verifyotp", element: <VerifyOTPForm /> },
           { path: "register", element: <DummyRegister /> },
+          { path: "goal", element: <GoalForm /> },
+
           { path: "level", element: <LevelForm /> },
         ],
       },

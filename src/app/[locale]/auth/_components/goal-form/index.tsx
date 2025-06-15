@@ -1,3 +1,4 @@
+import Heading from "@/components/common/heading";
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 
@@ -18,18 +19,28 @@ export default function GoalForm() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen  p-8">
       <div className="w-full max-w-md space-y-4">
         {/* Title */}
-        <div className="text-center mb-8">
+        {/* <div className="text-center mb-8">
           <h1 className="text-5xl text-white mb-2 font-extrabold capitalize">
             {t("what-is-your-goal")}
           </h1>
           <p className="text-white capitalize text-lg">
             {t("this-helps-us-create-your-personalized-plan")}
           </p>
-        </div>
+        </div> */}
 
+        {/* Heading */}
+        <div className="text-center ">
+          <Heading headTitle={t("what-is-your-goal")} />
+        </div>
+        {/* Title */}
+        <div className="text-center mb-8">
+          <Heading
+            subtitle={t("this-helps-us-create-your-personalized-plan")}
+          />
+        </div>
         {/* Radio group */}
         <div className="space-y-4 flex flex-col items-center">
           {options.map((option, index) => (
@@ -54,14 +65,14 @@ export default function GoalForm() {
                 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-200
                 ${
                   selectedOption === option
-                    ? " border-gray-400 bg-transparent"
+                    ? " border-gray-100 bg-transparent"
                     : "border-gray-400 bg-transparent"
                 }
               `}
               >
                 {/* Inner circle for selected option */}
                 {selectedOption === option && (
-                  <div className="w-2 h-2 rounded-full bg-customOrange"></div>
+                  <div className="w-2 h-2 rounded-full bg-flame-orange-500"></div>
                 )}
               </div>
             </label>
@@ -80,8 +91,8 @@ export default function GoalForm() {
         </div>
 
         {/* Next button */}
-        <div className="flex justify-center mt-8">
-          <button className="bg-customOrange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors">
+        <div className="flex justify-center mt-8 w-full">
+          <button className="bg-flame-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors w-4/5">
             {t("next")}
           </button>
         </div>

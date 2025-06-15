@@ -2,12 +2,14 @@ type HeadingProps = {
   mainTitle?: string;
   welcomeText?: string;
   subtitle?: string;
+  headTitle?: string;
 };
 
 export default function Heading({
   mainTitle,
   welcomeText,
   subtitle,
+  headTitle,
 }: HeadingProps) {
   return (
     <div className="mb-8  text-center space-y-2">
@@ -22,8 +24,13 @@ export default function Heading({
       </div>
 
       {/* Main title */}
-      <h1 className="text-[24px] font-bold text-white font-baloo">
+      <h1 className="text-[24px]  font-bold text-white font-baloo">
         {mainTitle}
+      </h1>
+
+      {/* // Head title */}
+      <h1 className="text-[24px] text-5xl font-bold text-white font-baloo">
+        {headTitle}
       </h1>
     </div>
   );
