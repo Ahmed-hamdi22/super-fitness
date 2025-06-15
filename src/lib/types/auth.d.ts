@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // User type
 declare type User = {
   firstName: string;
@@ -43,3 +44,8 @@ declare type VerifyOTPResponse = {
 declare type ForgotPasswordResponse =
   | SuccessfulForgotPassword
   | ForgotErrorResponse;
+=======
+declare type NewPasswordResponse =
+  | SuccessfulNewPassword
+  | NewPasswordErrorResponse;
+>>>>>>> 13b791b11cd08db45b20403adf26eb5c41a1f9f8

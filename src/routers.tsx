@@ -13,6 +13,7 @@ import DummyRegister from "./app/[locale]/auth/_components/dummy-register";
 import LevelForm from "./app/[locale]/auth/_components/level-form";
 import GoalForm from "./app/[locale]/auth/_components/goal-form";
 import ForgotPasswordForm from "./app/[locale]/auth/_components/forgot-password";
+import NewPasswordPage from "./app/[locale]/new-password/page";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +40,8 @@ const router = createBrowserRouter([
           { path: "register", element: <DummyRegister /> },
           { path: "goal", element: <GoalForm /> },
           { path: "forgotpassword", element: <ForgotPasswordForm /> },
-
           { path: "level", element: <LevelForm /> },
+          { path: "newpassword", element: <NewPasswordPage /> },
         ],
       },
     ],
