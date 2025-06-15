@@ -31,3 +31,15 @@ declare interface RegisterResponse {
   user: User;
   token: string;
 }
+
+// Verify otp types
+declare type VerifyOTPFields = {
+  resetCode: string;
+};
+
+declare type VerifyOTPResponse = {
+  status: string;
+};
+declare type ForgotPasswordResponse =
+  | SuccessfulForgotPassword
+  | ForgotErrorResponse;

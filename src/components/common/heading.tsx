@@ -29,9 +29,7 @@ export default function Heading({
       </h1>
 
       {/* // Head title */}
-      <h1 className="text-[24px] text-5xl font-bold text-white font-baloo">
-        {headTitle}
-      </h1>
+      <h1 className=" text-5xl font-bold text-white font-baloo">{headTitle}</h1>
     </div>
   );
 }
