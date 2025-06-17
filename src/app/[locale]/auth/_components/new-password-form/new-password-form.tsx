@@ -17,6 +17,7 @@ import { authContext } from "@/context/use-context";
 import { useNewPassword } from "@/hooks/auth/use-new-password";
 import { useState } from "react";
 import { Eye, EyeOff, Lock } from "lucide-react";
+import Heading from "@/components/common/heading";
 
 export default function NewPasswordForm() {
   // Translation
@@ -86,10 +87,9 @@ export default function NewPasswordForm() {
   return (
     <Form {...form}>
       {/* New password form */}
-      <div className="container bg-gray-400 mx-auto flex flex-col gap-5 justify-center items-center ">
-        <h3 className="font-extrabold text-5xl text-white">
-          {t("create-new-password")}
-        </h3>
+      <div className="container  mx-auto flex flex-col gap-5 justify-center items-center ">
+        {/* Heading */}
+        <Heading mainTitle={t("create-new-password")} />
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
           className="w-[493px] h-[291px] bg-transparent flex flex-col  gap-5 justify-center items-center  border-[1px] rounded-[50px] border-customGray"

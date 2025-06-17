@@ -14,7 +14,7 @@ import { useTranslations } from "use-intl";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Heading from "../common/heading";
+import Heading from "../../../../../components/common/heading";
 
 export default function RegisterForm() {
   // Translations
