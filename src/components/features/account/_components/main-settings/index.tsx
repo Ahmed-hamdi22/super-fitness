@@ -1,51 +1,36 @@
 import { useContext } from "react";
-import {
-  MdLanguage,
-  MdOutlinePublishedWithChanges,
-  MdSunny,
-} from "react-icons/md";
+import { MdLanguage, MdOutlinePublishedWithChanges, MdSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { GiCogLock } from "react-icons/gi";
 import { BsShieldExclamation } from "react-icons/bs";
 import { IoMdHelpBuoy } from "react-icons/io";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { useTranslations } from "use-intl";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/context/use-context";
-import { logout as logoutApi } from "@/lib/apis/auth/logout.api";
 import { ThemeContext } from "@/context/components/theme/context";
 import { LanguageContext } from "@/context/components/language/context";
+import { useLogout } from "@/hooks/auth/use-logout";
+import { Button } from "@/components/ui/button";
 
 export default function MainSettings() {
   // Translations
   const t = useTranslations();
 
-  // States
+  // Context
   const { lang, toggleLang } = useContext(LanguageContext);
   const { theme, toggleTheme, isDark } = useContext(ThemeContext);
 
+  // Hooks
+  const { logout } = useLogout();
+
   // Functions
-  const { token, logout: logoutContext } = useAuth();
-  const navigate = useNavigate();
-  const handleLogout = async () => {
-    try {
-      if (token) {
-        await logoutApi(token);
-      }
-    } catch (error) {
-      // Optionally handle error (e.g., show a toast)
-    } finally {
-      logoutContext(); // Clear auth state and redirect
-      navigate("/login"); // Redirect to login page
-    }
+  const handleLogout = () => {
+    logout();
   };
 
   // Variables
   const menuItems = [
     {
-      icon: (
-        <MdOutlinePublishedWithChanges className="text-customOrange text-2xl" />
-      ),
+      icon: <MdOutlinePublishedWithChanges className="text-customOrange text-2xl" />,
       title: t("change-password"),
       hasValue: false,
     },
@@ -81,65 +66,73 @@ export default function MainSettings() {
       icon: <IoMdHelpBuoy className="text-customOrange text-2xl" />,
       title: t("help"),
     },
-    {
-      icon: (
-        <IoArrowForwardCircleOutline className="text-customOrange text-2xl" />
-      ),
-      title: t("logout"),
-      onClick: handleLogout,
-    },
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4 mt-8 font-baloo">
-      {menuItems.map((item, index) => (
-        <button
-          key={index}
-          className="bg-transparent border border-darkGray1 dark:border-white rounded-2xl w-52 h-40 transition-colors group"
-          onClick={item.onClick}
-        >
-          <div className="flex flex-col items-center text-center">
-            <div className="w-25 h-16 flex flex-col justify-center items-center text-lg font-semibold">
-              <span>{item.icon}</span>
-              <span className="text-darkGray1 dark:text-white">
-                {item.title}
-              </span>
-              {item.hasValue && (
-                <span className="text-darkGray1 dark:text-white">
-                  (
-                  <span className="text-customOrange capitalize">
-                    {item.value}
+    <div className="font-baloo flex flex-col items-center">
+      {/* Menu items grid */}
+      <div className="grid grid-cols-3 gap-4 mt-8 mb-4">
+        {menuItems.map((item, index) => (
+          // Buttons of menu items
+          <Button
+            key={index}
+            className="bg-transparent border border-darkGray1 dark:border-white rounded-2xl w-52 h-40 transition-colors group hover:bg-transparent"
+            onClick={item.onClick}
+          >
+            {/* Buttons container */}
+            <div className="flex flex-col items-center text-center">
+              {/* Icon and title container */}
+              <div className="w-25 h-16 flex flex-col justify-center items-center text-lg font-semibold">
+                {/* Icon */}
+                <span>{item.icon}</span>
+
+                {/* Title */}
+                <span className="text-darkGray1 dark:text-white">{item.title}</span>
+
+                {/* If item has a value */}
+                {item.hasValue && (
+                  <span className="text-darkGray1 dark:text-white">
+                    (<span className="text-customOrange capitalize">{item.value}</span>)
                   </span>
-                  )
-                </span>
+                )}
+              </div>
+
+              {/* If item has a toggle button */}
+              {item.toggle !== undefined && (
+                <div className="mt-2">
+                  <div
+                    className={`w-8 h-5 rounded-full flex justify-start items-center ${item.toggle ? "bg-customOrange" : "bg-darkGray1"} relative transition-colors`}
+                  >
+                    <div
+                      className={`w-4 h-4 bg-white rounded-full absolute transition-transform ${item.toggle ? "translate-x-3 rtl:-translate-x-3" : "translate-x-0.5 rtl:-translate-x-0.5"}`}
+                    ></div>
+                  </div>
+                </div>
               )}
             </div>
-            {item.toggle !== undefined && (
-              <div className="mt-2">
-                <div
-                  className={`w-8 h-5 rounded-full flex justify-start items-center ${item.toggle ? "bg-customOrange" : "bg-darkGray1"} relative transition-colors`}
-                >
-                  <div
-                    className={`w-4 h-4 bg-white rounded-full absolute transition-transform ${item.toggle ? "translate-x-3 rtl:-translate-x-3" : "translate-x-0.5 rtl:-translate-x-0.5"}`}
-                  ></div>
-                </div>
-              </div>
-            )}
+          </Button>
+        ))}
+      </div>
+
+      {/* Logout button */}
+      <Button
+        className="bg-transparent border border-darkGray1 dark:border-white rounded-2xl w-52 h-40 transition-colors group hover:bg-transparent"
+        onClick={handleLogout}
+      >
+        {/* Buttons container */}
+        <div className="flex flex-col items-center text-center">
+          {/* Icon and title container */}
+          <div className="w-25 h-16 flex flex-col justify-center items-center text-lg font-semibold">
+            {/* Icon */}
+            <span>
+              <IoArrowForwardCircleOutline className="text-customOrange text-2xl" />
+            </span>
+
+            {/* Title */}
+            <span className="text-darkGray1 dark:text-white">{t("logout")}</span>
           </div>
-        </button>
-      ))}
+        </div>
+      </Button>
     </div>
   );
 }
-
-/**
- * 
- * font-family: Baloo Thambi 2;
-font-weight: 600;
-font-size: 18px;
-line-height: 100%;
-letter-spacing: 0.26px;
-text-align: center;
-vertical-align: middle;
-
-*/

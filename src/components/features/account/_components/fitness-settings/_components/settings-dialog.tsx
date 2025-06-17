@@ -1,33 +1,27 @@
-import {
-  Dialog,
-  DialogContent,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import SettingForm from "./settings-form";
 
-interface SettingsDialogProps {
+type SettingsDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   settingType: "goal" | "level" | "weight";
   currentValue: string;
   onRefresh: () => void;
-}
+};
 
 export default function SettingsDialog({
   open,
   onOpenChange,
   settingType,
   currentValue,
-  onRefresh
+  onRefresh,
 }: SettingsDialogProps) {
-
   return (
+    // Dialog
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent
-        className="bg-darkGray1 border-none"
-      >
-        {/* <DialogHeader>
-          <DialogTitle>{titles[settingType]}</DialogTitle>
-        </DialogHeader> */}
+      {/* Dialog content */}
+      <DialogContent className="bg-darkGray1 border-none">
+        {/* Setting form */}
         <SettingForm
           settingType={settingType}
           currentValue={currentValue}

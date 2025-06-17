@@ -5,37 +5,38 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "use-intl";
 
-interface SettingFormProps {
+type SettingFormProps = {
   settingType: "goal" | "level" | "weight";
   currentValue: string;
   onCancel: () => void;
   onRefresh: () => void;
-}
+};
 
 export default function SettingForm({
   settingType,
   currentValue,
   onCancel,
-  onRefresh
+  onRefresh,
 }: SettingFormProps) {
   // Translations
   const t = useTranslations();
 
+  // Variables
   const apiFieldMap = {
     goal: "goal",
     level: "activityLevel",
     weight: "weight",
   };
 
-  // State
-  // const [selectedOption, setSelectedOption] = useState<string>(currentValue);
+  // Context
+  const { token } = useAuth();
+
+  // Form &validation
   const { register, handleSubmit, watch, setValue } = useForm({
     defaultValues: {
-      [apiFieldMap[settingType]]:
-        settingType === "weight" ? Number(currentValue) : currentValue,
+      [apiFieldMap[settingType]]: settingType === "weight" ? Number(currentValue) : currentValue,
     },
   });
-  const { token } = useAuth();
 
   // Variables
   const formConfig = {
@@ -67,6 +68,7 @@ export default function SettingForm({
     },
   };
 
+  // Functions
   const onSubmit = async (data: ProfileFields) => {
     try {
       if (!token) return;
@@ -80,30 +82,33 @@ export default function SettingForm({
   };
   const selectedOption = watch(apiFieldMap[settingType]);
 
+  // Effects
   useEffect(() => {
-    const initialValue =
-      settingType === "weight" ? Number(currentValue) : currentValue;
+    const initialValue = settingType === "weight" ? Number(currentValue) : currentValue;
     setValue(apiFieldMap[settingType], initialValue);
   }, [currentValue, setValue, settingType]);
 
   return (
+    // Form container
     <div className="flex flex-col items-center justify-center font-baloo">
       <div className="w-full max-w-md space-y-4">
-        {/* Title */}
         <div className="text-center mb-8">
+          {/* Title */}
           <h1 className="text-5xl text-white mb-2 font-extrabold capitalize">
             {formConfig[settingType].title}
           </h1>
-          <p className="text-white capitalize text-lg">
-            {formConfig[settingType].description}
-          </p>
+
+          {/* Description */}
+          <p className="text-white capitalize text-lg">{formConfig[settingType].description}</p>
         </div>
 
+        {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Dynamic Form Content */}
+          {/* Dynamic form content */}
           {settingType !== "weight" ? (
             <div className="space-y-4 flex flex-col items-center">
               {formConfig[settingType].options?.map((option) => (
+                // Label
                 <label
                   key={option.value}
                   className={`
@@ -115,15 +120,18 @@ export default function SettingForm({
                     }
                   `}
                 >
+                  {/* Input */}
                   <input
                     type="radio"
                     value={option.value}
                     {...register(apiFieldMap[settingType])}
                     className="absolute opacity-0"
                   />
-                  <span className="text-base font-bold capitalize">
-                    {option.label}
-                  </span>
+
+                  {/* Option */}
+                  <span className="text-base font-bold capitalize">{option.label}</span>
+
+                  {/* Selected option */}
                   <div
                     className={`
                       w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-200
@@ -142,6 +150,7 @@ export default function SettingForm({
               ))}
             </div>
           ) : (
+            // NOTE: to be replaced with original form
             <div className="flex justify-center">
               <input
                 type="number"
@@ -152,15 +161,15 @@ export default function SettingForm({
             </div>
           )}
 
-          {/* Action Buttons */}
+          {/* Submit button */}
           <div className="flex justify-center">
-          <Button
-            type="submit"
-            className="bg-customOrange hover:bg-orange-600 w-80 rounded-3xl text-base font-extrabold"
-          >
-            {t('save')}
-          </Button>
-        </div>
+            <Button
+              type="submit"
+              className="bg-customOrange hover:bg-orange-600 w-80 rounded-3xl text-base font-extrabold"
+            >
+              {t("save")}
+            </Button>
+          </div>
         </form>
       </div>
     </div>

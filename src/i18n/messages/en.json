@@ -60,5 +60,6 @@
   "advanced": "Advanced",
   "what-is-your-level": "what is your level?",
   "expert": "Expert",
-  "master": "master"
+  "master": "master",
+  "logout-failed": "Logout Failed"
 }
