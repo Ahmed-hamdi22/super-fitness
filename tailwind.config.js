@@ -12,10 +12,8 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["font-nter", "sans-serif"],
-        roboto: ["font-roboto", "sans-serif"],
-        baloo: ['"Baloo Thambi 2"', "cursive"],
-        rubik: ["Rubik", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       container: {
         center: true,
@@ -100,15 +98,13 @@ const config = {
           800: "#7B7B7B",
           900: "#666666",
         },
-        "custom-orange": "#FF4100",
         customOrange: "#FF4100",
         customdarkOrange: "#FF4100",
         customGray: "#D3D3D3",
         customlightGray: "#D9D9D9",
-        "custom-gray": "#EAEAEA",
-        "dark-gray-1": "#242424",
-        "dark-gray-2": "#232425",
-        "transparent-orange": "#FF6A0080",
+        darkGray1: "#242424",
+        darkGray2: "#232425",
+        transparentOrange: "#FF6A0080",
       },
     },
   },

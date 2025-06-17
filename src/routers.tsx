@@ -44,6 +44,7 @@ const router = createBrowserRouter([
           { path: "level", element: <LevelForm /> },
           { path: "newpassword", element: <NewPasswordPage /> },
           { path: "registerr", element: <RegisterPage /> },
+          { path: "ab", element: <AboutPage /> },
         ],
       },
     ],
