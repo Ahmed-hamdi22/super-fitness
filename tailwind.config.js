@@ -74,6 +74,9 @@ const config = {
 				"customOrange": "#FF4100",
 				"darkGray1": "#242424",
 				"darkGray2": "#232425",
+				"darkGray3":"#282828",
+				"lightGray":"#F3F3F4",
+				"lightGray2": "#D3D3D3",
 				"transparentOrange": "#FF6A0080",
 			}
 		}
