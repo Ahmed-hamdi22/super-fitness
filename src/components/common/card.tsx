@@ -82,12 +82,12 @@ export default function FoodCard({
             className="flex items-center gap-2"
           >
             {/* Action label */}
-            <span className="text-sm font-semibold text-custom-orange">
+            <span className="text-sm font-semibold text-custom-orange-500">
               {currentLabel}
             </span>
 
             {/* Action icon */}
-            <div className="w-7 h-7 rounded-full bg-custom-orange flex items-center justify-center">
+            <div className="w-7 h-7 rounded-full bg-custom-orange-500 flex items-center justify-center">
               {currentIcon}
             </div>
           </button>

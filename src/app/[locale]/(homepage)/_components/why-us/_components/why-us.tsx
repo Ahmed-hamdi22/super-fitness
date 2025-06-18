@@ -14,12 +14,12 @@ export default function WhyUs() {
               {/* Text */}
               <h2 className="text-2xl md:text-5xl font-baloo uppercase">
                 {t("elevate-fitness-wite-the")}{" "}
-                <span className="text-custom-orange">{t("best-way")}</span>{" "}
+                <span className="text-custom-orange-500">{t("best-way")}</span>{" "}
                 {t("possible")}
               </h2>
 
               {/* Text */}
-              <p className="text-rubik dark-gray-1">
+              <p className="text-rubik text-dark-gray-800">
                 {t(
                   "we-offer-a-fitness-journey-thats-tailored-to-your-goals-supported-by-professional-trainers-and-a-welcoming-community-whether-its-weight-loss-strength-building-or-overall-wellness-our-proven-methods"
                 )}
@@ -30,7 +30,7 @@ export default function WhyUs() {
             <div className="space-y-8 pt-12">
               {/* Point one */}
               <div className="flex items-start gap-4">
-                <div className="bg-custom-orange rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
+                <div className="bg-custom-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
                   01
                 </div>
 
@@ -41,7 +41,7 @@ export default function WhyUs() {
                   </h4>
 
                   {/* Text */}
-                  <p className="text-rubik dark-gray-1">
+                  <p className="text-rubik text-dark-gray-800">
                     {t(
                       "we-tailor-every-workout-to-fit-your-unique-goals-and-fitness-level-ensuring-that-you-make-the-most-progress"
                     )}
@@ -51,7 +51,7 @@ export default function WhyUs() {
 
               {/* Point two */}
               <div className="flex items-start gap-4">
-                <div className="bg-custom-orange rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
+                <div className="bg-custom-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
                   02
                 </div>
 
@@ -62,7 +62,7 @@ export default function WhyUs() {
                   </h4>
 
                   {/* Text */}
-                  <p className="text-rubik dark-gray-1">
+                  <p className="text-rubik text-dark-gray-800">
                     {t(
                       "everything-we-do-is-designed-to-help-you-achieve-measurable-results-whether-youre-aiming-for-weight-loss"
                     )}
@@ -72,7 +72,7 @@ export default function WhyUs() {
 
               {/* Point three */}
               <div className="flex items-start gap-4">
-                <div className="bg-custom-orange rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
+                <div className="bg-custom-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
                   03
                 </div>
 
@@ -83,7 +83,7 @@ export default function WhyUs() {
                   </h4>
 
                   {/* Text */}
-                  <p className="text-rubik dark-gray-1">
+                  <p className="text-rubik text-dark-gray-800">
                     {t(
                       "we-provide-the-latest-in-gym-equipment-from-cardio-machines-to-free-weights-designed-to-support-every-type"
                     )}
