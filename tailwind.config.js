@@ -112,8 +112,7 @@ const config = {
           800: "#B8B8B9",
           900: "#ACACAD",
         },
-        "dark-charcoal": "#242424",
-
+        "dark-charcoal": "#242424F2",
         "custom-orange": "#FF4100",
         "custom-gray": "#EAEAEA",
         "dark-gray-1": "#242424",
