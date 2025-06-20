@@ -13,7 +13,6 @@ import DummyRegister from "./app/[locale]/auth/_components/dummy-register";
 import LevelForm from "./app/[locale]/auth/_components/level-form";
 import GoalForm from "./app/[locale]/auth/_components/goal-form";
 import ForgotPasswordForm from "./app/[locale]/auth/_components/forgot-password";
-import RegisterPage from "./app/[locale]/register/page";
 import NewPasswordForm from "./app/[locale]/auth/_components/new-password-form/new-password-form";
 import RegisterForm from "./app/[locale]/auth/_components/register-form/register-form";
 
@@ -39,13 +38,12 @@ const router = createBrowserRouter([
         children: [
           { path: "login", element: <LoginForm /> },
           { path: "verifyotp", element: <VerifyOTPForm /> },
-          { path: "register", element: <DummyRegister /> },
+          { path: "dummy", element: <DummyRegister /> },
           { path: "goal", element: <GoalForm /> },
           { path: "forgotpassword", element: <ForgotPasswordForm /> },
           { path: "level", element: <LevelForm /> },
           { path: "newpassword", element: <NewPasswordForm /> },
-          { path: "registerr", element: <RegisterForm /> },
-          { path: "ab", element: <AboutPage /> },
+          { path: "register", element: <RegisterForm /> },
         ],
       },
     ],

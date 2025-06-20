@@ -3,6 +3,7 @@ type HeadingProps = {
   welcomeText?: string;
   subtitle?: string;
   headTitle?: string;
+  discripton?: string;
 };
 
 export default function Heading({
@@ -10,6 +11,7 @@ export default function Heading({
   welcomeText,
   subtitle,
   headTitle,
+  discripton,
 }: HeadingProps) {
   return (
     <div className="mb-8  text-center space-y-2">
@@ -22,7 +24,9 @@ export default function Heading({
           {subtitle}
         </h2>
       </div>
-
+      <h2 className="text-lg font-normal   text-white font-baloo">
+        {discripton}
+      </h2>
       {/* Main title */}
       <h1 className="text-[24px]  font-bold text-white font-baloo">
         {mainTitle}

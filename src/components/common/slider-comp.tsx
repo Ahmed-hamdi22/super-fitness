@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import CircularProgress from "./circle-progress";
 import { Button } from "../ui/button";
 import { useTranslations } from "use-intl";
+import Heading from "./heading";
 
 type SliderProps = {
   title: string;
@@ -105,10 +106,11 @@ function Slider({ title, step, range, measure }: SliderProps) {
 
         {/* Title */}
         <div className="text-center mb-8">
-          <h1 className="text-white text-3xl font-bold mb-2">{title}</h1>
-          <p className="text-white text-lg">
-            {t("this-helps-us-create-your-personalized-plan")}
-          </p>
+          <Heading mainTitle={title} />
+
+          <Heading
+            discripton={t("this-helps-us-create-your-personalized-plan")}
+          />
         </div>
 
         {/* Age display */}

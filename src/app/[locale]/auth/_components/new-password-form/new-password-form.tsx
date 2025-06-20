@@ -92,7 +92,7 @@ export default function NewPasswordForm() {
         <Heading mainTitle={t("create-new-password")} />
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="w-[493px] h-[291px] bg-transparent flex flex-col  gap-5 justify-center items-center  border-[1px] rounded-[50px] border-customGray"
+          className="w-[493px] h-[291px] bg-transparent flex flex-col  gap-5 justify-center items-center  border-[1px] rounded-[50px] border-soft-gray-400"
         >
           <h3 className=" text-center block font-normal text-2xl text-white ">
             {t("make-sure-to-create-a-strong-password")}
@@ -108,7 +108,7 @@ export default function NewPasswordForm() {
                   <div className="relative w-[311px] h-[48px] ">
                     {/* Mail icon */}
                     <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                      <Lock className="w-5 h-5 text-customGray" />
+                      <Lock className="w-5 h-5 text-soft-gray-400" />
                     </div>
 
                     {/* Toggle visibility icon */}
@@ -117,9 +117,9 @@ export default function NewPasswordForm() {
                       onClick={() => setHidePassword(!hidePassword)}
                     >
                       {hidePassword ? (
-                        <EyeOff className="w-5 h-5 text-customGray" />
+                        <EyeOff className="w-5 h-5  text-soft-gray-400" />
                       ) : (
-                        <Eye className="w-5 h-5 text-customGray " />
+                        <Eye className="w-5 h-5  text-soft-gray-400 " />
                       )}
                     </div>
 
@@ -128,7 +128,7 @@ export default function NewPasswordForm() {
                       type="password"
                       {...field}
                       placeholder={t("new-password")}
-                      className=" w-full h-full pl-12  border-[1px] placeholder:text-customGray text-customGray rounded-[20px] border-customGray bg-transparent"
+                      className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
                     />
                   </div>
                 </FormControl>
@@ -148,7 +148,7 @@ export default function NewPasswordForm() {
                   <div className="relative w-[311px] h-[48px] ">
                     {/* Mail icon */}
                     <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                      <Lock className="w-5 h-5 text-customGray" />
+                      <Lock className="w-5 h-5 text-soft-gray-400 " />
                     </div>
 
                     {/* Toggle visibility icon */}
@@ -157,9 +157,9 @@ export default function NewPasswordForm() {
                       onClick={() => setHidePassword(!hidePassword)}
                     >
                       {hidePassword ? (
-                        <EyeOff className="w-5 h-5 text-customGray" />
+                        <EyeOff className="w-5 h-5  text-soft-gray-400" />
                       ) : (
-                        <Eye className="w-5 h-5 text-customGray " />
+                        <Eye className="w-5 h-5 text-soft-gray-400 " />
                       )}
                     </div>
 
@@ -168,7 +168,7 @@ export default function NewPasswordForm() {
                       type="password"
                       {...field}
                       placeholder={t("confirm-password")}
-                      className=" w-full h-full pl-12  border-[1px] placeholder:text-customGray text-customGray rounded-[20px] border-customGray bg-transparent"
+                      className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
                     />
                   </div>
                 </FormControl>
@@ -181,7 +181,7 @@ export default function NewPasswordForm() {
           {/* Create new password button */}
           <Button
             disabled={newPasswordLoading}
-            className="w-[311px] h-[41px] rounded-3xl text-white font-extrabold text-base bg-customOrange hover:bg-customOrange"
+            className="w-[311px] h-[41px] rounded-3xl text-white font-extrabold text-base bg-flame-orange-500 hover:bg-flame-orange-400"
             type="submit"
           >
             {t("create-new-password")}

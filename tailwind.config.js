@@ -98,10 +98,7 @@ const config = {
           800: "#7B7B7B",
           900: "#666666",
         },
-        customOrange: "#FF4100",
-        customdarkOrange: "#FF4100",
-        customGray: "#D3D3D3",
-        customlightGray: "#D9D9D9",
+
         darkGray1: "#242424",
         darkGray2: "#232425",
         transparentOrange: "#FF6A0080",
