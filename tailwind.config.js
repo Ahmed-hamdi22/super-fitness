@@ -113,4 +113,3 @@ const config = {
 	plugins: [tailwindcssAnimate, require("tailwindcss-animate")],
 }
 export default config;
-
