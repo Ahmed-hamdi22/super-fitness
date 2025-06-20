@@ -32,6 +32,7 @@ export default function useCategoriesCarousel() {
   for (let i = 0; i < meals.length; i += 6) {
     chunkedMeals.push(meals.slice(i, i + 6));
   }
+  const limitedMeals = chunkedMeals[0] ?? [];
 
   // Carousel select event to track active slide
   useEffect(() => {
@@ -59,6 +60,7 @@ export default function useCategoriesCarousel() {
     selectedCategory,
     setSelectedCategory,
     chunkedMeals,
+    limitedMeals,
     isLoading,
     error,
     setApi,
