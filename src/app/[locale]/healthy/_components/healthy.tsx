@@ -1,11 +1,7 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { CarouselDots } from "@/components/ui/carousel-dots";
-import FoodCard from "@/components/common/card";
+import Card from "@/components/common/card";
 import CategoriesTabs from "@/components/common/categories-tabs";
 import useCategoriesCarousel from "@/hooks/use-categories-carousel";
 import QueryStateHandler from "@/components/common/query-state-handler";
@@ -49,8 +45,7 @@ export default function CategoriesCarousel() {
 
           {/* Text */}
           <h2 className="text-2xl md:text-4xl font-baloo uppercase">
-            {t("customized")}{" "}
-            <span className="text-custom-orange-500">{t("meal-plavs")} </span>
+            {t("customized")} <span className="text-custom-orange-500">{t("meal-plavs")} </span>
             {t("for-you")}
           </h2>
         </div>
@@ -71,12 +66,12 @@ export default function CategoriesCarousel() {
               className="w-full max-w-7xl mx-auto overflow-hidden mt-10"
             >
               <CarouselContent className="flex flex-row rtl:flex-row-reverse">
-                {chunkedMeals.map((group, index) => (
-                  <CarouselItem key={index}>
+                {chunkedMeals.map((meals) => (
+                  <CarouselItem>
                     {/* Card */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                      {group.map((meal) => (
-                        <FoodCard
+                      {meals.map((meal: MealByCategory) => (
+                        <Card
                           key={meal.idMeal}
                           title={meal.strMeal}
                           image={meal.strMealThumb}
@@ -102,9 +97,7 @@ export default function CategoriesCarousel() {
                   dotClassName={(index) =>
                     cn(
                       "w-2 h-2 rounded-full transition-all mx-1",
-                      current === index
-                        ? "bg-custom-orange-500 w-5"
-                        : "bg-white"
+                      current === index ? "bg-custom-orange-500 w-5" : "bg-white"
                     )
                   }
                 />

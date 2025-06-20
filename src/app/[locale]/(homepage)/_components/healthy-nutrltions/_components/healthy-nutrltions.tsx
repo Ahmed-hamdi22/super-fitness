@@ -1,4 +1,4 @@
-import FoodCard from "@/components/common/card";
+import Card from "@/components/common/card";
 import { IoCloseSharp } from "react-icons/io5";
 import QueryStateHandler from "@/components/common/query-state-handler";
 import useMealsCategories from "@/lib/apis/meals-categories.api";
@@ -34,8 +34,7 @@ export default function HealthyNutrltions() {
 
           {/* Text */}
           <h2 className="text-2xl md:text-4xl font-baloo uppercase">
-            {t("customized")}{" "}
-            <span className="text-custom-orange-500">{t("meal-plavs")} </span>
+            {t("customized")} <span className="text-custom-orange-500">{t("meal-plavs")} </span>
             {t("for-you")}
           </h2>
         </div>
@@ -44,8 +43,8 @@ export default function HealthyNutrltions() {
         <QueryStateHandler isLoading={isLoading} error={error}>
           {/* Card */}
           <div className="flex flex-wrap justify-center gap-8">
-            {firstthreemeals.map((meal) => (
-              <FoodCard
+            {firstthreemeals.map((meal: Meals) => (
+              <Card
                 key={meal.idCategory}
                 title={meal.strCategory}
                 image={meal.strCategoryThumb}

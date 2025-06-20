@@ -1,9 +1,5 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import FoodCard from "@/components/common/card";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Card from "@/components/common/card";
 import { IoCloseSharp } from "react-icons/io5";
 import useMealsCategories from "@/lib/apis/meals-categories.api";
 import QueryStateHandler from "@/components/common/query-state-handler";
@@ -22,13 +18,13 @@ export default function ClassesCard() {
       {/* Card */}
       <Carousel className="w-full max-w-5xl mx-auto">
         <CarouselContent>
-          {categories?.map((cat) => (
+          {categories?.map((category: Meals) => (
             <CarouselItem className="basis-[75%] sm:basis-1/2 lg:basis-2/5">
-              <FoodCard
-                key={cat.idCategory}
-                title={cat.strCategory}
-                image={cat.strCategoryThumb}
-                description={cat.strCategoryDescription}
+              <Card
+                key={category.idCategory}
+                title={category.strCategory}
+                image={category.strCategoryThumb}
+                description={category.strCategoryDescription}
                 actionLabel={t("read-more")}
                 actionIcon={<ArrowRight />}
                 hideIcon={<IoCloseSharp />}

@@ -6,9 +6,5 @@ export type Locale = (typeof locales)[number];
 export function getInitialLocale(): Locale {
   const saved = localStorage.getItem("locale") as Locale;
 
-  return locales.includes(saved)
-    ? saved
-    : navigator.language.startsWith("ar")
-    ? "ar"
-    : "en";
+  return locales.includes(saved) ? saved : navigator.language.startsWith("ar") ? "ar" : "en";
 }
