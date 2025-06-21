@@ -12,8 +12,10 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        inter: ["font-nter", "sans-serif"],
+        roboto: ["font-roboto", "sans-serif"],
+        baloo: ['"Baloo Thambi 2"', "cursive"],
+        rubik: ["Rubik", "sans-serif"],
       },
       container: {
         center: true,
@@ -98,10 +100,22 @@ const config = {
           800: "#7B7B7B",
           900: "#666666",
         },
-
-        darkGray1: "#242424",
-        darkGray2: "#232425",
-        transparentOrange: "#FF6A0080",
+        "light-silver": {
+          50: "#FFFFFF",
+          100: "#FAFAFA",
+          200: "#F6F6F7",
+          300: "#F3F3F4",
+          400: "#E8E8E9",
+          500: "#DCDCDD",
+          600: "#D0D0D1",
+          700: "#C4C4C5",
+          800: "#B8B8B9",
+          900: "#ACACAD",
+        },
+        "dark-gray": {
+          800: "#242424",
+          900: "#232425",
+        },
       },
     },
   },
