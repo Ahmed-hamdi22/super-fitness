@@ -81,8 +81,8 @@ export default function ForgotPasswordForm() {
           <div className="text-center ">
             <Heading headTitle={t("forgot-password")} />
           </div>
-          {/* Forgot password form */}
 
+          {/* Forgot password form */}
           <form
             onSubmit={emailForm.handleSubmit(handleSubmit)}
             className="space-y-5 min-w-96 border-2 border-soft-gray-400 px-10 py-8 rounded-3xl bg-transparent"
@@ -118,13 +118,13 @@ export default function ForgotPasswordForm() {
               )}
             />
 
-            {/* Sent otp button */}
+            {/* Send otp button */}
             <Button
               disabled={forgotPasswordLoading}
-              className="w-full h-[50px] bg-flame-orange-500 hover:bg-flame-orange-700 text-white rounded-3xl font-semibold capitalize"
+              className="w-full h-[50px] bg-custom-orange-500 hover:bg-flame-orange-700 text-white rounded-3xl font-semibold capitalize"
               type="submit"
             >
-              {t("sent-otp")}
+              {t('send-otp')}
             </Button>
           </form>
         </Form>

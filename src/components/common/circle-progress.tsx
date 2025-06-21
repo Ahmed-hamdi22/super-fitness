@@ -4,7 +4,7 @@ function CircularProgress({
   step: number;
 }) {
   
-  const totalSteps = 6
+  const totalSteps = 7
   const radius = 30;
   const stroke = 3;
   const normalizedRadius = radius - stroke / 2;

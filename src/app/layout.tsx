@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { AuthProvider } from "@/context/auth/use-context";
 import { AuthProvider as ProviderNewPassword } from "@/context/use-context";
 import { Toaster } from "@/components/ui/sonner";
+import Providers from "@/context";
 
 const queryClient = new QueryClient();
 
@@ -11,6 +12,7 @@ export default function RootLayout() {
   return (
     <>
       {/* Context provider */}
+      <Providers>
       <AuthProvider>
         <ProviderNewPassword>
           <QueryClientProvider client={queryClient}>
@@ -28,6 +30,7 @@ export default function RootLayout() {
           </QueryClientProvider>
         </ProviderNewPassword>
       </AuthProvider>
+      </Providers>
     </>
   );
 }

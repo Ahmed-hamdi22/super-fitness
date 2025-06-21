@@ -22,15 +22,11 @@
   "login": "تسجيل الدخول",
   "first-name-is-required": "الاسم الأول مطلوب",
   "last-name-is-required": "اسم العائلة مطلوب",
-  "email-is-required": "البريد الإلكتروني مطلوب",
-  "email-is-invalid": "البريد الإلكتروني غير صالح",
-  "password-is-required": "كلمة المرور مطلوبة",
-  "password-is-too-short": "كلمة المرور قصيرة جدًا",
   "email-is-required": "الرجاء ادخال ايميلك",
   "email-is-invalid": "الايميل غير صالح",
-  "enter-your-email": "ادخل الايميل الخاص بك",
   "password-is-required": "كلمة المرور مطلوبة",
   "password-is-too-short": "كلمة المرور قصيرة جدًا",
+  "enter-your-email": "ادخل الايميل الخاص بك",
   "password-must-have-uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير",
   "password-must-have-lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير",
   "password-must-have-number": "يجب أن تحتوي كلمة المرور على رقم",
@@ -73,5 +69,7 @@
   "forgot-password": "هل نسيت  كلمة المرور؟",
   "dont-have-an-account": "ليس لديك حساب بعد؟",
   "otp-code": "رمز التحقق المؤقت ",
-  "welcome-to-super-fitness": "مرحبًا بك في Super Fitness"
+  "welcome-to-super-fitness": "مرحبًا بك في Super Fitness",
+  "re-password-is-required": "إعادة تمرير الكلمات المطلوبة",
+  "send-otp": "إرسال OTP"
 }

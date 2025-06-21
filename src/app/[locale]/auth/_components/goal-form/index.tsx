@@ -1,4 +1,5 @@
 import Heading from "@/components/common/heading";
+import { useRegistration } from "@/context/auth/register";
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 
@@ -8,6 +9,7 @@ export default function GoalForm() {
 
   // State
   const [selectedOption, setSelectedOption] = useState<string>("");
+  const { setFormData, setCurrentStep } = useRegistration();
 
   // Variables
   const options = [
@@ -17,6 +19,14 @@ export default function GoalForm() {
     t("gain-more-flexible"),
     t("learn-the-basic"),
   ];
+
+  const onSubmit = () => {
+    setFormData(prev => ({
+      ...prev,
+      goal: selectedOption,
+    }));
+    setCurrentStep(2);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen  p-8">
@@ -82,7 +92,7 @@ export default function GoalForm() {
 
         {/* Next button */}
         <div className="flex justify-center mt-8 w-full">
-          <button className="bg-flame-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors w-4/5">
+          <button  onClick={onSubmit} className="bg-flame-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors w-4/5">
             {t("next")}
           </button>
         </div>
