@@ -35,7 +35,7 @@ export default function HealthyNutrltions() {
           {/* Text */}
           <h2 className="text-2xl md:text-4xl font-baloo uppercase">
             {t("customized")}{" "}
-            <span className="text-custom-orange-500">{t("meal-plavs")} </span>
+            <span className="text-flame-orange-500">{t("meal-plavs")} </span>
             {t("for-you")}
           </h2>
         </div>

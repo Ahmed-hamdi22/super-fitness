@@ -60,7 +60,7 @@ export default function TabFitness() {
         onClick={() => handleClick("")}
         className={`px-4 py-1 rounded-full text-sm font-medium capitalize ${
           muscleGroup === ""
-            ? "bg-custom-orange-500 text-white"
+            ? "bg-flame-orange-500 text-white"
             : " text-darkGray1"
         }`}
       >
@@ -74,8 +74,8 @@ export default function TabFitness() {
           onClick={() => handleClick(muscle._id)}
           className={`px-4 py-1.5 rounded-full text-sm font-semibold ${
             muscleGroup === muscle._id
-              ? "bg-custom-orange-500 text-white"
-              : " text-darkGray1"
+              ? "bg-flame-orange-500 text-white"
+              : " text-dark-gray-800"
           }`}
         >
           {muscle.name}

@@ -73,13 +73,13 @@ export default function AboutUs() {
             </div>
 
             {/*  About us description */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-darkGray1 mb-4 leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 mb-4 leading-[1.2]">
               {t.rich("fitness-headline", {
                 span: (v) => <span className="text-flame-orange-500">{v}</span>,
               })}
             </h2>
 
-            <p className="text-darkGray1 mb-12  pt-5 text-sm sm:text-base leading-10">
+            <p className="text-dark-gray-800 mb-12  pt-5 text-sm sm:text-base leading-10">
               {t("services-description")}
             </p>
 
@@ -93,10 +93,10 @@ export default function AboutUs() {
                   <div>
                     <div className="flex items-center  ms-1 gap-2">
                       {/* Icon */}
-                      <ArrowUpRight className="w-6 h-6 text-custom-orange-500 mt-1" />
+                      <ArrowUpRight className="w-6 h-6 text-flame-orange-500 mt-1" />
 
                       {/* Title */}
-                      <h4 className="font-semibold text-darkGray1 text-lg mb-1 capitalize">
+                      <h4 className="font-semibold text-dark-gray-800 text-lg mb-1 capitalize">
                         {service.title}
                       </h4>
                     </div>
@@ -110,9 +110,9 @@ export default function AboutUs() {
             </div>
 
             {/* Get started button */}
-            <Button className="capitalize w-[150px] mr-8 mt-8 rounded-2xl bg-custom-orange-500 relative rtl:flex-row-reverse">
+            <Button className="capitalize w-[150px] mr-8 mt-8 rounded-2xl bg-flame-orange-500 relative rtl:flex-row-reverse">
               {t("get-started")}
-              <ArrowUpRight className="absolute top-3 rtl:-rotate-90 -right-3 rtl:-left-3 rtl:right-36 ml-2 w-9 h-9 text-white bg-custom-orange-500 rounded-full border-2 border-white" />
+              <ArrowUpRight className="absolute top-3 rtl:-rotate-90 -right-3 rtl:-left-3 rtl:right-36 ml-2 w-9 h-9 text-white bg-flame-orange-500 rounded-full border-2 border-white" />
             </Button>
           </div>
         </div>

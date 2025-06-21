@@ -19,7 +19,7 @@ export default function QueryStateHandler({
 
   if (isLoading) {
     return (
-      <div className="h-96 flex items-center justify-center text-custom-orange-500">
+      <div className="h-96 flex items-center justify-center text-flame-orange-500">
         Loading data...
       </div>
     );

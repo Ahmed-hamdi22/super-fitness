@@ -14,7 +14,7 @@ export default function WhyUs() {
               {/* Text */}
               <h2 className="text-2xl md:text-5xl font-baloo uppercase">
                 {t("elevate-fitness-wite-the")}{" "}
-                <span className="text-custom-orange-500">{t("best-way")}</span>{" "}
+                <span className="text-flame-orange-500">{t("best-way")}</span>{" "}
                 {t("possible")}
               </h2>
 
@@ -30,7 +30,7 @@ export default function WhyUs() {
             <div className="space-y-8 pt-12">
               {/* Point one */}
               <div className="flex items-start gap-4">
-                <div className="bg-custom-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
+                <div className="bg-flame-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
                   01
                 </div>
 
@@ -51,7 +51,7 @@ export default function WhyUs() {
 
               {/* Point two */}
               <div className="flex items-start gap-4">
-                <div className="bg-custom-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
+                <div className="bg-flame-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
                   02
                 </div>
 
@@ -72,7 +72,7 @@ export default function WhyUs() {
 
               {/* Point three */}
               <div className="flex items-start gap-4">
-                <div className="bg-custom-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
+                <div className="bg-flame-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-white">
                   03
                 </div>
 

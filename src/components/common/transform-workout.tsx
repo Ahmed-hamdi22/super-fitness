@@ -123,8 +123,8 @@ export default function MuscleGroupList({
 
           {/* Carousel navigation arrows */}
 
-          <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 rounded-full border border-custom-orange-300 text-custom-orange-500 hover:bg-flame-orange-200" />
-          <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-12 z-10 rounded-full border border-custom-orange-300 text-custom-orange-500 hover:bg-flame-orange-200" />
+          <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 rounded-full border border-flame-orange-300 text-flame-orange-500 hover:bg-flame-orange-200" />
+          <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-12 z-10 rounded-full border border-flame-orange-300 text-flame-orange-500 hover:bg-flame-orange-200" />
         </Carousel>
 
         {/* Dots  */}
@@ -140,7 +140,7 @@ export default function MuscleGroupList({
             dotClassName={(index) =>
               `w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-custom-orange-500 w-5"
+                  ? "bg-flame-orange-500 w-5"
                   : "bg-soft-gray-300"
               }`
             }

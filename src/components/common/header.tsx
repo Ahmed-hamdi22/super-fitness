@@ -26,7 +26,7 @@ export default function Header() {
         <span>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-custom-orange-500" : "text-black"
+              isActive ? "text-flame-orange-500" : "text-black"
             }
             to={`/`}
           >
@@ -36,7 +36,7 @@ export default function Header() {
         <span>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-custom-orange-500" : "text-black"
+              isActive ? "text-flame-orange-500" : "text-black"
             }
             to={`/about`}
           >
@@ -46,7 +46,7 @@ export default function Header() {
         <span>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-custom-orange-500" : "text-black"
+              isActive ? "text-flame-orange-500" : "text-black"
             }
             to={`/classes`}
           >
@@ -56,7 +56,7 @@ export default function Header() {
         <span>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-custom-orange-500" : "text-black"
+              isActive ? "text-flame-orange-500" : "text-black"
             }
             to={`/healthy`}
           >
@@ -66,39 +66,39 @@ export default function Header() {
       </div>
       <div className="hidden md:block">
         {user ? (
-          <User className="w-[47px] h-[47px] bg-custom-orange-500 rounded-full text-white p-3 cursor-pointer" />
+          <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
         ) : (
           <div className="flex gap-3">
             <div className="flex">
               <Button className="bg-flame-orange-500 hover:bg-flame-orange-400 text-white rounded-full rtl:ml-3 ltr:mr-3">
                 {t("login")}
               </Button>
-              <ArrowUpRight className="w-8 h-8 bg-custom-orange-500 border border-white rounded-full text-white p-2 -ml-5" />
+              <ArrowUpRight className="w-8 h-8 bg-flame-orange-500 border border-white rounded-full text-white p-2 -ml-5" />
             </div>
             <div className="flex">
               <Button
                 variant="outline"
-                className="rounded-full border-custom-orange-500 text-custom-orange-500"
+                className="rounded-full border-flame-orange-500 text-flame-orange-500"
               >
                 {t("sign-up")}
               </Button>
-              <ArrowUpRight className="w-8 h-8 bg-custom-orange-500 border border-white rounded-full text-white p-2 -ml-3" />
+              <ArrowUpRight className="w-8 h-8 bg-flame-orange-500 border border-white rounded-full text-white p-2 -ml-3" />
             </div>
           </div>
         )}
       </div>
       <div className="md:hidden flex gap-5">
-        <User className="w-[47px] h-[47px] bg-custom-orange-500 rounded-full text-white p-3 cursor-pointer" />
+        <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <Menu className="w-10 h-10 bg-custom-orange-500 p-2 rounded-full text-white" />
+            <Menu className="w-10 h-10 bg-flame-orange-500 p-2 rounded-full text-white" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>
               <NavLink
                 end
                 className={({ isActive }) =>
-                  isActive ? "text-custom-orange-500" : "text-black"
+                  isActive ? "text-flame-orange-500" : "text-black"
                 }
                 to={`/`}
               >
@@ -108,7 +108,7 @@ export default function Header() {
             <DropdownMenuItem>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-custom-orange-500" : "text-black"
+                  isActive ? "text-flame-orange-500" : "text-black"
                 }
                 to={`/about`}
               >
@@ -118,7 +118,7 @@ export default function Header() {
             <DropdownMenuItem>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-custom-orange-500" : "text-black"
+                  isActive ? "text-flame-orange-500" : "text-black"
                 }
                 to={`/classes`}
               >
@@ -128,7 +128,7 @@ export default function Header() {
             <DropdownMenuItem>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-custom-orange-500" : "text-black"
+                  isActive ? "text-flame-orange-500" : "text-black"
                 }
                 to={`/healthy`}
               >

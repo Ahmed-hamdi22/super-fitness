@@ -77,7 +77,7 @@ const config = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				},
-				"custom-orange": {
+				"flame-orange": {
 					50: "#FFF1E6",
 					200: "#FFB899",
 					300: "#FF9166",
@@ -88,7 +88,7 @@ const config = {
 					800: "#8F2400",
 					900: "#661A00",
 				},
-				"custom-orange-alpha": {
+				"flame-orange-alpha": {
 					50: "#FF410033",
 				},
 				"soft-gray": {
