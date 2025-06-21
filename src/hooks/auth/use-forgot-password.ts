@@ -22,7 +22,7 @@ export function useForgotPassword() {
 
     // Handel success
     onSuccess: () => {
-      toast.success(t("otp-sent-your-email"));
+      toast.success(t('otp-has-been-sent-successfully'));
     },
 
     //Handel error

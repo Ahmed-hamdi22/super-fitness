@@ -1,3 +1,4 @@
+import { EmailProvider } from "./auth/email/_components/provider";
 import { RegistrationProvider } from "./auth/register/_components/provider";
 
 type ProvidersProps = {
@@ -6,11 +7,8 @@ type ProvidersProps = {
 
 export default function Providers({ children }: ProvidersProps) {
   return (
-    <>
-    <RegistrationProvider>
-
-      {children}
-    </RegistrationProvider>
-    </>
-  )
+    <EmailProvider>
+      <RegistrationProvider>{children}</RegistrationProvider>
+    </EmailProvider>
+  );
 }

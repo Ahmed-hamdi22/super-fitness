@@ -35,11 +35,14 @@ export default function LoginForm() {
   const Schema = z.object({
     email: z
       .string({ required_error: t("email-reqired") })
-      .min(1, t("email-reqired"))
-      .email(t("email-invalid")),
-    password: z
-      .string({ required_error: t("password-required") })
-      .min(1, t("password-required")),
+      .min(1, t("email-reqired")),
+      password: z
+      .string()
+      .nonempty(t("password-is-required"))
+      .min(8, { message: t("password-is-too-short") })
+      .regex(/[A-Z]/, t("password-must-contain-at-least-one-uppercase-letter"))
+      .regex(/[a-z]/, t("password-must-contain-at-least-one-lowercase-letter"))
+      .regex(/[0-9]/, t("password-must-contain-at-least-one-number")),
   });
   type Inputs = z.infer<typeof Schema>;
 
@@ -144,7 +147,7 @@ export default function LoginForm() {
             />
 
             {/* Forget button */}
-            <div className="flex">
+            <div className="flex ">
               <Button
                 variant="link"
                 className="text-flame-orange-500 p-0 underline ml-auto"

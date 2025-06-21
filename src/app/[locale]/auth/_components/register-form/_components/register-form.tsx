@@ -69,7 +69,7 @@ export default function RegisterForm() {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 min-w-96 border-2 border-soft-gray-400 px-14 py-5 rounded-3xl">
           <div className="text-center mb-6">
-            <Heading mainTitle={t("basic-information")} />
+            <Heading mainTitle={t('register')} />
           </div>
 
           {/* First Name */}

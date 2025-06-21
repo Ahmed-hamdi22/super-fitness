@@ -16,7 +16,7 @@ export const RegistrationProvider = ({ children }: { children: React.ReactNode }
     activityLevel: "",
   });
   
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState<number>(0);
 
   return (
     <RegistrationContext.Provider value={{ formData, setFormData, currentStep, setCurrentStep }}>

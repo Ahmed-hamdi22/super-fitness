@@ -1,10 +1,4 @@
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
@@ -12,12 +6,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { authContext } from "@/context/use-context";
 import { useNewPassword } from "@/hooks/auth/use-new-password";
 import { useState } from "react";
 import { Eye, EyeOff, Lock } from "lucide-react";
 import Heading from "@/components/common/heading";
+import { useEmail } from "@/context/auth/email";
 
 export default function NewPasswordForm() {
   // Translation
@@ -27,17 +20,10 @@ export default function NewPasswordForm() {
   const navigate = useNavigate();
 
   // Context
-  const auth = useContext(authContext);
-
-  if (!auth) {
-    throw new Error("NewPasswordForm must be used within an AuthProvider");
-  }
-
-  const { email } = auth;
+  const { email, setCurrentStep } = useEmail();
 
   // Mutation
-  const { mutate: newPasswordMutate, isPending: newPasswordLoading } =
-    useNewPassword();
+  const { mutate: newPasswordMutate, isPending: newPasswordLoading } = useNewPassword();
 
   // State
   const [hidePassword, setHidePassword] = useState(true);
@@ -79,8 +65,9 @@ export default function NewPasswordForm() {
       {
         onSuccess: () => {
           navigate("/login");
+          setCurrentStep(3);
         },
-      }
+      },
     );
   };
 
