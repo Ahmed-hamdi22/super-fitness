@@ -4,6 +4,7 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import Chat from "@/components/common/gemini-ai";
 import AutoScrollBanner from "@/components/common/auto-scroll";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 
@@ -11,7 +12,7 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* React Query Developer tools */}
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <ReactQueryDevtools initialIsOpen={false} />
 
       <>
         <Header />

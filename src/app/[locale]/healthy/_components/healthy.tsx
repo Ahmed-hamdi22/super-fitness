@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { CarouselDots } from "@/components/ui/carousel-dots";
-import FoodCard from "@/components/common/card";
+import Card from "@/components/common/card";
 import CategoriesTabs from "@/components/common/categories-tabs";
 import useCategoriesCarousel from "@/hooks/use-categories-carousel";
 import QueryStateHandler from "@/components/common/query-state-handler";
@@ -71,12 +71,12 @@ export default function CategoriesCarousel() {
               className="w-full max-w-7xl mx-auto overflow-hidden mt-10"
             >
               <CarouselContent className="flex flex-row rtl:flex-row-reverse">
-                {chunkedMeals.map((group, index) => (
-                  <CarouselItem key={index}>
+                {chunkedMeals.map((meals) => (
+                  <CarouselItem>
                     {/* Card */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                      {group.map((meal) => (
-                        <FoodCard
+                      {meals.map((meal: MealByCategory) => (
+                        <Card
                           key={meal.idMeal}
                           title={meal.strMeal}
                           image={meal.strMealThumb}

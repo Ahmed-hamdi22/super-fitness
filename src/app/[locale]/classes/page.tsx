@@ -1,14 +1,40 @@
-import ClassesCard from "./_components/card";
-import Classes from "./_components/classes";
+import WorkoutsLogo from "@/components/common/workouts-logo";
+import DumbbellIcon from "@/components/common/dumbbell";
+import TransformTitle from "@/components/common/transform-title";
+import MuscleGroupList from "../../../components/common/transform-workout";
+import TabFitness from "@/components/common/tab-transform";
 
-export default function ClassesPage() {
+export default function Classes() {
   return (
-    <div>
-      {/* Classes */}
-      <Classes />
+    <>
+      {/* Main section */}
+      <section className="bg-white bg-opacity-60 backdrop-blur-2xl h-[1122px] relative py-12">
+        {/* Content container */}
+        <div className="relative z-10  text-center">
+          {/* Header content */}
+          <div className="absolute -top-6 left-0 right-0 flex justify-center items-center gap-2 mb-8">
+            <WorkoutsLogo />
 
-      {/* Classes card */}
-      <ClassesCard />
-    </div>
+            {/* Icon and label for fitness */}
+            <div className="relative z-10 flex items-center gap-2 -bottom-6 ">
+              <DumbbellIcon />
+            </div>
+          </div>
+
+          {/* Main headline */}
+          <div className="pt-8">
+            <TransformTitle />
+          </div>
+          {/* Tabs */}
+          <div>
+            <TabFitness />
+          </div>
+        </div>
+        {/* Muscle Slider */}
+        <div className="px-16">
+          <MuscleGroupList variant="grid" />
+        </div>
+      </section>
+    </>
   );
 }

@@ -14,7 +14,7 @@ type FoodCardProps = {
   onActionClick?: () => void;
 };
 
-export default function FoodCard({
+export default function Card({
   title,
   image,
   description,
