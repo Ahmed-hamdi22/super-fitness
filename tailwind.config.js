@@ -73,7 +73,7 @@ const config = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				},
-				"custom-orange": {
+				"flame-orange": {
 					50: "#FFF1E6",
 					200: "#FFB899",
 					300: "#FF9166",
@@ -84,7 +84,7 @@ const config = {
 					800: "#8F2400",
 					900: "#661A00",
 				},
-				"custom-orange-alpha": {
+				"flame-orange-alpha": {
 					50: "#FF410033",
 				},
 				"soft-gray": {
@@ -98,6 +98,18 @@ const config = {
 					700: "#919191",
 					800: "#7B7B7B",
 					900: "#666666",
+				},
+				"light-silver": {
+					50: "#FFFFFF",
+					100: "#FAFAFA",
+					200: "#F6F6F7",
+					300: "#F3F3F4",
+					400: "#E8E8E9",
+					500: "#DCDCDD",
+					600: "#D0D0D1",
+					700: "#C4C4C5",
+					800: "#B8B8B9",
+					900: "#ACACAD",
 				},
 				"dark-gray": {
 					800: "#242424",
