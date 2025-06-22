@@ -1,11 +1,17 @@
-import { useTranslations } from "use-intl";
+type Props = {
+  text: string;
+  shadow?: string;
+};
 
-export default function WorkoutsLogo() {
-  // Translation
-  const t = useTranslations();
+export default function WorkoutsLogo({ text, shadow }: Props) {
   return (
-    <h2 className="absolute  text-5xl sm:text-7xl font-extrabold font-montserrat uppercase text-gray-200 opacity-30 ">
-      {t("about-us-title")}
-    </h2>
+    <h1
+      className={`absolute text-transparent text-6xl sm:text-7xl font-bold font-baloo uppercase 
+        [-webkit-text-stroke:2px_#A8A8A8] 
+        [text-stroke:1px_#A8A8A8]`}
+      style={shadow ? { textShadow: shadow } : {}}
+    >
+      {text}
+    </h1>
   );
 }

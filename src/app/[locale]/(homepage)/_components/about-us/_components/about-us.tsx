@@ -1,6 +1,7 @@
 import ArrowUpRight from "@/components/common/arrow-long-right";
+import DumbbellIcon from "@/components/common/dumbbell";
+import WorkoutsLogo from "@/components/common/workouts-logo";
 import { Button } from "@/components/ui/button";
-import { Dumbbell } from "lucide-react";
 import { useTranslations } from "use-intl";
 
 export default function AboutUs() {
@@ -59,16 +60,15 @@ export default function AboutUs() {
           {/* Text content */}
           <div className="rtl:text-right mt-8 ">
             <div className="relative mb-8">
-              <h2 className="absolute sm:-top-6 ltr:left-0 rtl:right-0 rtl:left-auto text-5xl sm:text-7xl font-extrabold font-montserrat uppercase text-gray-200 opacity-30  z-0">
-                {t("about-us-title")}
-              </h2>
 
-              {/* About us*/}
+              {/* Title  */}
+             <span className="absolute sm:-top-4 ltr:left-0 rtl:right-0 rtl:left-auto z-0 shadow-light-silver-800 shadow-2xl ">
+                    <WorkoutsLogo text=  {t("about-us-title")}/>
+              </span>
+
+              {/* Icon and label for about us */}
               <div className="relative z-10 flex items-center gap-2 -bottom-6 ">
-                <Dumbbell className="w-5 h-5 text-flame-orange-500 rotate-45" />
-                <span className="text-sm font-semibold text-flame-orange-500">
-                  {t("about-us")}
-                </span>
+                   <DumbbellIcon text=  {t("about-us")} />
               </div>
             </div>
 
