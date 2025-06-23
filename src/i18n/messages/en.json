@@ -68,5 +68,8 @@
   "email-invalid": "Email Is Invalid",
   "password-required": "Password Required",
   "otp-code": "otp code",
-  "welcome-to-super-fitness": "Welcome to Super Fitness"
+  "welcome-to-super-fitness": "Welcome to Super Fitness",
+  "re-password-is-required": "Re-password is required",
+  "send-otp": "Send OTP",
+  "otp-has-been-sent-successfully": "OTP has been sent successfully"
 }

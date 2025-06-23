@@ -4,8 +4,8 @@ export default function AuthLayout() {
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 bg-[url(/assets/bg-form.png)] bg-cover bg-center bg-no-repeat">
       {/* Left side: Logo and image */}
-      <div className="hidden md:flex p-8 bg-main-color bg-opacity-90 backdrop-blur-2xl flex-col justify-center items-center border-e border-flame-orange-alpha-50">
-        {/* Image */}
+      <div className="hidden md:flex bg-main-color bg-opacity-90 backdrop-blur-2xl flex-col justify-center items-center border-e border-flame-orange-alpha-50">
+        {/* Logo */}
         <div className="relative">
           <img
             src="/assets/logofitness.png"
@@ -21,7 +21,7 @@ export default function AuthLayout() {
           <img
             src="/assets/menfitness.png"
             alt="Fitness "
-            width={350}
+            width={380}
             height={360}
             className="mx-auto"
           />

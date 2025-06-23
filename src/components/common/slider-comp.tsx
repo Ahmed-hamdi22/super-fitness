@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import CircularProgress from "./circle-progress";
-import { Button } from "../ui/button";
 import { useTranslations } from "use-intl";
 import Heading from "./heading";
+import AuthButton from "../ui/auth-button";
 
 type SliderProps = {
   title: string;
@@ -106,11 +106,9 @@ function Slider({ title, step, range, measure }: SliderProps) {
 
         {/* Title */}
         <div className="text-center mb-8">
-          <Heading mainTitle={title} />
+          <Heading question={title} />
 
-          <Heading
-            discripton={t("this-helps-us-create-your-personalized-plan")}
-          />
+          <Heading discripton={t("this-helps-us-create-your-personalized-plan")} />
         </div>
 
         {/* Age display */}
@@ -172,9 +170,11 @@ function Slider({ title, step, range, measure }: SliderProps) {
         </div>
 
         {/* Next button */}
-        <Button className="bg-flame-orange-500 w-full rounded-full text-white block -mt-8 hover:bg-flame-orange-700">
-          {t("next")}
-        </Button>
+        <AuthButton
+          className="w-full -mt-8  hover:bg-flame-orange-700"
+          label={t("next")}
+          type="button"
+        />
       </div>
     </div>
   );

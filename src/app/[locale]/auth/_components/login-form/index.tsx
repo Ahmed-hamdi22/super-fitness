@@ -11,12 +11,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import { Loader, Lock, Mail, Eye, EyeOff } from "lucide-react";
+import { Lock, Mail, Eye, EyeOff } from "lucide-react";
 import { useTranslations } from "use-intl";
 import Heading from "@/components/common/heading";
 import { useLogin } from "@/hooks/use-login";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import AuthButton from "@/components/ui/auth-button";
 
 export default function LoginForm() {
   // Translations
@@ -33,13 +34,14 @@ export default function LoginForm() {
 
   // Login Schema
   const Schema = z.object({
-    email: z
-      .string({ required_error: t("email-reqired") })
-      .min(1, t("email-reqired"))
-      .email(t("email-invalid")),
+    email: z.string({ required_error: t("email-reqired") }).min(1, t("email-reqired")),
     password: z
-      .string({ required_error: t("password-required") })
-      .min(1, t("password-required")),
+      .string()
+      .nonempty(t("password-is-required"))
+      .min(8, { message: t("password-is-too-short") })
+      .regex(/[A-Z]/, t("password-must-contain-at-least-one-uppercase-letter"))
+      .regex(/[a-z]/, t("password-must-contain-at-least-one-lowercase-letter"))
+      .regex(/[0-9]/, t("password-must-contain-at-least-one-number")),
   });
   type Inputs = z.infer<typeof Schema>;
 
@@ -144,39 +146,38 @@ export default function LoginForm() {
             />
 
             {/* Forget button */}
-            <div className="flex">
+            <div className="flex ">
               <Button
                 variant="link"
-                className="text-flame-orange-500 p-0 underline ml-auto"
+                className="text-flame-orange-500 underline ml-auto"
                 onClick={() => navigate("/forgot-password")}
               >
                 {t("forgot-password")}
               </Button>
             </div>
 
-            <div className="flex flex-col gap-8">
-              {/* Error message */}
-              {error && (
-                <p className="text-red-500 text-sm font-semibold text-center">
-                  {error.message}
-                </p>
-              )}
-            </div>
+            {/* Error message */}
+            {error && (
+              <p className="text-red-500 text-sm font-semibold text-center">{error.message}</p>
+            )}
 
             {/* Login button */}
-            <Button
+            <AuthButton
+              label={t("login")}
+              isLoading={isLoading}
               disabled={isPending}
               type="submit"
-              className="w-full h-[50px] bg-flame-orange-500 hover:bg-flame-orange-700 rounded-3xl text-white capitalize mb-3"
-            >
-              {isLoading ? <Loader /> : t("login")}
-            </Button>
-
+              className="w-full h-[50px]"
+            />
             {/* Register link */}
             <div className="flex flex-col gap-2 text-sm text-center mb-5">
               <div className="text-white">
                 {t("dont-have-an-account")}{" "}
-                <Button variant="link" className="text-flame-orange-500 p-0">
+                <Button
+                  variant="link"
+                  onClick={() => navigate("/register")}
+                  className="text-flame-orange-500 p-0"
+                >
                   <span> {t("register")}</span>
                 </Button>
               </div>

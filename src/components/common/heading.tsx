@@ -4,6 +4,7 @@ type HeadingProps = {
   subtitle?: string;
   headTitle?: string;
   discripton?: string;
+  question?: string;
 };
 
 export default function Heading({
@@ -12,26 +13,23 @@ export default function Heading({
   subtitle,
   headTitle,
   discripton,
+  question,
 }: HeadingProps) {
   return (
-    <div className="mb-8  text-center space-y-2">
+    <div className="text-center space-y-2">
       {/* Welcome text and subtitle */}
       <div className="flex flex-col items-center">
         <span className="text-[24px] font-normal  text-white font-baloo capitalize ">
           {welcomeText}
         </span>
-        <h2 className="text-lg font-extrabold mt-1  text-white font-baloo">
-          {subtitle}
-        </h2>
+        <h2 className="text-lg font-extrabold mt-1  text-white font-baloo">{subtitle}</h2>
       </div>
-      <h2 className="text-lg font-normal   text-white font-baloo">
-        {discripton}
-      </h2>
-      {/* Main title */}
-      <h1 className="text-[24px]  font-bold text-white font-baloo">
-        {mainTitle}
-      </h1>
+      {/* Question */}
+      <h2 className="text-4xl font-extrabold text-white font-baloo">{question}</h2>
 
+      <p className="text-lg font-normal text-white font-baloo">{discripton}</p>
+      {/* Main title */}
+      <p className="text-[24px] font-normal text-white font-baloo">{mainTitle}</p>
       {/* // Head title */}
       <h1 className=" text-5xl font-bold text-white font-baloo">{headTitle}</h1>
     </div>

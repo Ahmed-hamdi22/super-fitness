@@ -1,4 +1,6 @@
+import CircularProgress from "@/components/common/circle-progress";
 import Heading from "@/components/common/heading";
+import AuthButton from "@/components/ui/auth-button";
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 
@@ -10,26 +12,20 @@ export default function LevelForm() {
   const [selectedOption, setSelectedOption] = useState<string>("");
 
   // Variables
-  const options = [
-    t("rookie"),
-    t("beginner"),
-    t("intermediate"),
-    t("advance"),
-    t("true-beast"),
-  ];
+  const options = [t("rookie"), t("beginner"), t("intermediate"), t("advance"), t("true-beast")];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8">
       <div className="w-full max-w-md space-y-4">
+        {/* Progressbar */}
+        <CircularProgress step={6} />
         {/* Heading */}
         <div className="text-center ">
           <Heading headTitle={t("your-regular-physical-activity-level")} />
         </div>
         {/* Title */}
         <div className="text-center mb-8">
-          <Heading
-            subtitle={t("this-helps-us-create-your-personalized-plan")}
-          />
+          <Heading discripton={t("this-helps-us-create-your-personalized-plan")} />
         </div>
 
         {/* Radio group */}
@@ -41,7 +37,7 @@ export default function LevelForm() {
                 relative flex items-center justify-between w-80 h-12 px-4 py-2 rounded-3xl cursor-pointer transition-all duration-200 border-2
                 ${
                   selectedOption === option
-                    ? "border-customOrange text-customOrange"
+                    ? "border-flame-orange-400 text-flame-orange-500"
                     : "border-white text-white hover:border-gray-500 hover:bg-gray-800/70"
                 }
               `}
@@ -74,18 +70,13 @@ export default function LevelForm() {
         {/* Selected value display */}
         <div className="text-center mt-8">
           <p className="text-gray-400 text-sm">
-            Selected:{" "}
-            <span className="text-customOrange font-medium">
-              {selectedOption}
-            </span>
+            Selected: <span className="text-customOrange font-medium">{selectedOption}</span>
           </p>
         </div>
 
         {/* Next button */}
         <div className="flex justify-center mt-8">
-          <button className="bg-flame-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors w-4/5">
-            {t("next")}
-          </button>
+          <AuthButton label={t("next")} type="button" className="w-[343px]" />
         </div>
       </div>
     </div>

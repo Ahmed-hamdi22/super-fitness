@@ -1,23 +1,16 @@
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { authContext } from "@/context/use-context";
 import { useNewPassword } from "@/hooks/auth/use-new-password";
 import { useState } from "react";
 import { Eye, EyeOff, Lock } from "lucide-react";
 import Heading from "@/components/common/heading";
+import { useEmail } from "@/context/auth/email";
+import AuthButton from "@/components/ui/auth-button";
 
 export default function NewPasswordForm() {
   // Translation
@@ -27,17 +20,10 @@ export default function NewPasswordForm() {
   const navigate = useNavigate();
 
   // Context
-  const auth = useContext(authContext);
-
-  if (!auth) {
-    throw new Error("NewPasswordForm must be used within an AuthProvider");
-  }
-
-  const { email } = auth;
+  const { email, setCurrentStep } = useEmail();
 
   // Mutation
-  const { mutate: newPasswordMutate, isPending: newPasswordLoading } =
-    useNewPassword();
+  const { mutate: newPasswordMutate, isPending: newPasswordLoading } = useNewPassword();
 
   // State
   const [hidePassword, setHidePassword] = useState(true);
@@ -79,8 +65,9 @@ export default function NewPasswordForm() {
       {
         onSuccess: () => {
           navigate("/login");
+          setCurrentStep(3);
         },
-      }
+      },
     );
   };
 
@@ -89,14 +76,15 @@ export default function NewPasswordForm() {
       {/* New password form */}
       <div className="container  mx-auto flex flex-col gap-5 justify-center items-center ">
         {/* Heading */}
-        <Heading mainTitle={t("create-new-password")} />
+        <Heading question={t("create-new-password")} />
+
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
           className="w-[493px] h-[291px] bg-transparent flex flex-col  gap-5 justify-center items-center  border-[1px] rounded-[50px] border-soft-gray-400"
         >
-          <h3 className=" text-center block font-normal text-2xl text-white ">
-            {t("make-sure-to-create-a-strong-password")}
-          </h3>
+          {/* Heading */}
+
+          <Heading mainTitle={t("make-sure-to-create-a-strong-password")} />
 
           {/* New password field */}
           <FormField
@@ -125,7 +113,7 @@ export default function NewPasswordForm() {
 
                     {/* Password input */}
                     <Input
-                      type="password"
+                      type={hidePassword ? "password" : "text"}
                       {...field}
                       placeholder={t("new-password")}
                       className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
@@ -165,10 +153,10 @@ export default function NewPasswordForm() {
 
                     {/* Password input */}
                     <Input
-                      type="password"
+                      type={hidePassword ? "password" : "text"}
                       {...field}
                       placeholder={t("confirm-password")}
-                      className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
+                      className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent "
                     />
                   </div>
                 </FormControl>
@@ -179,13 +167,12 @@ export default function NewPasswordForm() {
           />
 
           {/* Create new password button */}
-          <Button
-            disabled={newPasswordLoading}
-            className="w-[311px] h-[41px] rounded-3xl text-white font-extrabold text-base bg-flame-orange-500 hover:bg-flame-orange-400"
+
+          <AuthButton
             type="submit"
-          >
-            {t("create-new-password")}
-          </Button>
+            disabled={newPasswordLoading}
+            label={t("create-new-password")}
+          />
         </form>
       </div>
     </Form>

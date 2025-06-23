@@ -5,15 +5,14 @@ import HealthyPage from "./app/[locale]/healthy/page";
 import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import NotFound from "./app/[locale]/not-found";
-import VerifyOTPForm from "./app/[locale]/auth/_components/verify-otp";
+import VerifyOTPForm from "./app/[locale]/auth/_components/forgot-password/_components/verify-otp-form";
 import LoginForm from "./app/[locale]/auth/_components/login-form";
 import AuthLayout from "./app/[locale]/auth/layout";
-import DummyRegister from "./app/[locale]/auth/_components/dummy-register";
 import LevelForm from "./app/[locale]/auth/_components/level-form";
 import GoalForm from "./app/[locale]/auth/_components/goal-form";
-import ForgotPasswordForm from "./app/[locale]/auth/_components/forgot-password";
-import NewPasswordForm from "./app/[locale]/auth/_components/new-password-form/new-password-form";
-import RegisterForm from "./app/[locale]/auth/_components/register-form/register-form";
+import NewPasswordForm from "./app/[locale]/auth/_components/forgot-password/_components/new-password-form";
+import RegisterPage from "./app/[locale]/auth/_components/register-form";
+import ForgotPasswordPage from "./app/[locale]/auth/_components/forgot-password";
 
 const router = createBrowserRouter([
   {
@@ -28,12 +27,11 @@ const router = createBrowserRouter([
         children: [
           { path: "login", element: <LoginForm /> },
           { path: "verifyotp", element: <VerifyOTPForm /> },
-          { path: "dummy", element: <DummyRegister /> },
           { path: "goal", element: <GoalForm /> },
-          { path: "forgotpassword", element: <ForgotPasswordForm /> },
+          { path: "forgot-password", element: <ForgotPasswordPage /> },
           { path: "level", element: <LevelForm /> },
           { path: "newpassword", element: <NewPasswordForm /> },
-          { path: "register", element: <RegisterForm /> },
+          { path: "register", element: <RegisterPage /> },
         ],
       },
     ],
