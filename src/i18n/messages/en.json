@@ -29,7 +29,7 @@
   "fitness": "              fitness class\n",
   "is-error": "Something went wrong while fetching muscles.",
   "not-found": "No muscles found.",
-  "transform-headline": "transform your body with our Dynamic <span>upcoming workouts</span> ",
+  "transform-headline": "transform your body with our {br} Dynamic <span>upcoming workouts</span> ",
   "explore-classes": "Explore More",
   "sign-up": "Sign up",
   "login": "Login",
