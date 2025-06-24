@@ -1,5 +1,5 @@
+import ArrowUpRight from "@/components/common/arrow-long-right";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "use-intl";
 
 export default function Hero() {
@@ -60,24 +60,26 @@ export default function Hero() {
 
             {/* Get start btn */}
             <div className="mt-8 flex space-y-2 items-center">
-              <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
+             <div className="relative">
+               <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
                 {t("get-started")}
-                <ArrowUpRight className="absolute top-3 -right-3 ml-2 w-9 h-9 text-whit  bg-flame-orange-500 rounded-full border-2 border-white " />
               </Button>
+               <ArrowUpRight className="absolute top-1 p-[2px] right-4 rtl:-right-4 ml-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
 
+
+             </div>
               {/* Explore classes btn */}
-              <div className="relative inline-block">
-                <Button
-                  variant="outline"
-                  className="w-36 rounded-2xl border-2 border-flame-orange-500 relative text-flame-orange-500"
-                >
+          
+                   <div className="relative">
+               <Button className="w-36 rounded-2xl border-2 border-flame-orange-500 relative text-flame-orange-500 bg-white">
                   {t("explore-classes")}
-                  <ArrowUpRight className="absolute top-3 -right-3 ml-2 w-9 h-9 text-white bg-flame-orange-500 rounded-full border-2 border-white" />
-                </Button>
-              </div>
+              </Button>
+               <ArrowUpRight className="absolute top-1 p-[2px] -right-4 rtl:-right-4 ml-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
+
+          </div>
             </div>
           </div>
-
+    
           {/* Image */}
           <div className="flex justify-center md:justify-end  lg:mt-0 mt-8">
             <img

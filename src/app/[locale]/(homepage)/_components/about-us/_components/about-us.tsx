@@ -28,7 +28,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="w-full bg-white  mb-14">
+    <section className="w-full bg-white  mb-14 font-baloo">
       <div className="mx-auto px-4 sm:px-6 lg:py-8 max-w-screen-xl">
         {/*  Grid  */}
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 lg:gap-y-0 gap-y-12 items-center">
@@ -73,47 +73,62 @@ export default function AboutUs() {
             </div>
 
             {/*  About us description */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 mb-4 leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 mb-4 leading-[1.2] ">
               {t.rich("fitness-headline", {
                 span: (v) => <span className="text-flame-orange-500">{v}</span>,
               })}
             </h2>
 
-            <p className="text-dark-gray-800 mb-12  pt-5 text-sm sm:text-base leading-10">
+            <p className="text-dark-gray-800 mb-12  pt-5 text-sm sm:text-base leading-10 font-rubik">
               {t("services-description")}
             </p>
 
             {/* Services grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 mb-8  border-gray-200 pt-6">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 rtl:text-right"
-                >
-                  <div>
-                    <div className="flex items-center  ms-1 gap-2">
-                      {/* Icon */}
-                      <ArrowUpRight className="w-6 h-6 text-flame-orange-500 mt-1" />
+                      
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 mb-8 border-gray-200 pt-6 ">
+              {Array.from({ length: Math.floor(services.length / 2) }, (_, i) => {
+                const group = services.slice(i * 2, i * 2 + 2);
+                return (
+                  <div key={i} className="flex flex-col gap-6 col-span-1 sm:col-span-2">
+                    {/* Map */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+                      {group.map((service, index) => (
+                        <div key={index} className="flex items-start gap-4 rtl:text-right">
+                          <div>
+                            <div className="flex items-center ms-1 gap-2 mb-4">
+                              {/* Icon */}
+                              <ArrowUpRight className="w-4 h-4 text-flame-orange-500 mt-1" />
 
-                      {/* Title */}
-                      <h4 className="font-semibold text-dark-gray-800 text-lg mb-1 capitalize">
-                        {service.title}
-                      </h4>
+                            {/* Title */}
+                              <h4 className="font-bold text-dark-gray-800 text-base mb-1 capitalize">
+                                {service.title}
+                              </h4>
+                            </div>
+                              {/*  Description */}
+                            <p className="text-lg font-normal  text-dark-gray-800 leading-relaxed">
+                              {service.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    {/*  Description */}
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      {service.description}
-                    </p>
+                        {/* Border */}
+                    {i === 0 && (
+                      <div className="w-full h-px bg-gray-100 my-3"></div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Get started button */}
-            <Button className="capitalize w-[150px] mr-8 mt-8 rounded-2xl bg-flame-orange-500 relative rtl:flex-row-reverse">
-              {t("get-started")}
-              <ArrowUpRight className="absolute top-3 rtl:-rotate-90 -right-3 rtl:-left-3 rtl:right-36 ml-2 w-9 h-9 text-white bg-flame-orange-500 rounded-full border-2 border-white" />
-            </Button>
+       
+               <div className="relative">
+                <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
+                {t("get-started")}
+              </Button>
+                <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
+              </div>
           </div>
         </div>
       </div>
