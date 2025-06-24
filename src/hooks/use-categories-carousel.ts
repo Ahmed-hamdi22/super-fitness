@@ -21,11 +21,7 @@ export default function useCategoriesCarousel() {
   }, [categories, selectedCategory]);
 
   // Fetch meals for the selected category
-  const {
-    data: meals = [],
-    isLoading,
-    error,
-  } = useMealsByCategory(selectedCategory || "");
+  const { data: meals = [], isLoading, error } = useMealsByCategory(selectedCategory || "");
 
   // display six meals
   const chunkedMeals = [];

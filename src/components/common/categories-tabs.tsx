@@ -17,9 +17,7 @@ export default function CategoriesTabs({
           key={cat.idCategory}
           onClick={() => onSelect(cat.strCategory)}
           className={`px-4 py-2 rounded-full font-semibold transition ${
-            selectedCategory === cat.strCategory
-              ? "bg-flame-orange-500 text-white"
-              : "text-black"
+            selectedCategory === cat.strCategory ? "bg-flame-orange-500 text-white" : "text-black"
           }`}
         >
           {cat.strCategory}

@@ -1,14 +1,10 @@
 import { useTranslations } from "use-intl";
 
-export default function TransformTitle({
-  className = "",
-}: {
-  className?: string;
-}) {
+export default function TransformTitle({ className = "" }: { className?: string }) {
   // Translation
   const t = useTranslations();
   return (
-   <div className="flex justify-center">
+    <div className="flex justify-center">
       <h2
         className={`text-center max-w-[850px] text-3xl sm:text-4xl md:text-5xl font-bold uppercase mb-8 leading-tight ${className}`}
       >

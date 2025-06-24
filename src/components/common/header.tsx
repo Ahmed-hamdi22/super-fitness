@@ -25,9 +25,7 @@ export default function Header() {
       <div className="hidden md:flex gap-5 text-lg">
         <span>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-flame-orange-500" : "text-black"
-            }
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
             to={`/`}
           >
             {t("home")}
@@ -35,9 +33,7 @@ export default function Header() {
         </span>
         <span>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-flame-orange-500" : "text-black"
-            }
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
             to={`/about`}
           >
             {t("about")}
@@ -45,9 +41,7 @@ export default function Header() {
         </span>
         <span>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-flame-orange-500" : "text-black"
-            }
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
             to={`/classes`}
           >
             {t("classes")}
@@ -55,9 +49,7 @@ export default function Header() {
         </span>
         <span>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-flame-orange-500" : "text-black"
-            }
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
             to={`/healthy`}
           >
             {t("healthy")}
@@ -97,9 +89,7 @@ export default function Header() {
             <DropdownMenuLabel>
               <NavLink
                 end
-                className={({ isActive }) =>
-                  isActive ? "text-flame-orange-500" : "text-black"
-                }
+                className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
                 to={`/`}
               >
                 {t("home")}
@@ -107,9 +97,7 @@ export default function Header() {
             </DropdownMenuLabel>
             <DropdownMenuItem>
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-flame-orange-500" : "text-black"
-                }
+                className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
                 to={`/about`}
               >
                 {t("about")}
@@ -117,9 +105,7 @@ export default function Header() {
             </DropdownMenuItem>
             <DropdownMenuItem>
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-flame-orange-500" : "text-black"
-                }
+                className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
                 to={`/classes`}
               >
                 {t("classes")}
@@ -127,9 +113,7 @@ export default function Header() {
             </DropdownMenuItem>
             <DropdownMenuItem>
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-flame-orange-500" : "text-black"
-                }
+                className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
                 to={`/healthy`}
               >
                 {t("healthy")}

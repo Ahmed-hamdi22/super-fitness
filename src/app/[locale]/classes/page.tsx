@@ -31,7 +31,7 @@ export default function Classes() {
           </div>
         </div>
         {/* Muscle Slider */}
-          <MuscleGroupList variant="grid" />
+        <MuscleGroupList variant="grid" />
       </section>
     </>
   );
