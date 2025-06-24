@@ -2,8 +2,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { CarouselDots } from "@/components/ui/carousel-dots";
@@ -62,17 +60,17 @@ export default function MuscleGroupList({
   function getCarouselItems() {
     if (variant === "carousel") {
       return displayedMuscles.map((muscle) => (
-        <CarouselItem key={muscle._id} className="basis-1/3 ">
+      <CarouselItem key={muscle._id} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
           <div>
             <Card
               title={muscle.name}
               image={muscle.image}
               actionLabel={t("explore")}
               actionIcon={<ArrowRight />}
-              className="h-[397px] w-full sm:w-[403px]"
+              className="w-[320px] h-[397px] sm:w-[400px]"
               mode="Exploer"
             />
-          </div>{" "}
+          </div>
         </CarouselItem>
       ));
     }
@@ -85,19 +83,21 @@ export default function MuscleGroupList({
         return (
           <CarouselItem
             key={i}
-            className="pl-4 basis-full sm:basis-1/2 md:basis-1/3"
+        className="pl-4 basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
           >
-            <div className="flex flex-col gap-6">
+            
+        <div className="flex flex-col gap-6 w-full max-w-[403px] mx-auto">
               {grid.map((muscle: Muscle) => (
                 <div key={muscle._id}>
-                  <Card
-                    title={muscle.name}
-                    image={muscle.image}
-                    actionLabel={t("explore")}
-                    actionIcon={<ArrowRight />}
-                    className="h-[397px] w-full sm:w-[403px]"
-                    mode="Exploer"
-                  />
+              <Card
+              title={muscle.name}
+              image={muscle.image}
+               actionLabel={t("explore")}
+               actionIcon={<ArrowRight />} 
+                  className="w-[380px] h-[350px] bg-white/50 backdrop-blur-md "
+                 mode="Exploer"
+                    />
+
                 </div>
               ))}
             </div>
@@ -121,11 +121,7 @@ export default function MuscleGroupList({
             {getCarouselItems()}
           </CarouselContent>
 
-          {/* Carousel navigation arrows */}
-
-          <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 rounded-full border border-flame-orange-300 text-flame-orange-500 hover:bg-flame-orange-200" />
-          <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-12 z-10 rounded-full border border-flame-orange-300 text-flame-orange-500 hover:bg-flame-orange-200" />
-        </Carousel>
+       </Carousel>
 
         {/* Dots  */}
         <div className="mt-5 flex justify-center">
@@ -141,7 +137,7 @@ export default function MuscleGroupList({
               `w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? "bg-flame-orange-500 w-5"
-                  : "bg-soft-gray-300"
+                  : "bg-soft-gray-900"
               }`
             }
           />

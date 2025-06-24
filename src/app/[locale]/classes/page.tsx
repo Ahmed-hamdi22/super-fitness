@@ -8,7 +8,7 @@ export default function Classes() {
   return (
     <>
       {/* Main section */}
-      <section className="bg-white bg-opacity-60 backdrop-blur-2xl h-[1122px] relative py-12">
+      <section className="bg-gray- bg-opacity-50 backdrop-blur-2xl relative py-12">
         {/* Content container */}
         <div className="relative z-10  text-center">
           {/* Header content */}
@@ -31,9 +31,7 @@ export default function Classes() {
           </div>
         </div>
         {/* Muscle Slider */}
-        <div className="px-16">
           <MuscleGroupList variant="grid" />
-        </div>
       </section>
     </>
   );
