@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./app/[locale]/(homepage)/page";
-import AboutPage from "./app/[locale]/about/page";
 import HealthyPage from "./app/[locale]/healthy/page";
 import RootLayout from "./app/layout";
 import NotFound from "./app/[locale]/not-found";
 import Classes from "./app/[locale]/classes/page";
+import AboutPage from "./app/[locale]/about";
 
 const router = createBrowserRouter([
   {

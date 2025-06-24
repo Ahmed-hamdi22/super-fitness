@@ -7,11 +7,15 @@ export default function Hero() {
   const t = useTranslations();
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-r from-soft-gray-400 bg-[url('/assets/images/transform-bg.jpg')] to-soft-gray-300">
-      {/* Background gradient */}
-      <div className="absolute top-0 left-40 w-[250px] h-[1000px] z-0 rounded-full opacity-30 pointer-events-none bg-[radial-gradient(theme(colors.flame-orange.200)_0%,_transparent_70%)]"></div>
+    <div className="relative w-full">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="w-full h-full bg-[url('/assets/bg-form.png')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-white bg-opacity-60 backdrop-blur-2xl" />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-8  md:py-16 md:px-8   mx-4">
+      <section className="relative z-10 py-8 md:py-16 md:px-8 mx-4">
         <div className=" grid grid-cols-1 md:grid-cols-2  items-center">
           <div className="">
             {/* Title */}

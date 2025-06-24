@@ -5,7 +5,7 @@ export async function GetRandomMuscle() {
     APIResponse<PaginatedResponse<{ muscles: Muscle[] }>>
   >(`${import.meta.env.VITE_API_URL}/muscles/random`, {
     headers: {
-      "Accept-Language": localStorage.getItem("lang") || "en",
+      "Accept-Language": localStorage.getItem("locale") || "en",
     },
   });
 

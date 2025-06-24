@@ -80,9 +80,9 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
       const grid = displayedMuscles.slice(i * 2, i * 2 + 2);
       return (
         <CarouselItem key={i} className="pl-4 basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
-          <div className="flex flex-col gap-6 w-full max-w-[403px] mx-auto">
+          <div className="flex flex-col gap-6 w-full max-w-[403px] mx-auto cursor-pointer">
             {grid.map((muscle: Muscle) => (
-              <div key={muscle._id}>
+              <div key={muscle._id} onClick={() => navigate(`/classes/${muscle._id}`)}>
                 <Card
                   title={muscle.name}
                   image={muscle.image}

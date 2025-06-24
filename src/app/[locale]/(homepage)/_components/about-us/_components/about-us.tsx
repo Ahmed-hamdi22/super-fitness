@@ -1,6 +1,7 @@
 import ArrowUpRight from "@/components/common/arrow-long-right";
+import DumbbellIcon from "@/components/common/dumbbell";
+import WorkoutsLogo from "@/components/common/workouts-logo";
 import { Button } from "@/components/ui/button";
-import { Dumbbell } from "lucide-react";
 import { useTranslations } from "use-intl";
 
 export default function AboutUs() {
@@ -28,8 +29,8 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="w-full bg-white  mb-14 font-baloo">
-      <div className="mx-auto px-4 sm:px-6 lg:py-8 max-w-screen-xl">
+    <section className="w-fullbg-white/95 backdrop-blur-[86px]  mb-14 font-baloo ">
+      <div className="mx-auto px-4 sm:px-6 mb-32 md:mb-0 lg:py-8 max-w-screen-xl">
         {/*  Grid  */}
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 lg:gap-y-0 gap-y-12 items-center">
           {/* Images */}
@@ -58,15 +59,15 @@ export default function AboutUs() {
 
           {/* Text content */}
           <div className="rtl:text-right mt-8 ">
-            <div className="relative mb-8">
-              <h2 className="absolute sm:-top-6 ltr:left-0 rtl:right-0 rtl:left-auto text-5xl sm:text-7xl font-extrabold font-montserrat uppercase text-gray-200 opacity-30  z-0">
-                {t("about-us-title")}
-              </h2>
+            <div className="relative mb-8   ">
+              {/* Title  */}
+              <span className="absolute sm:-top-4 ltr:left-0 rtl:right-0 rtl:left-auto z-0 ">
+                <WorkoutsLogo text={t("about-us-title")} />
+              </span>
 
-              {/* About us*/}
-              <div className="relative z-10 flex items-center gap-2 -bottom-6 ">
-                <Dumbbell className="w-5 h-5 text-flame-orange-500 rotate-45" />
-                <span className="text-sm font-semibold text-flame-orange-500">{t("about-us")}</span>
+              {/* Icon and label for about us */}
+              <div className="relative z-10 flex items-center gap-2 -bottom-6 capitalize ">
+                <DumbbellIcon text={t("about-us")} />
               </div>
             </div>
 
