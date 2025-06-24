@@ -11,10 +11,14 @@ import useCategoriesCarousel from "@/hooks/use-categories-carousel";
 import QueryStateHandler from "@/components/common/query-state-handler";
 import { useTranslations } from "use-intl";
 import ArrowRight from "@/components/common/arrow-right";
+import { useNavigate } from "react-router-dom";
 
 export default function CategoriesCarousel() {
   // Translation
   const t = useTranslations();
+
+  // Navigate
+  const navigate = useNavigate();
 
   const {
     categories,
@@ -50,7 +54,7 @@ export default function CategoriesCarousel() {
           {/* Text */}
           <h2 className="text-2xl md:text-4xl font-baloo uppercase">
             {t("customized")}{" "}
-            <span className="text-flame-orange-500">{t("meal-plavs")} </span>
+            <span className="text-custom-orange-500">{t("meal-plavs")} </span>
             {t("for-you")}
           </h2>
         </div>
@@ -84,7 +88,12 @@ export default function CategoriesCarousel() {
                           actionIcon={<ArrowRight />}
                           className="h-[397px] w-full sm:w-[403px]"
                           mode="Exploer"
-                          onClick={() => meal.idMeal}
+                          onClick={() =>
+                            navigate(`/mealsdetails/${meal.idMeal}`)
+                          }
+                          onActionClick={() =>
+                            navigate(`/mealsdetails/${meal.idMeal}`)
+                          }
                         />
                       ))}
                     </div>
@@ -102,7 +111,9 @@ export default function CategoriesCarousel() {
                   dotClassName={(index) =>
                     cn(
                       "w-2 h-2 rounded-full transition-all mx-1",
-                      current === index ? "bg-flame-orange-500 w-5" : "bg-white"
+                      current === index
+                        ? "bg-custom-orange-500 w-5"
+                        : "bg-white"
                     )
                   }
                 />
