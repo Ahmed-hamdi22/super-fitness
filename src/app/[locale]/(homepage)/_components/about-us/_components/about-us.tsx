@@ -66,9 +66,7 @@ export default function AboutUs() {
               {/* About us*/}
               <div className="relative z-10 flex items-center gap-2 -bottom-6 ">
                 <Dumbbell className="w-5 h-5 text-flame-orange-500 rotate-45" />
-                <span className="text-sm font-semibold text-flame-orange-500">
-                  {t("about-us")}
-                </span>
+                <span className="text-sm font-semibold text-flame-orange-500">{t("about-us")}</span>
               </div>
             </div>
 
@@ -84,7 +82,7 @@ export default function AboutUs() {
             </p>
 
             {/* Services grid */}
-                      
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 mb-8 border-gray-200 pt-6 ">
               {Array.from({ length: Math.floor(services.length / 2) }, (_, i) => {
                 const group = services.slice(i * 2, i * 2 + 2);
@@ -99,12 +97,12 @@ export default function AboutUs() {
                               {/* Icon */}
                               <ArrowUpRight className="w-4 h-4 text-flame-orange-500 mt-1" />
 
-                            {/* Title */}
+                              {/* Title */}
                               <h4 className="font-bold text-dark-gray-800 text-base mb-1 capitalize">
                                 {service.title}
                               </h4>
                             </div>
-                              {/*  Description */}
+                            {/*  Description */}
                             <p className="text-lg font-normal  text-dark-gray-800 leading-relaxed">
                               {service.description}
                             </p>
@@ -112,23 +110,21 @@ export default function AboutUs() {
                         </div>
                       ))}
                     </div>
-                        {/* Border */}
-                    {i === 0 && (
-                      <div className="w-full h-px bg-gray-100 my-3"></div>
-                    )}
+                    {/* Border */}
+                    {i === 0 && <div className="w-full h-px bg-gray-100 my-3"></div>}
                   </div>
                 );
               })}
             </div>
 
             {/* Get started button */}
-       
-               <div className="relative">
-                <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
+
+            <div className="relative">
+              <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
                 {t("get-started")}
               </Button>
-                <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
-              </div>
+              <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
+            </div>
           </div>
         </div>
       </div>
