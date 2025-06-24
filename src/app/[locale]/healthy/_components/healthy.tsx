@@ -1,8 +1,4 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { CarouselDots } from "@/components/ui/carousel-dots";
 import Card from "@/components/common/card";
@@ -53,8 +49,7 @@ export default function CategoriesCarousel() {
 
           {/* Text */}
           <h2 className="text-2xl md:text-4xl font-baloo uppercase">
-            {t("customized")}{" "}
-            <span className="text-flame-orange-500">{t("meal-plavs")} </span>
+            {t("customized")} <span className="text-flame-orange-500">{t("meal-plavs")} </span>
             {t("for-you")}
           </h2>
         </div>
@@ -88,12 +83,8 @@ export default function CategoriesCarousel() {
                           actionIcon={<ArrowRight />}
                           className="h-[397px] w-full sm:w-[403px]"
                           mode="Exploer"
-                          onClick={() =>
-                            navigate(`/mealsdetails/${meal.idMeal}`)
-                          }
-                          onActionClick={() =>
-                            navigate(`/mealsdetails/${meal.idMeal}`)
-                          }
+                          onClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
+                          onActionClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
                         />
                       ))}
                     </div>
