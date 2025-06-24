@@ -1,5 +1,8 @@
+import { SelectGender } from "@/components/common/select-gender";
 import About from "./_components/about";
 
 export default function AboutPage() {
-  return <About />;
+  return <div>
+    <SelectGender/>
+  </div>
 }
