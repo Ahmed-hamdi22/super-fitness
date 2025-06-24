@@ -11,7 +11,7 @@ export default function TransformWorkout() {
   return (
     <>
       {/* Main section */}
-      <section className="relative py-12 bg-[url('/assets/images/transform-bg.jpg')] bg-center bg-no-repeat h-[720px]">
+      <section className="relative py-12 bg-[url('/assets/images/transform-bg.jpg')] bg-center bg-no-repeat h-[720px] w-full">
 
         {/* Content container */}
         <div className="relative z-10  text-center">

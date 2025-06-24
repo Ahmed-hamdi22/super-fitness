@@ -2,8 +2,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { CarouselDots } from "@/components/ui/carousel-dots";
@@ -108,9 +106,7 @@ export default function MuscleGroupList({
 
           {/* Carousel navigation arrows */}
 
-          <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 rounded-full border border-flame-orange-300 text-flame-orange-500 hover:bg-flame-orange-200" />
-          <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-0 z-10 rounded-full border border-flame-orange-300 text-flame-orange-500 hover:bg-flame-orange-200" />
-        </Carousel>
+          </Carousel>
 
         {/* Dots  */}
         <div className="mt-6 flex justify-center">
