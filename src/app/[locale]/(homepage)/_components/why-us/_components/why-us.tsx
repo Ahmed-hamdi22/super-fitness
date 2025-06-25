@@ -14,8 +14,7 @@ export default function WhyUs() {
               {/* Text */}
               <h2 className="text-2xl md:text-5xl font-baloo uppercase">
                 {t("elevate-fitness-wite-the")}{" "}
-                <span className="text-flame-orange-500">{t("best-way")}</span>{" "}
-                {t("possible")}
+                <span className="text-flame-orange-500">{t("best-way")}</span> {t("possible")}
               </h2>
 
               {/* Text */}
@@ -57,9 +56,7 @@ export default function WhyUs() {
 
                 <div>
                   {/* Text */}
-                  <h4 className="font-bold text-xl mb-2">
-                    {t("results-driven-focus")}
-                  </h4>
+                  <h4 className="font-bold text-xl mb-2">{t("results-driven-focus")}</h4>
 
                   {/* Text */}
                   <p className="text-rubik text-dark-gray-800">
@@ -78,9 +75,7 @@ export default function WhyUs() {
 
                 <div>
                   {/* Text */}
-                  <h4 className="font-bold text-xl mb-2">
-                    {t("state-of-the-art-equipment")}
-                  </h4>
+                  <h4 className="font-bold text-xl mb-2">{t("state-of-the-art-equipment")}</h4>
 
                   {/* Text */}
                   <p className="text-rubik text-dark-gray-800">

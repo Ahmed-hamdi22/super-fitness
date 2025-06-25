@@ -1,8 +1,4 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Card from "@/components/common/card";
 import { IoCloseSharp } from "react-icons/io5";
 import useMealsCategories from "@/lib/apis/meals-categories.api";

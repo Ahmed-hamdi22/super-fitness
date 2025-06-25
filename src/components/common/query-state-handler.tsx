@@ -4,16 +4,10 @@ type QueryStateHandlerProps = {
   children: React.ReactNode;
 };
 
-export default function QueryStateHandler({
-  isLoading,
-  error,
-  children,
-}: QueryStateHandlerProps) {
+export default function QueryStateHandler({ isLoading, error, children }: QueryStateHandlerProps) {
   if (error) {
     return (
-      <div className="h-96 flex items-center justify-center text-red-700">
-        Error loading data
-      </div>
+      <div className="h-96 flex items-center justify-center text-red-700">Error loading data</div>
     );
   }
 

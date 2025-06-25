@@ -2,34 +2,23 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Button } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
-import {
-  Menu,
-  PencilIcon,
-} from "lucide-react";
+import { Menu, PencilIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import BotAIImage from "../../../public/assets/bot.png";
 import { useTranslations } from "use-intl";
 
-  type Message = {
-    role: "user" | "assistant";
-    content: string;
-  };
+type Message = {
+  role: "user" | "assistant";
+  content: string;
+};
 
 export default function Chat() {
-
   // Translations
-  const t = useTranslations()
-
+  const t = useTranslations();
 
   // State
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -39,7 +28,6 @@ export default function Chat() {
 
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
-
 
   // Functions
   const handleSubmit = async (e: React.FormEvent) => {
@@ -51,7 +39,7 @@ export default function Chat() {
       content: input,
     };
 
-    setMessages(prev => [...prev, newUserMessage]);
+    setMessages((prev) => [...prev, newUserMessage]);
     setInput("");
     setIsLoading(true);
 
@@ -65,7 +53,7 @@ export default function Chat() {
         content: text,
       };
 
-      setMessages(prev => [...prev, newBotMessage]);
+      setMessages((prev) => [...prev, newBotMessage]);
     } catch (error) {
       console.error("Error generating content:", error);
     } finally {
@@ -92,14 +80,11 @@ export default function Chat() {
           className="fixed bottom-4 right-4 z-50"
         >
           {!isChatOpen && (
-            <div
-              className="w-[200px] cursor-pointer rounded-xl p-2"
-              onClick={toggleChat}
-            >
+            <div className="w-[200px] cursor-pointer rounded-xl p-2" onClick={toggleChat}>
               <img src={BotAIImage} alt="AI Bot" className="mx-auto mb-2" />
 
               <h1 className="text-center bg-[#FF5E00] text-white rounded-full py-2 px-4 font-bold shadow-[0_0_15px_#FF5E00] transition-transform hover:scale-105">
-                {t('hey-ask-me')}
+                {t("hey-ask-me")}
               </h1>
             </div>
           )}
@@ -115,27 +100,19 @@ export default function Chat() {
             transition={{ duration: 0.2 }}
             className="fixed -bottom-5 -right-5 z-50 w-[95%] md:w-[500px]"
           >
-            <div
-              className="w-[200px] mx-auto cursor-pointer rounded-xl p-2"
-              onClick={toggleChat}
-            >
+            <div className="w-[200px] mx-auto cursor-pointer rounded-xl p-2" onClick={toggleChat}>
               <img src={BotAIImage} alt="AI Bot" className="mx-auto mb-2" />
 
               <h1 className="text-center bg-[#FF5E00] text-white rounded-full py-2 px-4 font-bold shadow-[0_0_15px_#FF5E00] transition-transform hover:scale-105">
-                {t('tap-to-close')}
+                {t("tap-to-close")}
               </h1>
             </div>{" "}
             <Card className="m-10 mt-1">
               <CardHeader className="flex flex-row items-center justify-between space-y-0">
-                <CardTitle className="text-lg font-bold">{t('smart-coach')}</CardTitle>
-                <Button
-                  onClick={toggleChat}
-                  size="sm"
-                  variant="ghost"
-                  className="px-2 py-0"
-                >
+                <CardTitle className="text-lg font-bold">{t("smart-coach")}</CardTitle>
+                <Button onClick={toggleChat} size="sm" variant="ghost" className="px-2 py-0">
                   <Menu className="size-10 text-flame-orange-500" />
-                  <span className="sr-only">{t('close-chat')}</span>
+                  <span className="sr-only">{t("close-chat")}</span>
                 </Button>
               </CardHeader>
 
@@ -143,15 +120,13 @@ export default function Chat() {
                 <ScrollArea className="h-[300px] pr-4">
                   {messages.length === 0 && (
                     <div className="w-full mt-32 text-gray-500 items-center justify-center flex gap-3">
-                      {t('no-messages-yet')}.
+                      {t("no-messages-yet")}.
                     </div>
                   )}
                   {messages.map((message, index) => (
                     <div
                       key={index}
-                      className={`mb-4 ${
-                        message.role === "user" ? "text-right" : "text-left"
-                      }`}
+                      className={`mb-4 ${message.role === "user" ? "text-right" : "text-left"}`}
                     >
                       <div
                         className={`inline-block rounded-lg px-4 py-2 ${
@@ -163,9 +138,7 @@ export default function Chat() {
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           components={{
-                            p: ({ children }) => (
-                              <p className="mb-0">{children}</p>
-                            ),
+                            p: ({ children }) => <p className="mb-0">{children}</p>,
                           }}
                         >
                           {message.content}
@@ -189,7 +162,7 @@ export default function Chat() {
                       value={input}
                       onChange={handleInputChange}
                       className="w-full pl-10" // Add padding-left for icon space
-                      placeholder={t('ask-me-anything')}
+                      placeholder={t("ask-me-anything")}
                     />
                   </div>
                 </form>
