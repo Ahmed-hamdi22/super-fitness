@@ -71,5 +71,7 @@
   "welcome-to-super-fitness": "Welcome to Super Fitness",
   "re-password-is-required": "Re-password is required",
   "send-otp": "Send OTP",
-  "otp-has-been-sent-successfully": "OTP has been sent successfully"
+  "otp-has-been-sent-successfully": "OTP has been sent successfully",
+  "email-is-required": "Email Is Reqired",
+  "email-is-invalid": "Email Is Invalid"
 }

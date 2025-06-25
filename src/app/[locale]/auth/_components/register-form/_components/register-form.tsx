@@ -8,7 +8,8 @@ import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import Heading from "../../../../../../components/common/heading";
 import { useRegistration } from "@/context/auth/register";
-import AuthButton from "@/components/ui/auth-button";
+import AuthButton from "@/components/common/auth-button";
+import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
   // Translations
@@ -31,9 +32,9 @@ export default function RegisterForm() {
         .string()
         .nonempty(t("password-is-required"))
         .min(8, { message: t("password-is-too-short") })
-        .regex(/[A-Z]/, t("password-must-contain-at-least-one-uppercase-letter"))
-        .regex(/[a-z]/, t("password-must-contain-at-least-one-lowercase-letter"))
-        .regex(/[0-9]/, t("password-must-contain-at-least-one-number")),
+        .regex(/[A-Z]/, t("password-must-have-uppercase"))
+        .regex(/[a-z]/, t("password-must-have-lowercase"))
+        .regex(/[0-9]/, t("password-must-have-number")),
       rePassword: z
         .string()
         .nonempty(t("re-password-is-required"))
@@ -193,25 +194,38 @@ export default function RegisterForm() {
                       <Lock className="w-5 h-5 text-soft-gray-400" />
                     </div>
                     <Input
-                      type="password"
+                      type={hidePassword ? "password" : "text"}
                       className="w-full h-full ps-10 border-[1px] placeholder:text-soft-gray-400 text-soft-gray-500 rounded-[20px] border-customGray bg-transparent"
                       placeholder={t("confirm-password")}
                       {...field}
                     />
+                    <div
+                      className="absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center pe-3 cursor-pointer"
+                      onClick={() => setHidePassword(!hidePassword)}
+                    >
+                      {hidePassword ? (
+                        <EyeOff className="w-5 h-5 text-soft-gray-400" />
+                      ) : (
+                        <Eye className="w-5 h-5 text-soft-gray-400" />
+                      )}
+                    </div>
                   </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+          {/* Register button */}
 
-          {/* <Button
-            className="bg-flame-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors w-full "
-            type="submit"
-          >
-            {t("next")}
-          </Button> */}
           <AuthButton label={t("next")} type="submit" />
+
+          {/* Login link */}
+          <div className="text-center text-base text-soft-gray-400 ">
+            {t("already-have-an-account")}{" "}
+            <Link to="/login" className="text-flame-orange-400 text-base font-bold underline">
+              {t("login")}
+            </Link>
+          </div>
         </form>
       </Form>
     </>

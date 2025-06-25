@@ -1,6 +1,6 @@
 import CircularProgress from "@/components/common/circle-progress";
 import Heading from "@/components/common/heading";
-import AuthButton from "@/components/ui/auth-button";
+import AuthButton from "@/components/common/auth-button";
 import { useRegistration } from "@/context/auth/register";
 import { useState } from "react";
 import { useTranslations } from "use-intl";

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import CircularProgress from "./circle-progress";
 import { useTranslations } from "use-intl";
 import Heading from "./heading";
-import AuthButton from "../ui/auth-button";
+import AuthButton from "./auth-button";
 
 type SliderProps = {
   title: string;

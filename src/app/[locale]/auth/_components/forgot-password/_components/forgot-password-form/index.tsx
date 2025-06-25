@@ -15,7 +15,7 @@ import { useForgotPassword } from "@/hooks/auth/use-forgot-password";
 import Heading from "@/components/common/heading";
 import { useEmail } from "@/context/auth/email";
 import { useTranslations } from "use-intl";
-import AuthButton from "@/components/ui/auth-button";
+import AuthButton from "@/components/common/auth-button";
 
 export default function ForgotPasswordForm() {
   // Translation
