@@ -7,13 +7,8 @@ export default function Hero() {
   const t = useTranslations();
 
   return (
-    <div className="relative w-full">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-[url('/assets/bg-form.png')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-white bg-opacity-60 backdrop-blur-2xl" />
-      </div>
-
+    <div className="relative w-full h-full bg-[url('/assets/bg-form.png')] bg-cover bg-center">
+      <div className="absolute inset-0 bg-white bg-opacity-60 backdrop-blur-2xl" />
       {/* Hero Section */}
       <section className="relative z-10 py-8 md:py-16 md:px-8 mx-4">
         <div className=" grid grid-cols-1 md:grid-cols-2  items-center">
