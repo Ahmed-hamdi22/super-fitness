@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { EmailContext } from "./_components/context";
+import { EmailContext } from "./components/context";
 
 export const useEmail = () => {
   const context = useContext(EmailContext);

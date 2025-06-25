@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./app/[locale]/(homepage)/page";
-import AboutPage from "./app/[locale]/about/page";
 import HealthyPage from "./app/[locale]/healthy/page";
-import ClassesPage from "./app/[locale]/classes/page";
 import RootLayout from "./app/layout";
 import NotFound from "./app/[locale]/not-found";
+import Classes from "./app/[locale]/classes/page";
+import AboutPage from "./app/[locale]/about";
 import VerifyOTPForm from "./app/[locale]/auth/_components/forgot-password/_components/verify-otp-form";
 import LoginForm from "./app/[locale]/auth/_components/login-form";
 import AuthLayout from "./app/[locale]/auth/layout";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
       { path: "healthy", element: <HealthyPage /> },
-      { path: "classes", element: <ClassesPage /> },
+      { path: "classes", element: <Classes /> },
       {
         element: <AuthLayout />,
         children: [

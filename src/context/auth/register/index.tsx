@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { RegistrationContext } from "./_components/context";
+import { RegistrationContext } from "./components/context";
 
 export const useRegistration = () => {
   const context = useContext(RegistrationContext);
