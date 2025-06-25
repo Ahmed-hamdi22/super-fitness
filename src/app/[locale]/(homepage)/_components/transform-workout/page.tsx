@@ -27,7 +27,7 @@ export default function TransformWorkout() {
             </div>
 
             {/* Main headline */}
-            <TransformTitle className="text-dark-gray-800" />
+            <TransformTitle />
             {/* Tabs */}
             <div className="">
               <TabFitness />
