@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
-import ExercisesByLevel from "./Exercises-ui";
+import ExercisesByLevel from "./exercises-ui";
 
 export default function ExercisesPage() {
   // Params
   const { primeMoverMuscleId } = useParams<{ primeMoverMuscleId: string }>();
-  
+  console.log("primeMoverMuscleId:", primeMoverMuscleId);
+
   return (
     <div>
-      {/* Exercise page */}
+      {/* Exercise  */}
       <ExercisesByLevel primeMoverMuscleId={primeMoverMuscleId!} />
     </div>
   );

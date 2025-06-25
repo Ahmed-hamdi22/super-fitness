@@ -38,4 +38,4 @@ declare type ExerciesResponse =
   primary_exercise_classification: string;
   short_youtube_demonstration_link: string;
   in_depth_youtube_explanation_link: string | null;
-}
+}& DatabaseFields

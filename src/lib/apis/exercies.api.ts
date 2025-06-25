@@ -1,9 +1,6 @@
 import axios from "axios";
 
-export const getAllExercies = async (
-  primeMoverMuscleId: string,
-  difficultyLevelId: string
-) => {
+export const getAllExercies = async (primeMoverMuscleId: string, difficultyLevelId: string) => {
   const response = await axios.get(
     `${import.meta.env.VITE_API_URL}/exercises/by-muscle-difficulty`,
     {
