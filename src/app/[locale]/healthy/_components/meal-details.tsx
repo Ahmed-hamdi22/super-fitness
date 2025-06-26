@@ -6,9 +6,12 @@ import useMealDetails from "@/lib/apis/meal-details.api";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function Modal() {
-  const { id } = useParams<{ id: string }>();
+  // Navigation
   const navigate = useNavigate();
 
+  const { id } = useParams<{ id: string }>();
+
+  // Hooks
   const { isLoading, data, error } = useMealDetails(id || "");
   const { categories, selectedCategory, setSelectedCategory, limitedMeals } =
     useCategoriesCarousel();
@@ -17,7 +20,6 @@ export default function Modal() {
 
   return (
     <div className="flex gap-6">
-     
       <div className="w-[409px] rounded-3xl border-2 border-darkGray3 min-h-screen px-3 py-6">
         {/* Levels */}
         <div className="flex flex-wrap gap-4 mb-4">
@@ -28,6 +30,7 @@ export default function Modal() {
           />
         </div>
 
+        {/* Meals */}
         <QueryStateHandler isLoading={isLoading} error={error}>
           <div className="space-y-4 mt-10">
             {limitedMeals.map((meal) => (
@@ -49,9 +52,11 @@ export default function Modal() {
           </div>
         </QueryStateHandler>
       </div>
+
       <div className="flex-1 ">
         <QueryStateHandler isLoading={isLoading} error={error}>
           {meal && (
+            // Image
             <div className="relative w-full h-[340px] mb-6 rounded-3xl overflow-hidden">
               <img
                 src={meal.strMealThumb}
@@ -59,13 +64,14 @@ export default function Modal() {
                 className="w-full max-h-full object-cover "
               />
 
-              
               <div className="absolute inset-0 flex flex-col  gap-4 justify-center items-center px-6 text-white">
                 <h1 className="text-5xl font-medium mb-2">{meal.strMeal}</h1>
+                {/* Description */}
                 <p className="text-gray-200 text-lg font-normal mb-4 max-w-2xl ">
                   Lorem ipsum dolor sit amet consectetur. Tempus volutpat Ut nisl morbi.
                 </p>
 
+                {/* Nutrition */}
                 <div className="flex gap-6 mb-2">
                   <div className="text-center border border-soft-gray-400 w-16 h-14 flex flex-col justify-center items-center rounded-3xl">
                     <span className="text-base text-gray-200">100 kC</span>
@@ -88,12 +94,12 @@ export default function Modal() {
             </div>
           )}
         </QueryStateHandler>
-        
+
         {/* Ingredients */}
         <h2 className="text-2xl font-bold mb-3">Ingredients</h2>
         <div className="grid grid-cols-2  gap-x-12 gap-y-2 text-sm">
           {extractIngredients(meal).map((item, i) => (
-            <IngredientItem key={i} ingredient={item.ingredient} measure={item.measure}  />
+            <IngredientItem key={i} ingredient={item.ingredient} measure={item.measure} />
           ))}
         </div>
       </div>
