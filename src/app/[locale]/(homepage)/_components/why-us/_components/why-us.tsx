@@ -5,7 +5,7 @@ export default function WhyUs() {
   const t = useTranslations();
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-16 py-5 bg-light-silver-300 dark:bg-dark-gray-800">
+    <div className="w-full px-4 sm:px-6 lg:px-16 py-5 bg-light-silver-300 dark:bg-dark-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left section */}

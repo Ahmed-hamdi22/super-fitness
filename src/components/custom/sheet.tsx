@@ -49,7 +49,7 @@ export function Sheet({ isOpen, onClose, children }: SheetProps) {
           >
             <div className="flex min-h-full items-stretch justify-end text-center">
               <div
-                className="relative transform text-left shadow-xl transition-all w-full bg-white bg-opacity-60 dark:bg-dark-gray-800 dark:bg-opacity-60 backdrop-blur-2xl"
+                className="relative transform text-left shadow-xl transition-all w-full bg-white bg-opacity-60 dark:bg-dark-gray-900 dark:bg-opacity-60 backdrop-blur-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 {children}

@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <>
-    <header className="w-4/5 mx-auto flex justify-between items-center bg-light-silver-300/50 dark:bg-dark-gray-800/50 backdrop-blur-2xl">
+    <header className="w-4/5 mx-auto flex justify-between items-center bg-light-silver-300/50 dark:bg-dark-gray-900/50 backdrop-blur-2xl">
       <Link to={`/`}>
         <img src={LogoImg} className="w-[100px] h-[100px]" />
       </Link>

@@ -20,7 +20,7 @@ export default function SettingsDialog({
     // Dialog
     <Dialog open={open} onOpenChange={onOpenChange}>
       {/* Dialog content */}
-      <DialogContent className="bg-dark-gray-800 border-none">
+      <DialogContent className="bg-dark-gray-900 border-none">
         {/* Setting form */}
         <SettingForm
           settingType={settingType}

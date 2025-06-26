@@ -29,7 +29,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="w-full bg-light-silver-300/95 dark:bg-dark-gray-800 backdrop-blur-[86px] font-baloo ">
+    <section className="w-full bg-light-silver-300/95 dark:bg-dark-gray-900 backdrop-blur-[86px] font-baloo ">
       <div className="mx-auto px-4 sm:px-6 mb-32 md:mb-0 lg:py-8 max-w-screen-xl">
         {/*  Grid  */}
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 lg:gap-y-0 gap-y-12 items-center">

@@ -8,7 +8,7 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-full bg-[url('/src/assets/bg-form.png')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-light-silver-300 bg-opacity-60 dark:bg-dark-gray-800 dark:bg-opacity-60  backdrop-blur-2xl" />
+      <div className="absolute inset-0 bg-light-silver-300 bg-opacity-60 dark:bg-dark-gray-900 dark:bg-opacity-60  backdrop-blur-2xl" />
       {/* Hero Section */}
       <section className="relative z-10 py-8 md:py-16 md:px-8 mx-4">
         <div className=" grid grid-cols-1 md:grid-cols-2  items-center">

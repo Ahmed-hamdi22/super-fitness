@@ -15,7 +15,7 @@ export default function TransformWorkout() {
         {/* Content container */}
         <div className="relative z-10  text-center">
           {/* Header content */}
-          <div className="bg-light-silver-300/50 dark:bg-dark-gray-800 h-[380px] backdrop-blur-sm py-16 px-8 ">
+          <div className="bg-light-silver-300/50 dark:bg-dark-gray-900 h-[380px] backdrop-blur-sm py-16 px-8 ">
             {/* Workoutslogo */}
             <div className="absolute -top-6 left-0 right-0 flex justify-center items-center gap-2 mb-8 ">
               <WorkoutsLogo text={t("about-us-title")} />

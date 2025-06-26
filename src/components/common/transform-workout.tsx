@@ -120,7 +120,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
             onDotClick={(index) => api?.scrollTo(index)}
             dotClassName={(index) =>
               `w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-flame-orange-500 w-5" : "dark:bg-soft-gray-400 bg-dark-gray-800"
+                index === currentIndex ? "bg-flame-orange-500 w-5" : "dark:bg-soft-gray-400 bg-dark-gray-900"
               }`
             }
           />

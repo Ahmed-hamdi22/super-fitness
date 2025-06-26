@@ -22,7 +22,7 @@ export default function HealthyNutrltions() {
         <div className="w-full h-full bg-healthy-nutrltions bg-cover bg-center" />
 
         {/* Layout */}
-        <div className="absolute top-14 left-0 right-0 h-3/5 bg-light-silver-300/50 dark:bg-dark-gray-800/50 backdrop-blur-[86px]" />
+        <div className="absolute top-14 left-0 right-0 h-3/5 bg-light-silver-300/50 dark:bg-dark-gray-900/50 backdrop-blur-[86px]" />
       </div>
 
       {/* Content */}

@@ -126,7 +126,7 @@ export default function MainSettings() {
               {item.toggle !== undefined && (
                 <div className="mt-2">
                   <div
-                    className={`w-8 h-5 rounded-full flex justify-start items-center ${item.toggle ? "bg-flame-orange-500" : "bg-dark-gray-800"} relative transition-colors`}
+                    className={`w-8 h-5 rounded-full flex justify-start items-center ${item.toggle ? "bg-flame-orange-500" : "bg-dark-gray-900"} relative transition-colors`}
                   >
                     <div
                       className={`w-4 h-4 bg-white rounded-full absolute transition-transform ${item.toggle ? "translate-x-3 rtl:-translate-x-3" : "translate-x-0.5 rtl:-translate-x-0.5"}`}

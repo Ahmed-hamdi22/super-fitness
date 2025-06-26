@@ -11,7 +11,7 @@ export default function Classes() {
   return (
     <>
       {/* Main section */}
-      <section className="bg-gray- bg-opacity-50 backdrop-blur-2xl relative py-12">
+      <section className="bg-light-silver-300/50 dark:bg-dark-gray-900/50 backdrop-blur-2xl relative py-12">
         {/* Content container */}
         <div className="relative z-10  text-center">
           {/* Header content */}

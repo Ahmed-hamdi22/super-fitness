@@ -59,7 +59,7 @@ export default function Card({
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 w-full backdrop-blur-3xl bg-light-silver-300/50 dark:bg-dark-gray-800/50 px-6 py-4">
+      <div className="absolute bottom-0 left-0 w-full backdrop-blur-3xl bg-light-silver-300/50 dark:bg-dark-gray-900/50 px-6 py-4">
         {/* Title */}
         <h3 className="text-lg font-bold text-dark-gray-800 dark:text-light-silver-300 uppercase tracking-wide">{title}</h3>
 

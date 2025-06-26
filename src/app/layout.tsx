@@ -12,7 +12,7 @@ export default function RootLayout() {
       {/* Providers */}
       <Providers>
         {/* Main content */}
-        <main className="bg-transparent">
+        <main className="">
 
         {/* Header */}
         <Header />
