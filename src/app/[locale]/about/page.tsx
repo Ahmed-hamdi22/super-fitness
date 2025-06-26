@@ -1,3 +1,4 @@
+import { SelectGender } from "@/components/common/select-gender";
 import Slider from "@/components/common/slider";
 
 export default function AboutPage() {
@@ -15,6 +16,8 @@ export default function AboutPage() {
         step={1}
         windowSize={7}
       />
+          <SelectGender/>
+
     </div>
   );
 }

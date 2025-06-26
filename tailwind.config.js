@@ -92,11 +92,11 @@ const config = {
 					700: "#B93000",
 					800: "#8F2400",
 					900: "#661A00",
-				},
-				"flame-orange-alpha": {
+					},
+					"flame-orange-alpha": {
 					50: "#FF410033",
-				},
-				"soft-gray": {
+					},
+					"soft-gray": {
 					50: "#F5F5F5",
 					100: "#EDEDED",
 					200: "#E5E5E5",
@@ -124,10 +124,12 @@ const config = {
 					800: "#242424",
 					900: "#232425",
 				},
+				"darkGray1": "#242424",
+				"darkGray2": "#232425",
+				"transparentOrange": "#FF6A0080",
 			}
 		}
 	},
 	plugins: [tailwindcssAnimate, require("tailwindcss-animate")],
 }
 export default config;
-

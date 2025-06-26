@@ -27,7 +27,7 @@ export default function GoalForm() {
       ...prev,
       goal: selectedOption,
     }));
-    setCurrentStep(2);
+    setCurrentStep(6);
   };
 
   return (

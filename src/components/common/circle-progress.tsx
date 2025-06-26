@@ -1,5 +1,10 @@
-function CircularProgress({ step }: { step: number }) {
-  const totalSteps = 6;
+function CircularProgress({
+  step,
+}: {
+  step: number;
+}) {
+  
+  const totalSteps = 6
   const radius = 30;
   const stroke = 3;
   const normalizedRadius = radius - stroke / 2;
@@ -27,7 +32,7 @@ function CircularProgress({ step }: { step: number }) {
           r={normalizedRadius}
           cx={radius}
           cy={radius}
-          transform={`rotate(-90 ${radius} ${radius})`}
+          transform={`rotate(-90 ${radius} ${radius})`} 
           style={{ transition: "stroke-dashoffset 0.5s ease" }}
         />
       </svg>

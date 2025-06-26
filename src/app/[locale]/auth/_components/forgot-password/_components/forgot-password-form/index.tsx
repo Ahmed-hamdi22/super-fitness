@@ -64,7 +64,6 @@ export default function ForgotPasswordForm() {
           <div className="text-center  mb-4">
             <Heading headTitle={t("forgot-password")} />
           </div>
-
           {/* Forgot password form */}
           <form
             onSubmit={emailForm.handleSubmit(handleSubmit)}

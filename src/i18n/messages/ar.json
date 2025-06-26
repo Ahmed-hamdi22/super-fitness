@@ -48,7 +48,6 @@
   "gain-more-flexible": "كسب أكثر مرونة",
   "learn-the-basic": "تعلم الأساسي",
   "what-is-your-goal": "ما هو هدفك؟",
-  "next": "التالي",
   "rookie": "الصاعد",
   "beginner": "مبتدئ",
   "intermediate": "متوسط",
@@ -72,5 +71,10 @@
   "welcome-to-super-fitness": "مرحبًا بك في Super Fitness",
   "re-password-is-required": "إعادة تمرير الكلمات المطلوبة",
   "send-otp": "إرسال OTP",
-  "otp-has-been-sent-successfully": "تم إرسال OTP بنجاح"
+  "otp-has-been-sent-successfully": "تم إرسال OTP بنجاح",
+  "next": "التالي",
+  "female": "أنثى",
+  "male": "ذكر",
+  "tell-us-about-yourself": "أخبرنا عن نفسك",
+  "we-need-to-know-your-gender": "نحن بحاجة إلى معرفة جنسك"
 }

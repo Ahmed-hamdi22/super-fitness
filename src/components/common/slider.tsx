@@ -3,6 +3,7 @@ import { useSwipeable } from "react-swipeable";
 import CircularProgress from "./circle-progress";
 import { useTranslations } from "use-intl";
 import { Button } from "../ui/button";
+import { useRegistration } from "@/context/auth/register";
 
 type SliderProps = {
   title: string;
@@ -11,6 +12,7 @@ type SliderProps = {
   max: number;
   initialValue: number;
   windowSize: number;
+  nextStep:number;
   measure: string;
 };
 
@@ -20,11 +22,15 @@ const Slider = ({
   measure,
   min = 1,
   max = 80,
+  nextStep,
   initialValue = 40,
   windowSize = 7,
 }: SliderProps) => {
   const t = useTranslations();
 
+      const { setCurrentStep } = useRegistration();
+
+  
   const [selected, setSelected] = useState(initialValue);
   const [translateX, setTranslateX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -82,9 +88,14 @@ const Slider = ({
     trackMouse: true, // Enable mouse events for dragging
   });
 
+  const handleSubmit = () => {
+    console.log(selected)
+    setCurrentStep(nextStep)
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="bg-gray-800/90 backdrop:blur-sm rounded-3xl p-8 w-full max-w-md">
+      <div className="rounded-3xl p-8 w-full max-w-md">
         {/* Progress indicator */}
         <CircularProgress step={step} />
 
@@ -151,7 +162,7 @@ const Slider = ({
 
         {/* Next button */}
         <Button
-          onClick={() => console.log(selected)}
+          onClick={handleSubmit}
           className="bg-flame-orange-500 w-full rounded-full text-white block -mt-8 hover:bg-flame-orange-700"
         >
           {t("next")}

@@ -46,7 +46,6 @@
   "gain-more-flexible": "Gain More Flexible",
   "learn-the-basic": "Learn The Basic",
   "what-is-your-goal": "what is your goal?",
-  "next": "Next",
   "rookie": "Rookie",
   "beginner": "Beginner",
   "intermediate": "Intermediate",
@@ -73,5 +72,10 @@
   "send-otp": "Send OTP",
   "otp-has-been-sent-successfully": "OTP has been sent successfully",
   "email-is-required": "Email Is Reqired",
-  "email-is-invalid": "Email Is Invalid"
+  "email-is-invalid": "Email Is Invalid",
+  "next": "Next",
+  "female": "Female",
+  "male": "Male",
+  "tell-us-about-yourself": "Tell us about yourself!",
+  "we-need-to-know-your-gender": "We need to know your gender"
 }
