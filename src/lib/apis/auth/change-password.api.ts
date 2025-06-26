@@ -4,7 +4,7 @@ import axios from "axios";
 export async function changePassword(token: string, fields: ChangePasswordFields) {
   const apiUrl = `${API_URL}/auth/change-password`;
 
-  const response = await axios.put(apiUrl, fields, {
+  const response = await axios.patch(apiUrl, fields, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,

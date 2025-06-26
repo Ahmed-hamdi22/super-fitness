@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import LogoImg from "../../../public/assets/logo.png";
+import LogoImg from "@/assets/logo.png";
 import { NavLink } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { useTranslations } from "use-intl";
 import { ArrowUpRight, Menu, User } from "lucide-react";
 import {
@@ -11,23 +11,25 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import AccountPanel from "../features/account-panel/components";
+import { useState } from "react";
+import AccountModal from "../../features/account";
+import { Sheet } from "../../custom/sheet";
 
 export default function Header() {
   const t = useTranslations();
-
+  const [isAccountSheetOpen, setIsAccountSheetOpen] = useState(false);
   const user = true;
 
   return (
-    <header className="w-4/5 mx-auto flex justify-between items-center">
+    <>
+    <header className="w-4/5 mx-auto flex justify-between items-center bg-light-silver-300/50 dark:bg-dark-gray-800/50 backdrop-blur-2xl">
       <Link to={`/`}>
         <img src={LogoImg} className="w-[100px] h-[100px]" />
       </Link>
       <div className="hidden md:flex gap-5 text-lg">
         <span>
           <NavLink
-            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-dark-gray-800 dark:text-light-silver-300")}
             to={`/`}
           >
             {t("home")}
@@ -35,7 +37,7 @@ export default function Header() {
         </span>
         <span>
           <NavLink
-            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-dark-gray-800 dark:text-light-silver-300")}
             to={`/about`}
           >
             {t("about")}
@@ -43,7 +45,7 @@ export default function Header() {
         </span>
         <span>
           <NavLink
-            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-dark-gray-800 dark:text-light-silver-300")}
             to={`/classes`}
           >
             {t("classes")}
@@ -51,7 +53,7 @@ export default function Header() {
         </span>
         <span>
           <NavLink
-            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
+            className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-dark-gray-800 dark:text-light-silver-300")}
             to={`/healthy`}
           >
             {t("healthy")}
@@ -60,16 +62,13 @@ export default function Header() {
       </div>
       <div className="hidden md:block">
         {user ? (
-          <>
-            <Sheet>
-              <SheetTrigger>
-                <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
-              </SheetTrigger>
-              <SheetContent className="bg-white bg-opacity-60 dark:bg-darkGray1 dark:bg-opacity-60 backdrop-blur-2xl h-screen">
-                <AccountPanel />
-              </SheetContent>
-            </Sheet>
-          </>
+          // Will be used to open account sheet
+          <button 
+          onClick={() => setIsAccountSheetOpen(true)}
+          className="focus:outline-none"
+        >
+          <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
+        </button>
         ) : (
           <div className="flex gap-3">
             <div className="flex">
@@ -134,5 +133,10 @@ export default function Header() {
         </DropdownMenu>
       </div>
     </header>
+
+    <Sheet isOpen={isAccountSheetOpen} onClose={() => setIsAccountSheetOpen(false)}>
+        <AccountModal />
+      </Sheet>
+    </>
   );
 }

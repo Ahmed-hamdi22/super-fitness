@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "@/components/common/header";
-import Footer from "@/components/common/footer";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 import Chat from "@/components/common/gemini-ai";
 import AutoScrollBanner from "@/components/common/auto-scroll";
 import { Toaster } from "@/components/ui/sonner";
@@ -11,11 +11,12 @@ export default function RootLayout() {
     <>
       {/* Providers */}
       <Providers>
+        {/* Main content */}
+        <main className="bg-transparent">
+
         {/* Header */}
-        <main className="bg-white">
         <Header />
 
-        {/* Main content */}
           {/* Outlet */}
           <Outlet />
 

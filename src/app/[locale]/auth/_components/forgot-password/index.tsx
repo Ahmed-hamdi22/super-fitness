@@ -11,7 +11,7 @@ export default function ForgotPasswordPage() {
 
   // Reset step on mount
   useEffect(() => {
-    setCurrentStep(1);
+    setCurrentStep(2);
   }, [setCurrentStep]);
 
   // Functions

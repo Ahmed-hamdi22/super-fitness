@@ -8,7 +8,7 @@ import { ScrollArea } from "../ui/scroll-area";
 import { Menu, PencilIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import BotAIImage from "../../../public/assets/bot.png";
+import BotAIImage from "@/assets/bot.png";
 import { useTranslations } from "use-intl";
 
 type Message = {

@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import LogoImg from "../../../public/assets/logo.png";
+import LogoImg from "@/assets/logo.png";
 import { useTranslations } from "use-intl";
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
   const t = useTranslations();
 
   return (
-    <footer className="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-4 gap-5">
+    <footer className="w-4/5 text-dark-gray-800 dark:text-light-silver-300 mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 bg-light-silver-300 dark:bg-dark-gray-900 ">
       {/* Logo & Message */}
       <div className="flex flex-col md:items-start">
         <img src={LogoImg} className="w-[87px]" />
@@ -21,14 +21,14 @@ const Footer = () => {
         <h3 className="text-lg font-bold mb-4">{t("contact-us")}</h3>
         <ul className="space-y-3">
           <li className="flex gap-3 items-center">
-            <div className="w-12 h-12 rounded-full border flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full border dark:border-light-silver-300 flex items-center justify-center">
               <Phone />
             </div>
             <h1>+91 123 456 789</h1>
           </li>
 
           <li className="flex gap-3 items-center">
-            <div className="w-12 h-12 rounded-full border flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full border dark:border-light-silver-300 flex items-center justify-center">
               <Mail />
             </div>
             <h1>info@gmail.com</h1>

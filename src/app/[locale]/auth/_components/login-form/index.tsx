@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Lock, Mail, Eye, EyeOff } from "lucide-react";
 import { useTranslations } from "use-intl";
 import Heading from "@/components/common/heading";
-import { useLogin } from "@/hooks/use-login";
+import { useLogin } from "@/hooks/auth/use-login";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import AuthButton from "@/components/ui/auth-button";

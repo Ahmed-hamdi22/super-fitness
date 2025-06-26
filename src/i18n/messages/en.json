@@ -93,11 +93,11 @@
   "last-name-is-required": "last name is required",
   "enter-your-email": "Enter Your Email",
   "password-is-required": "Password is required",
-  "password-is-too-short": "Password is too short",
-  "password-must-have-uppercase": "password must have uppercase",
-  "password-must-have-lowercase": "password must have lowercase",
-  "password-must-have-number": "password must have number",
-  "password-must-have-symbol": "password must have symbol",
+  "password-is-too-short": "Password is too short (Minimum: 8)",
+  "password-must-have-uppercase": "Password must contain at least one uppercase letter",
+  "password-must-have-lowercase": "Password must contain at least one lowercase letter",
+  "password-must-have-number": "Password must contain at least one number",
+  "password-must-have-symbol": "Password must contain at least one number symbol",
   "new-password": "New Password",
   "create-new-password": "Create New Password",
   "new-password-is-created": "New password is created",
@@ -161,5 +161,10 @@
   "what-is-your-level": "what is your level?",
   "expert": "Expert",
   "master": "master",
-  "logout-failed": "Logout Failed"
+  "logout-failed": "Logout Failed",
+  "settings": "Settings",
+  "your-password-has-been-changed-successfully": "Your password has been changed successfully!",
+  "change-your-password": "Change Your Password",
+  "current-password": "Current Password",
+  "new-passowrd": "New Passowrd"
 }

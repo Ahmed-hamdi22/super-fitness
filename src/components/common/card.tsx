@@ -59,9 +59,9 @@ export default function Card({
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 w-full backdrop-blur-3xl bg-white/30 px-6 py-4">
+      <div className="absolute bottom-0 left-0 w-full backdrop-blur-3xl bg-light-silver-300/50 dark:bg-dark-gray-800/50 px-6 py-4">
         {/* Title */}
-        <h3 className="text-lg font-bold text-black uppercase tracking-wide">{title}</h3>
+        <h3 className="text-lg font-bold text-dark-gray-800 dark:text-light-silver-300 uppercase tracking-wide">{title}</h3>
 
         <div className="mt-2">
           <button onClick={handleActionClick} className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function Card({
 
           {/* only shown if not in explorer mode */}
           {!isExplorer && isExpanded && description && (
-            <p className="mt-2 text-sm text-white bg-black/60 p-2 rounded-md">{description}</p>
+            <p className="mt-2 text-sm text-light-silver-300 bg-black/60 p-2 rounded-md">{description}</p>
           )}
         </div>
       </div>

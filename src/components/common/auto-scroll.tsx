@@ -4,8 +4,8 @@ const AutoScrollBanner = () => {
   const t = useTranslations();
 
   return (
-    <div className="overflow-hidden whitespace-nowrap bg-orange-600 py-3">
-      <div className="inline-block animate-scroll text-white font-semibold text-sm">
+    <div className="overflow-hidden whitespace-nowrap bg-flame-orange-500 h-20 flex justify-center items-center">
+      <div className="inline-block animate-scroll text-white font-bold text-2xl">
         <span className="mx-4">{t("classes")}</span> ✦
         <span className="mx-4">{t("outdoor-and-online-trainers")}</span> ✦
         <span className="mx-4">{t("personal-training")}</span> ✦

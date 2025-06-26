@@ -158,5 +158,7 @@
   "advanced": "متقدم",
   "what-is-your-level": "ما هو مستواك؟",
   "expert": "خبير",
-  "master": "متقن"
+  "master": "متقن",
+  "your-password-has-been-changed-successfully": "تم تغيير كلمة المرور الخاصة بك بنجاح!",
+  "change-your-password": "تغيير كلمة المرور الخاصة بك"
 }

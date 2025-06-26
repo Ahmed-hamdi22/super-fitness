@@ -10,6 +10,8 @@ export default function App() {
     <main className="">
       {/* Hero */}
       <HeroPage />
+
+      {/* Auto Scroll */}
       <AutoScrollBanner />
 
       {/* About us */}

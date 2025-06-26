@@ -7,47 +7,47 @@ export default function Hero() {
   const t = useTranslations();
 
   return (
-    <div className="relative w-full h-full bg-[url('/assets/bg-form.png')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-white bg-opacity-60 backdrop-blur-2xl" />
+    <div className="relative w-full h-full bg-[url('/src/assets/bg-form.png')] bg-cover bg-center">
+      <div className="absolute inset-0 bg-light-silver-300 bg-opacity-60 dark:bg-dark-gray-800 dark:bg-opacity-60  backdrop-blur-2xl" />
       {/* Hero Section */}
       <section className="relative z-10 py-8 md:py-16 md:px-8 mx-4">
         <div className=" grid grid-cols-1 md:grid-cols-2  items-center">
           <div className="">
             {/* Title */}
-            <h1 className="text-[24px] md:text-5xl lg:text-6xl font-bold uppercase font-baloo leading-[120%] tracking-normal">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl text-dark-gray-800 dark:text-light-silver-300 font-bold uppercase font-baloo tracking-normal">
               {t.rich("hero-title", {
                 span: (value) => <span className="text-flame-orange-500">{value}</span>,
                 br: () => <br />,
               })}
             </h1>
             {/* Description */}
-            <p className="my-10 ps-4 text-sm md:text-base lg:text-lg rlt:text-r border-s-4 border-flame-orange-500 ">
+            <p className="my-10 text-dark-gray-800 mr-32 dark:text-light-silver-300 ps-4 text-sm md:text-base lg:text-lg rlt:text-r border-s-4 border-flame-orange-500 ">
               {t("hero-discription")}
             </p>
 
             {/* Statistics */}
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 text-left lg:text-center rtl:text-right">
+            <div className="mt-4 capitalize text-dark-gray-800 dark:text-light-silver-300 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 text-left lg:text-center rtl:text-right">
               <div>
-                <p className="text-xl  text-dark-gray-800 font-bold">{t("hero-active-members")}</p>
-                <p className="text-lg  text-dark-gray-800 capitalize">
+                <p className="text-xl font-bold font-inter">{t("hero-active-members")}</p>
+                <p className="text-lg font-rubik">
                   {t("hero-active-members-discription")}
                 </p>
               </div>
               <div>
-                <p className="text-xl  text-dark-gray-800 font-bold">
+                <p className="text-xl font-bold  font-inter">
                   {t("hero-certified-trainers")}
                 </p>
 
-                <p className="text-lg  text-dark-gray-800 capitalize">
+                <p className="text-lg font-rubik">
                   {t("hero-certified-trainers-discription")}
                 </p>
               </div>
               <div>
-                <p className="text-xl  text-dark-gray-800 font-bold">
+                <p className="text-xl font-bold  font-inter">
                   {t("hero-years-experience")}
                 </p>
 
-                <p className="text-lg  text-dark-gray-800 capitalize">
+                <p className="text-lg font-rubik">
                   {t("hero-years-experience-discription")}
                 </p>
               </div>
@@ -56,18 +56,18 @@ export default function Hero() {
             {/* Get start btn */}
             <div className="mt-8 flex space-y-2 items-center">
               <div className="relative">
-                <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
+                <Button className="w-36 h-12 text-base rounded-full me-8 text-light-silver-300 bg-flame-orange-500 relative capitalize">
                   {t("get-started")}
                 </Button>
-                <ArrowUpRight className="absolute top-1 p-[2px] right-4 rtl:-right-4 ml-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
+                <ArrowUpRight className="absolute top-1 p-1 right-4 rtl:-right-4 ml-2 w-7 h-7 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
               </div>
-              {/* Explore classes btn */}
 
+              {/* Explore classes btn */}
               <div className="relative">
-                <Button className="w-36 rounded-2xl border-2 border-flame-orange-500 relative text-flame-orange-500 bg-white">
+                <Button className="w-36 h-12 text-base rounded-full border-2 border-flame-orange-500 relative text-flame-orange-500 bg-transparent">
                   {t("explore-classes")}
                 </Button>
-                <ArrowUpRight className="absolute top-1 p-[2px] -right-4 rtl:-right-4 ml-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
+                <ArrowUpRight className="absolute top-1 p-1 -right-4 rtl:-right-4 ml-2 w-7 h-7 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Hero() {
           {/* Image */}
           <div className="flex justify-center md:justify-end  lg:mt-0 mt-8">
             <img
-              src="/assets/images/hero.png"
+              src="/src/assets/images/hero.png"
               alt="Trainer in gym"
               className="w-[343px] h-[528px] opacity-90 md:w-[460px] md:h-[650px]"
             />

@@ -8,6 +8,7 @@ import Heading from "@/components/common/heading";
 import { useEmail } from "@/context/auth/email";
 import { useForgotPassword } from "@/hooks/auth/use-forgot-password";
 import AuthButton from "@/components/ui/auth-button";
+import { Button } from "@/components/ui/button";
 
 export default function VerifyOTPForm() {
   // Translations
@@ -114,14 +115,14 @@ export default function VerifyOTPForm() {
             </p>
 
             {/* NOTE: will resend when merging with forgot password */}
-            <button
+            <Button
               onClick={handleResendOTP}
               type="button"
               className="text-flame-orange-500 font-bold hover:text-flame-orange-400 underline transition-colors text-sm"
               disabled={isPending}
             >
               {t("resend-code")}
-            </button>
+            </Button>
           </div>
         </form>
       </div>

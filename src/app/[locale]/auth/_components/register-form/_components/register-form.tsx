@@ -56,6 +56,7 @@ export default function RegisterForm() {
     },
   });
 
+  // Functions
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setFormData((prev) => ({
       ...prev,

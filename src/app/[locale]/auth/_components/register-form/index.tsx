@@ -11,11 +11,11 @@ export default function RegisterPage() {
     switch (currentStep) {
       case 0:
         return <RegisterForm />;
+      // case 1:
+      //   return <AboutPage />;
       case 1:
-        return <AboutPage />;
-      case 2:
         return <GoalForm />;
-      case 3:
+      case 2:
         return <LevelForm />;
       // case 3:
       //   return <Step4Age />;

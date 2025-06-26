@@ -29,7 +29,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="w-fullbg-white/95 backdrop-blur-[86px]  mb-14 font-baloo ">
+    <section className="w-full bg-light-silver-300/95 dark:bg-dark-gray-800 backdrop-blur-[86px] font-baloo ">
       <div className="mx-auto px-4 sm:px-6 mb-32 md:mb-0 lg:py-8 max-w-screen-xl">
         {/*  Grid  */}
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 lg:gap-y-0 gap-y-12 items-center">
@@ -38,7 +38,7 @@ export default function AboutUs() {
             {/* Big image */}
             <div>
               <img
-                src="/assets/images/trainer-1.png"
+                src="/src/assets/images/trainer-1.png"
                 alt="Trainer 1"
                 className="w-[203.41px] h-[307.96px] rounded-[10.23px] md:w-[300px] md:h-[540px] md:rounded-xl"
               />
@@ -46,12 +46,12 @@ export default function AboutUs() {
 
             {/* Small images */}
             <img
-              src="/assets/images/trainer-2.png"
+              src="/src/assets/images/trainer-2.png"
               alt="Trainer 2"
               className="w-[126.14px] h-[106.84px] rounded-[10.23px] mt-10 md:w-56 md:h-44 md:rounded-xl"
             />
             <img
-              src="/assets/images/trainer-3.png"
+              src="/src/assets/images/trainer-3.png"
               alt="Trainer 3"
               className="w-[200.57px] h-[256.93px] md:w-[345px] md:h-[400px] rounded-xl absolute top-40 md:top-60 -end-1 rtl:end-0 z-10"
             />
@@ -72,13 +72,13 @@ export default function AboutUs() {
             </div>
 
             {/*  About us description */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 mb-4 leading-[1.2] ">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 dark:text-light-silver-300 mb-4 leading-[1.2] ">
               {t.rich("fitness-headline", {
                 span: (v) => <span className="text-flame-orange-500">{v}</span>,
               })}
             </h2>
 
-            <p className="text-dark-gray-800 mb-12  pt-5 text-sm sm:text-base leading-10 font-rubik">
+            <p className="text-dark-gray-800 dark:text-light-silver-300 mb-12  pt-5 text-sm sm:text-base leading-10 font-rubik">
               {t("services-description")}
             </p>
 
@@ -99,12 +99,12 @@ export default function AboutUs() {
                               <ArrowUpRight className="w-4 h-4 text-flame-orange-500 mt-1" />
 
                               {/* Title */}
-                              <h4 className="font-bold text-dark-gray-800 text-base mb-1 capitalize">
+                              <h4 className="font-bold text-dark-gray-800 dark:text-light-silver-300 text-base mb-1 capitalize">
                                 {service.title}
                               </h4>
                             </div>
                             {/*  Description */}
-                            <p className="text-lg font-normal  text-dark-gray-800 leading-relaxed">
+                            <p className="text-lg font-normal  text-dark-gray-800 dark:text-light-silver-300 leading-relaxed">
                               {service.description}
                             </p>
                           </div>
@@ -121,10 +121,10 @@ export default function AboutUs() {
             {/* Get started button */}
 
             <div className="relative">
-              <Button className=" w-36 me-8 rounded-2xl bg-flame-orange-500 relative capitalize">
+              <Button className=" w-36 me-8 text-light-silver-300 rounded-2xl bg-flame-orange-500 relative capitalize">
                 {t("get-started")}
               </Button>
-              <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-white text-white " />
+              <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
             </div>
           </div>
         </div>

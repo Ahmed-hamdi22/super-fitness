@@ -67,7 +67,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
               image={muscle.image}
               actionLabel={t("explore")}
               actionIcon={<ArrowRight />}
-              className="w-[320px] h-[397px] sm:w-[400px]"
+              className="w-[320px] h-[397px] sm:w-[400px] "
               mode="Exploer"
             />
           </div>
@@ -88,7 +88,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
                   image={muscle.image}
                   actionLabel={t("explore")}
                   actionIcon={<ArrowRight />}
-                  className="w-[380px] h-[350px] bg-white/50 backdrop-blur-md "
+                  className="w-[380px] h-[350px] backdrop-blur-md "
                   mode="Exploer"
                 />
               </div>
@@ -120,7 +120,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
             onDotClick={(index) => api?.scrollTo(index)}
             dotClassName={(index) =>
               `w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-flame-orange-500 w-5" : "bg-soft-gray-900"
+                index === currentIndex ? "bg-flame-orange-500 w-5" : "dark:bg-soft-gray-400 bg-dark-gray-800"
               }`
             }
           />

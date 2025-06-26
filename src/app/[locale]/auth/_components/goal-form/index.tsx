@@ -85,7 +85,7 @@ export default function GoalForm() {
         {/* Selected value display */}
         <div className="text-center mt-8">
           <p className="text-gray-400 text-sm">
-            Selected: <span className="text-customOrange font-medium">{selectedOption}</span>
+            Selected: <span className="text-flame-orange-500 font-medium">{selectedOption}</span>
           </p>
         </div>
 

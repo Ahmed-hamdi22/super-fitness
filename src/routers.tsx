@@ -5,14 +5,12 @@ import RootLayout from "./app/layout";
 import NotFound from "./app/[locale]/not-found";
 import Classes from "./app/[locale]/classes/page";
 import AboutPage from "./app/[locale]/about";
-import VerifyOTPForm from "./app/[locale]/auth/_components/forgot-password/_components/verify-otp-form";
 import LoginForm from "./app/[locale]/auth/_components/login-form";
 import AuthLayout from "./app/[locale]/auth/layout";
-import LevelForm from "./app/[locale]/auth/_components/level-form";
-import GoalForm from "./app/[locale]/auth/_components/goal-form";
-import NewPasswordForm from "./app/[locale]/auth/_components/forgot-password/_components/new-password-form";
 import RegisterPage from "./app/[locale]/auth/_components/register-form";
 import ForgotPasswordPage from "./app/[locale]/auth/_components/forgot-password";
+import AccountModal from "./components/features/account";
+import ChangePasswordPage from "./app/[locale]/auth/_components/change-password";
 
 const router = createBrowserRouter([
   {
@@ -22,18 +20,16 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "healthy", element: <HealthyPage /> },
       { path: "classes", element: <Classes /> },
-      {
-        element: <AuthLayout />,
-        children: [
-          { path: "login", element: <LoginForm /> },
-          { path: "verifyotp", element: <VerifyOTPForm /> },
-          { path: "goal", element: <GoalForm /> },
-          { path: "forgot-password", element: <ForgotPasswordPage /> },
-          { path: "level", element: <LevelForm /> },
-          { path: "newpassword", element: <NewPasswordForm /> },
-          { path: "register", element: <RegisterPage /> },
-        ],
-      },
+      { path: "account", element: <AccountModal /> },
+    ],
+  },
+  {
+    element: <AuthLayout />,
+    children: [
+      { path: "login", element: <LoginForm /> },
+      { path: "forgot-password", element: <ForgotPasswordPage /> },
+      { path: "register", element: <RegisterPage /> },
+      { path: "change-password", element: <ChangePasswordPage /> }
     ],
   },
   { path: "*", element: <NotFound /> },
