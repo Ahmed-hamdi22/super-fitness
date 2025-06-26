@@ -36,19 +36,19 @@ export default function CategoriesCarousel() {
         <div className="w-full h-full bg-healthy bg-cover bg-center" />
 
         {/* Layout */}
-        <div className="absolute top-0 left-0 right-0 h-full bg-white bg-opacity-60 backdrop-blur-2xl" />
+        <div className="absolute top-0 left-0 right-0 h-full bg-light-silver-300/50 dark:bg-dark-gray-900/50 backdrop-blur-2xl" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto px-6 lg:px-20 py-20">
         <div className="text-center mb-8">
           {/* Text */}
-          <h2 className="text-2xl md:text-4xl font-bold uppercase mt-3">
+          <h2 className="text-2xl md:text-4xl font-bold uppercase mt-3 text-dark-gray-800 dark:text-light-silver-300 ">
             {t("fuel-your-fitness-journey-with")}
           </h2>
 
           {/* Text */}
-          <h2 className="text-2xl md:text-4xl font-baloo uppercase">
+          <h2 className="text-2xl md:text-4xl font-baloo uppercase text-dark-gray-800 dark:text-light-silver-300">
             {t("customized")} <span className="text-flame-orange-500">{t("meal-plavs")} </span>
             {t("for-you")}
           </h2>
