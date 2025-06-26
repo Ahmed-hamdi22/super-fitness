@@ -2,9 +2,11 @@ import { getLevelsByPrimeMover } from "@/lib/apis/auth/levels.api";
 import { getAllExercies } from "@/lib/apis/exercies.api";
 import type { LevelsResponse } from "@/lib/types/levels";
 import { useQuery } from "@tanstack/react-query";
-import { Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import Card from "../card";
+import VideoSection from "./video-ui";
+import { Play } from "lucide-react";
+import Icons from "./Icons-ui";
 
 interface ExercisesPageProps {
   primeMoverMuscleId: string;
@@ -120,31 +122,16 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
         )}
       </div>
 
-      {/* Video section */}
+      {/* Video */}
       <div className="flex-1 flex flex-col gap-5">
         {selectedExercise && (
-          <div className="relative w-full h-[250px] md:h-[400px] flex justify-center items-center rounded-3xl overflow-hidden">
-            <img
-              src={`https://img.youtube.com/vi/${extractYoutubeID(
-                selectedExercise.short_youtube_demonstration_link
-              )}/hqdefault.jpg`}
-              alt="Exercise Thumbnail"
-              className="absolute w-full h-full object-cover opacity-50"
-            />
-
-            <div className="relative text-center z-10 flex flex-col items-center">
-              <a
-                href={selectedExercise.short_youtube_demonstration_link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex justify-center items-center bg-custom-orange-500 w-16 h-16 rounded-full text-white text-2xl"
-              >
-                <Play />
-              </a>
-              <h2 className="text-white text-3xl font-bold mb-4">{selectedExercise.exercise}</h2>
-            </div>
-          </div>
+          <VideoSection selectedExercise={selectedExercise} extractYoutubeID={extractYoutubeID} />
         )}
+
+        {/* Icons */}
+        <Icons />
+
+        {/* Card */}
         <Card />
       </div>
     </div>
