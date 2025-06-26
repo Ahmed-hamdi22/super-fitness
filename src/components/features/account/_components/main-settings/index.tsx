@@ -1,22 +1,22 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { MdLanguage, MdOutlinePublishedWithChanges, MdSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { HiOutlineCog } from "react-icons/hi";
 import { BsShieldExclamation } from "react-icons/bs";
 import { useTranslations } from "use-intl";
-import { LanguageContext } from "@/context/components/language/context";
 import { useLogout } from "@/hooks/auth/use-logout";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/context/theme";
 import { IoArrowForwardCircleOutline, IoHelpBuoy } from "react-icons/io5";
 import SettingsDialog from "./components/main-settings-dialog";
+import { useLocale } from "@/i18n/provider";
 
 export default function MainSettings() {
   // Translations
   const t = useTranslations();
 
   // Context
-  const { lang, toggleLang } = useContext(LanguageContext);
+  const { locale, setLocale } = useLocale();
   const { theme, toggleTheme, isDark } = useTheme();
 
   // States
@@ -30,10 +30,6 @@ export default function MainSettings() {
     logout();
   };
 
-  const toggleChangePassword = () => {
-    setOpenDialog(true);
-  }
-
   // Variables
   const menuItems = [
     {
@@ -45,16 +41,15 @@ export default function MainSettings() {
       ),
       title: t("change-password"),
       hasValue: false,
-      onClick: toggleChangePassword,
     },
     {
       icon: (
         <MdLanguage className="text-flame-orange-500" style={{ width: "24px", height: "24px" }} />
       ),
       title: t("select-language"),
-      value: lang === "en" ? "English" : "العربية",
+      value: locale === "en" ? "English" : "العربية",
       hasValue: true,
-      onClick: toggleLang,
+      onClick: () => setLocale(locale === "en" ? "ar" : "en"),
     },
     {
       icon: isDark ? (

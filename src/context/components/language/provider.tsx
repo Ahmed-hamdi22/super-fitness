@@ -21,6 +21,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [lang, isAr]);
 
   const toggleLang = () => {
+    console.log("Language")
     const newLang = lang === "en" ? "ar" : "en";
     setLang(newLang);
     setIsAr(newLang === "ar");
@@ -28,7 +29,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const newPath = location.pathname.replace(/^\/(en|ar)/, `/${newLang}`);
     navigate(newPath);
 
-    localStorage.setItem("lang", newLang);
+    localStorage.setItem("locale", newLang);
   };
 
   const value = {
