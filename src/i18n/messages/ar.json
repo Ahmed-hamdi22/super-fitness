@@ -32,7 +32,7 @@
   "transform-headline": "قم بتحويل جسمك  {br}باستخدام التدريبات  الديناميكية<span>القادمة  </span>",
   "explore-classes": "استكشف المزيد",
   "sign-up": "اشتراك",
-  "healthy": "صحيح",
+  "healthy": "صحة",
   "classes": "فصول",
   "about": "عن",
   "home": "بيت",
@@ -160,5 +160,6 @@
   "expert": "خبير",
   "master": "متقن",
   "your-password-has-been-changed-successfully": "تم تغيير كلمة المرور الخاصة بك بنجاح!",
-  "change-your-password": "تغيير كلمة المرور الخاصة بك"
+  "change-your-password": "تغيير كلمة المرور الخاصة بك",
+  "healthy-nutrltions": "غذائيات صحية"
 }

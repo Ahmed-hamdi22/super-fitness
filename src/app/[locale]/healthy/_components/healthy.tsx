@@ -8,6 +8,8 @@ import QueryStateHandler from "@/components/common/query-state-handler";
 import { useTranslations } from "use-intl";
 import ArrowRight from "@/components/common/arrow-right";
 import { useNavigate } from "react-router-dom";
+import WorkoutsLogo from "@/components/common/workouts-logo";
+import DumbbellIcon from "@/components/common/dumbbell";
 
 export default function CategoriesCarousel() {
   // Translation
@@ -30,8 +32,18 @@ export default function CategoriesCarousel() {
   } = useCategoriesCarousel();
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full mt-10">
       <div className="absolute inset-0 z-0">
+        {/* Healthy logo */}
+        <div className="absolute -top-8 left-0 right-0 flex justify-center items-center gap-2  ">
+          <WorkoutsLogo text={t("healthy")} />
+
+          {/* Icon and label for healthy nutrltions */}
+          <div className="relative z-10 flex items-center top-8 left-4  ">
+            <DumbbellIcon text={t("healthy-nutrltions")} />
+          </div>
+        </div>
+
         {/* Background image */}
         <div className="w-full h-full bg-healthy bg-cover bg-center" />
 
@@ -40,10 +52,10 @@ export default function CategoriesCarousel() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto px-6 lg:px-20 py-20">
-        <div className="text-center mb-8">
+      <div className="relative z-10 mx-auto px-6 lg:px-20 py-10">
+        <div className="text-center mb-4">
           {/* Text */}
-          <h2 className="text-2xl md:text-4xl font-bold uppercase mt-3 text-dark-gray-800 dark:text-light-silver-300 ">
+          <h2 className="text-2xl md:text-4xl font-bold font-baloo uppercase mt-3 text-dark-gray-800 dark:text-light-silver-300 ">
             {t("fuel-your-fitness-journey-with")}
           </h2>
 
@@ -67,7 +79,7 @@ export default function CategoriesCarousel() {
             <Carousel
               setApi={setApi}
               opts={{ slidesToScroll: 1, align: "start", loop: true }}
-              className="w-full max-w-7xl mx-auto overflow-hidden mt-10"
+              className="w-full max-w-7xl mx-auto overflow-hidden mt-5"
             >
               <CarouselContent className="flex flex-row rtl:flex-row-reverse">
                 {chunkedMeals.map((meals) => (
@@ -102,7 +114,7 @@ export default function CategoriesCarousel() {
                   dotClassName={(index) =>
                     cn(
                       "w-2 h-2 rounded-full transition-all mx-1",
-                      current === index ? "bg-flame-orange-500 w-5" : "bg-white"
+                      current === index ? "bg-flame-orange-500 w-5" : "bg-white",
                     )
                   }
                 />

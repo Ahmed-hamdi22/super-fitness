@@ -28,7 +28,7 @@ export default function ClassesCard() {
                 actionLabel={t("read-more")}
                 actionIcon={<ArrowRight />}
                 hideIcon={<IoCloseSharp />}
-                className="h-[397px] w-[403px] bg-white/50 backdrop-blur-md"
+                className="h-[397px] w-full sm:w-[403px] bg-light-silver-300/50 backdrop-blur-md"
               />
             </CarouselItem>
           ))}
