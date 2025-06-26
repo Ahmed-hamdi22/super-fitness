@@ -45,7 +45,7 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
     return match && match[2].length === 11 ? match[2] : null;
   }
 
-  //  Effect
+  // Effect
   useEffect(() => {
     if (levels?.difficulty_levels?.length > 0) {
       setSelectedLevel(levels.difficulty_levels[0].id);
@@ -63,9 +63,9 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
   }
 
   return (
-    <div className="bg-dark-gray-800 flex  pt-5 gap-3">
-      {/* Exercies */}
-      <div className="bg-dark-gray-800 rounded-3xl border-2  border-dark-gray-700 min-h-screen w-[409px] px-3 py-6">
+    <div className="bg-dark-gray-800 flex flex-col lg:flex-row pt-5 gap-6">
+      {/* Exercises */}
+      <div className="bg-dark-gray-800 rounded-3xl border-2 border-dark-gray-700 w-full lg:w-[409px] px-3 py-6">
         {/* Levels */}
         <div className="flex flex-wrap gap-4 mb-4">
           {levels?.difficulty_levels?.map((level: LevelsResponse) => (
@@ -90,7 +90,7 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
         {exercisesLoading ? (
           <div className="text-center py-8 text-white">Exercises are Loading....</div>
         ) : exercisesError ? (
-          <div className="text-center py-8 text-red-500">Error While Fetching Exercises</div>
+          <div className="text-center py-8 text-red-500">Error Fetching Exercises</div>
         ) : exercises?.exercises?.length ? (
           <div className="space-y-4">
             {exercises.exercises.map((exercise: Exercise) => (
@@ -107,7 +107,7 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
                         {exercise.short_youtube_demonstration}
                       </p>
                     </div>
-                    <div className="bg-custom-orange-500  w-6 h-6 rounded-full flex justify-center  items-center">
+                    <div className="bg-custom-orange-500 w-6 h-6 rounded-full flex justify-center items-center">
                       <Play />
                     </div>
                   </div>
@@ -121,30 +121,26 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
       </div>
 
       {/* Video section */}
-      <div className="flex flex-col gap-5">
+      <div className="flex-1 flex flex-col gap-5">
         {selectedExercise && (
-          <div className="relative w-full h-[400px]  flex  justify-center items-center rounded-3xl">
+          <div className="relative w-full h-[250px] md:h-[400px] flex justify-center items-center rounded-3xl overflow-hidden">
             <img
               src={`https://img.youtube.com/vi/${extractYoutubeID(
                 selectedExercise.short_youtube_demonstration_link
               )}/hqdefault.jpg`}
               alt="Exercise Thumbnail"
-              className="absolute  w-full h-full object-cover opacity-50 rounded-3xl"
+              className="absolute w-full h-full object-cover opacity-50"
             />
 
-            {/* Youtube link */}
-            <div className="relative text-center z-10">
+            <div className="relative text-center z-10 flex flex-col items-center">
               <a
                 href={selectedExercise.short_youtube_demonstration_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center items-center bg-custom-orange-500 w-16 h-16 rounded-full text-white text-2xl "
+                className="inline-flex justify-center items-center bg-custom-orange-500 w-16 h-16 rounded-full text-white text-2xl"
               >
-                {/* Play icon */}
                 <Play />
               </a>
-
-              {/* Exercise name */}
               <h2 className="text-white text-3xl font-bold mb-4">{selectedExercise.exercise}</h2>
             </div>
           </div>
