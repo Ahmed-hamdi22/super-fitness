@@ -32,7 +32,7 @@ export default function Modal() {
 
         {/* Meals */}
         <QueryStateHandler isLoading={isLoading} error={error}>
-          <div className="space-y-4 mt-10">
+          <div className="flex flex-col mt-3">
             {limitedMeals.map((meal) => (
               <div
                 key={meal.idMeal}

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import ExercisesByLevel from "./exercises-ui";
+import ExercisesByLevel from "./Exercises-ui";
+
 
 export default function ExercisesPage() {
   // Params

@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import Card from "../card";
 import VideoSection from "./video-ui";
 import { Play } from "lucide-react";
-import Icons from "./Icons-ui";
+import Icons from "./icons-ui";
+
 
 interface ExercisesPageProps {
   primeMoverMuscleId: string;
