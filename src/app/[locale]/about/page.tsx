@@ -1,41 +1,20 @@
-import Slider from "@/components/common/slider-comp";
-import { useTranslations } from "use-intl";
+import Slider from "@/components/common/slider";
 
 export default function AboutPage() {
-  // Translations
-  const t = useTranslations();
-
-
-  // age array
-  const ages = Array.from({ length: 81 }, (_, i) => i + 1);
-
-  // weight array
-  const weight = Array.from({ length: 121 }, (_, i) => i + 20);
-
-  // height array
-  const height = Array.from({ length: 190 }, (_, i) => i + 20);
+  
 
   return (
     <div className="flex flex-row">
-      {/* Test. will remove in merge */}
+      {/* Test */}
       <Slider
-        title={t("how-old-are-you")}
-        range={ages}
-        measure={t("years-old")}
-        step={2}
+        title="What is your weight"
+        measure="kg"
+        min={20}
+        max={200}
+        initialValue={50}
+        step={1}
+        windowSize={7}
       />
-      {/* <Slider
-        title={t("what-is-your-weight")}
-        range={weight}
-        measure={t("kg")}
-        step={3}
-      />
-      <Slider
-        title={t("what-is-your-height")}
-        range={height}
-        measure={t("cm")}
-        step={4}
-      /> */}
     </div>
   );
 }
