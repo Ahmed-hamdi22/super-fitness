@@ -17,7 +17,7 @@ export default function ForgotPasswordPage() {
   // Functions
   const renderStep = () => {
     switch (currentStep) {
-      case 0:
+      case 1:
         return <ForgotPasswordForm />;
       case 1:
         return <VerifyOTPForm />;

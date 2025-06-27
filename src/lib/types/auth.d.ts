@@ -41,7 +41,6 @@ declare type VerifyOTPResponse = {
   status: string;
 };
 declare type ForgotPasswordResponse = SuccessfulForgotPassword | ForgotErrorResponse;
-
 declare type NewPasswordResponse = SuccessfulNewPassword | NewPasswordErrorResponse;
 declare type ForgotPasswordResponse = SuccessfulForgotPassword | ForgotErrorResponse;
 declare type NewPasswordResponse = SuccessfulNewPassword | NewPasswordErrorResponse;
