@@ -10,6 +10,7 @@ import ArrowRight from "@/components/common/arrow-right";
 import { useNavigate } from "react-router-dom";
 import WorkoutsLogo from "@/components/common/workouts-logo";
 import DumbbellIcon from "@/components/common/dumbbell";
+import Header from "@/components/layout/header";
 
 export default function CategoriesCarousel() {
   // Translation
@@ -33,6 +34,8 @@ export default function CategoriesCarousel() {
 
   return (
     <div className="relative w-full mt-10">
+              <Header/>
+
       <div className="absolute inset-0 z-0">
         {/* Healthy logo */}
         <div className="absolute -top-8 left-0 right-0 flex justify-center items-center gap-2  ">

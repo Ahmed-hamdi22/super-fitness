@@ -9,7 +9,7 @@ export default function App() {
   return (
     <main className="">
       {/* Hero */}
-      <HeroPage />
+      <HeroPage />  
 
       {/* Auto Scroll */}
       <AutoScrollBanner />

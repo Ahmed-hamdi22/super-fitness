@@ -1,4 +1,5 @@
 import ArrowUpRight from "@/components/common/arrow-long-right";
+import Header from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 
@@ -7,7 +8,8 @@ export default function Hero() {
   const t = useTranslations();
 
   return (
-    <div className="relative w-full h-full bg-[url('/src/assets/bg-form.png')] bg-cover bg-center">
+    <div className="relative w-full h-full bg-[url('/src/assets/bg-form.png')] bg-cover bg-center ">
+      <Header />
       <div className="absolute inset-0 bg-light-silver-300 bg-opacity-60 dark:bg-dark-gray-900 dark:bg-opacity-60  backdrop-blur-2xl" />
       {/* Hero Section */}
       <section className="relative z-10 py-8 md:py-16 md:px-8 mx-4">
@@ -29,27 +31,17 @@ export default function Hero() {
             <div className="mt-4 capitalize text-dark-gray-800 dark:text-light-silver-300 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 text-left lg:text-center rtl:text-right">
               <div>
                 <p className="text-xl font-bold font-inter">{t("hero-active-members")}</p>
-                <p className="text-lg font-rubik">
-                  {t("hero-active-members-discription")}
-                </p>
+                <p className="text-lg font-rubik">{t("hero-active-members-discription")}</p>
               </div>
               <div>
-                <p className="text-xl font-bold  font-inter">
-                  {t("hero-certified-trainers")}
-                </p>
+                <p className="text-xl font-bold  font-inter">{t("hero-certified-trainers")}</p>
 
-                <p className="text-lg font-rubik">
-                  {t("hero-certified-trainers-discription")}
-                </p>
+                <p className="text-lg font-rubik">{t("hero-certified-trainers-discription")}</p>
               </div>
               <div>
-                <p className="text-xl font-bold  font-inter">
-                  {t("hero-years-experience")}
-                </p>
+                <p className="text-xl font-bold  font-inter">{t("hero-years-experience")}</p>
 
-                <p className="text-lg font-rubik">
-                  {t("hero-years-experience-discription")}
-                </p>
+                <p className="text-lg font-rubik">{t("hero-years-experience-discription")}</p>
               </div>
             </div>
 
