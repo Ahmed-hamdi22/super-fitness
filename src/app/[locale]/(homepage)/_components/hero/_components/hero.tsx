@@ -1,4 +1,5 @@
 import ArrowUpRight from "@/components/common/arrow-long-right";
+import Header from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 
@@ -7,7 +8,8 @@ export default function Hero() {
   const t = useTranslations();
 
   return (
-    <div className="relative w-full h-full bg-[url('/src/assets/bg-form.png')] bg-cover bg-center">
+    <div className="relative w-full h-full bg-[url('/src/assets/bg-form.png')] bg-cover bg-center ">
+      <Header />
       <div className="absolute inset-0 bg-light-silver-300 bg-opacity-60 dark:bg-dark-gray-900 dark:bg-opacity-60  backdrop-blur-2xl" />
       {/* Hero Section */}
       <section className="relative z-10  md:pt-16 md:px-8 mx-4">

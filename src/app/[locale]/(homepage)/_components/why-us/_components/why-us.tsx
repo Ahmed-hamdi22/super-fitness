@@ -20,13 +20,13 @@ export default function WhyUs() {
               {/* Text */}
               <p className="text-rubik text-dark-gray-800 dark:text-light-silver-300 mr-28">
                 {t(
-                  "we-offer-a-fitness-journey-thats-tailored-to-your-goals-supported-by-professional-trainers-and-a-welcoming-community-whether-its-weight-loss-strength-building-or-overall-wellness-our-proven-methods"
+                  "we-offer-a-fitness-journey-thats-tailored-to-your-goals-supported-by-professional-trainers-and-a-welcoming-community-whether-its-weight-loss-strength-building-or-overall-wellness-our-proven-methods",
                 )}
               </p>
             </div>
 
             {/* Right section */}
-            <div className="space-y-8 pt-12">
+            <div className="space-y-14 pt-12">
               {/* Point one */}
               <div className="flex items-start gap-4">
                 <div className="bg-flame-orange-500 rounded-full min-w-16 h-16 flex items-center justify-center font-bold text-light-silver-300">
@@ -42,7 +42,7 @@ export default function WhyUs() {
                   {/* Text */}
                   <p className="text-rubik ">
                     {t(
-                      "we-tailor-every-workout-to-fit-your-unique-goals-and-fitness-level-ensuring-that-you-make-the-most-progress"
+                      "we-tailor-every-workout-to-fit-your-unique-goals-and-fitness-level-ensuring-that-you-make-the-most-progress",
                     )}
                   </p>
                 </div>
@@ -61,7 +61,7 @@ export default function WhyUs() {
                   {/* Text */}
                   <p className="text-rubik">
                     {t(
-                      "everything-we-do-is-designed-to-help-you-achieve-measurable-results-whether-youre-aiming-for-weight-loss"
+                      "everything-we-do-is-designed-to-help-you-achieve-measurable-results-whether-youre-aiming-for-weight-loss",
                     )}
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export default function WhyUs() {
                   {/* Text */}
                   <p className="text-rubik">
                     {t(
-                      "we-provide-the-latest-in-gym-equipment-from-cardio-machines-to-free-weights-designed-to-support-every-type"
+                      "we-provide-the-latest-in-gym-equipment-from-cardio-machines-to-free-weights-designed-to-support-every-type",
                     )}
                   </p>
                 </div>

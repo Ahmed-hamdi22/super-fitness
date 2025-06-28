@@ -14,9 +14,6 @@ export default function RootLayout() {
         {/* Main content */}
         <main className="">
 
-        {/* Header */}
-        <Header />
-
           {/* Outlet */}
           <Outlet />
 

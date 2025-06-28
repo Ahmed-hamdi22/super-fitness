@@ -4,12 +4,14 @@ import QueryStateHandler from "@/components/common/query-state-handler";
 import useMealsCategories from "@/lib/apis/meals/meals-categories.api";
 import { useTranslations } from "use-intl";
 import ArrowRight from "@/components/common/arrow-right";
+import WorkoutsLogo from "@/components/common/workouts-logo";
+import DumbbellIcon from "@/components/common/dumbbell";
 
 export default function HealthyNutrltions() {
   // Translation
   const t = useTranslations();
 
-  // 
+  //
   const { data: meals, isLoading, error } = useMealsCategories();
 
   // Selecting the first three categories
@@ -18,6 +20,16 @@ export default function HealthyNutrltions() {
   return (
     <div className="relative w-full">
       <div className="absolute inset-0">
+        {/* Healthy logo */}
+        <div className="absolute top-6 left-0 right-0 flex justify-center items-center gap-2 mb-8 ">
+          <WorkoutsLogo text={t("healthy")} />
+
+          {/* Icon and label for healthy nutrltions */}
+          <div className="relative z-10 flex items-center top-8 left-4  ">
+            <DumbbellIcon text={t("healthy-nutrltions")} />
+          </div>
+        </div>
+
         {/* Background image */}
         <div className="w-full h-full bg-healthy-nutrltions bg-cover bg-center" />
 
@@ -29,7 +41,7 @@ export default function HealthyNutrltions() {
       <div className="relative z-10 mx-auto px-6 lg:px-20 py-20">
         <div className="text-center mb-16">
           {/* Text */}
-          <h2 className="text-2xl md:text-4xl font-bold uppercase mt-5 text-dark-gray-800 dark:text-light-silver-300">
+          <h2 className="text-2xl md:text-4xl font-bold font-baloo uppercase mt-5 text-dark-gray-800 dark:text-light-silver-300">
             {t("fuel-your-fitness-journey-with")}
           </h2>
 

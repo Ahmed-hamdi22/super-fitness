@@ -7,7 +7,7 @@ const Footer = () => {
   const t = useTranslations();
 
   return (
-    <footer className="w-4/5 text-dark-gray-800 dark:text-light-silver-300 mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 bg-light-silver-300 dark:bg-dark-gray-900 ">
+    <footer className="px-8 p-8 text-dark-gray-800 dark:text-light-silver-300 mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 bg-[#F3F3F4] dark:bg-[#232424] font-baloo">
       {/* Logo & Message */}
       <div className="flex flex-col md:items-start">
         <img src={LogoImg} className="w-[87px]" />
@@ -24,14 +24,14 @@ const Footer = () => {
             <div className="w-12 h-12 rounded-full border dark:border-light-silver-300 flex items-center justify-center">
               <Phone />
             </div>
-            <h1>+91 123 456 789</h1>
+            <p>+91 123 456 789</p>
           </li>
 
           <li className="flex gap-3 items-center">
             <div className="w-12 h-12 rounded-full border dark:border-light-silver-300 flex items-center justify-center">
               <Mail />
             </div>
-            <h1>info@gmail.com</h1>
+            <p>info@gmail.com</p>
           </li>
         </ul>
       </div>
