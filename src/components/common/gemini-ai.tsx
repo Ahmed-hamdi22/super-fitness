@@ -17,8 +17,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import BotAIImage from "@/assets/bot.png";
-
+import BotAIImage from "@/assets/bot.png"
 import { useTranslations } from "use-intl";
 
   type Message = {
@@ -41,6 +40,7 @@ export default function Chat() {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
 
+
   // Functions
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ export default function Chat() {
       role: "user",
       content: input,
     };
-    console.table(messages)
+
     setMessages(prev => [...prev, newUserMessage]);
     setInput("");
     setIsLoading(true);
@@ -141,12 +141,13 @@ export default function Chat() {
 
               <CardContent>
                 <ScrollArea className="h-[300px] pr-4">
-                  {messages && (
+                  {messages.length === 0 && (
                     <div className="w-full mt-32 text-gray-500 items-center justify-center flex gap-3">
                       {t('no-messages-yet')}.
                     </div>
                   )}
-                  {messages.map((message, index) => (
+                  {messages.map((message, index) => {
+                    return  (
                     <div
                       key={index}
                       className={`mb-4 ${
@@ -156,8 +157,8 @@ export default function Chat() {
                       <div
                         className={`inline-block rounded-lg px-4 py-2 ${
                           message.role === "user"
-                            ? "bg-transparentOrange text-white"
-                            : "bg-transparentBlack text-white"
+                            ? "bg-[#FF6A0080] text-white"
+                            : "bg-[#00000040] text-white"
                         }`}
                       >
                         <ReactMarkdown
@@ -172,7 +173,8 @@ export default function Chat() {
                         </ReactMarkdown>
                       </div>
                     </div>
-                  ))}
+                  )
+                  })}
                 </ScrollArea>
               </CardContent>
 
