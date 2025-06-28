@@ -12,7 +12,7 @@ export default function Classes() {
   return (
     <div className="w-full h-full bg-[url('/src/assets/images/transform-bg.jpg')] bg-cover bg-center">
       {/* Main section */}
-      <div className="bg-light-silver-100/95  bg-opacity-30 dark:bg-dark-gray-900/50 backdrop-blur-xl  relative ">
+      <div className="bg-light-silver-400/95  bg-opacity-30 dark:bg-dark-gray-900/50 backdrop-blur-2xl  relative ">
         <Header />
         {/* Content container */}
         <div className="relative z-10 text-center mt-10">
