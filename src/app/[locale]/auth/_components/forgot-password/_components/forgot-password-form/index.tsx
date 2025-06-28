@@ -51,7 +51,7 @@ export default function ForgotPasswordForm() {
     setEmail(values.email);
     forgotPasswordMutate(values.email, {
       onSuccess: () => {
-        setCurrentStep(1);
+        setCurrentStep(2);
       },
     });
   };

@@ -9,9 +9,9 @@ export default function Classes() {
   // useTranslation
   const t = useTranslations();
   return (
-    <>
+    <div className="w-full h-full bg-[url('/src/assets/images/transform-bg.jpg')] bg-cover bg-center">
       {/* Main section */}
-      <section className="bg-light-silver-300/50 dark:bg-dark-gray-900/50 backdrop-blur-2xl relative py-12">
+      <div className="bg-light-silver-100/95  bg-opacity-30 dark:bg-dark-gray-900/50 backdrop-blur-xl  relative py-12">
         {/* Content container */}
         <div className="relative z-10  text-center">
           {/* Header content */}
@@ -35,7 +35,7 @@ export default function Classes() {
         </div>
         {/* Muscle Slider */}
         <MuscleGroupList variant="grid" />
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

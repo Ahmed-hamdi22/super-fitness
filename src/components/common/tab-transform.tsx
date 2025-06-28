@@ -55,23 +55,27 @@ export default function TabFitness() {
 
   return (
     <div className="flex flex-wrap gap-2 items-center justify-center py-4">
-      {/* All body  */}
+      {/* Fullbody  */}
       <button
         onClick={() => handleClick("")}
-        className={`px-4 py-1 rounded-full text-sm font-medium capitalize ${
-          muscleGroup === "" ? "bg-flame-orange-500 text-light-silver-300" : " text-dark-gray-800 dark:text-light-silver-300"
+        className={`px-4 py-1 rounded-full font-bold font-baloo text-xl capitalize ${
+          muscleGroup === ""
+            ? "bg-flame-orange-500 text-light-silver-300"
+            : " text-dark-gray-800 dark:text-light-silver-300"
         }`}
       >
         {t("all-body")}
       </button>
 
       {/* All muscles */}
-      {data?.slice(0, 6).map((muscle: Muscle) => (
+      {data?.slice(0, 5).map((muscle: Muscle) => (
         <button
           key={muscle._id}
           onClick={() => handleClick(muscle._id)}
-          className={`px-4 py-1.5 rounded-full text-sm font-semibold ${
-            muscleGroup === muscle._id ? "bg-flame-orange-500 text-light-silver-300" : " text-dark-gray-800 dark:text-light-silver-300"
+          className={`px-4 py-1.5 rounded-full  font-bold font-baloo text-xl ${
+            muscleGroup === muscle._id
+              ? "bg-flame-orange-500 text-light-silver-300"
+              : " text-dark-gray-800 dark:text-light-silver-300"
           }`}
         >
           {muscle.name}

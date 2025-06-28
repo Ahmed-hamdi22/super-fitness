@@ -62,7 +62,7 @@ export default function LoginForm() {
     <div className="h-full flex items-center justify-center">
       <div className="w-full max-w-md">
         {/* Heading */}
-        <Heading welcomeText={t("hey-there")} subtitle={t("welcome-back")} />
+        <Heading welcomeText={t("hey-there")} question={t("welcome-back")} />
 
         {/* Form */}
         <Form {...form}>
