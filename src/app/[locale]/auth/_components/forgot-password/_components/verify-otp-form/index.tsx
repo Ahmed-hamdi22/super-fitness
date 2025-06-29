@@ -114,11 +114,10 @@ export default function VerifyOTPForm() {
               {t("didnt-receive-verification-code")}{" "}
             </p>
 
-            {/* NOTE: will resend when merging with forgot password */}
             <Button
               onClick={handleResendOTP}
               type="button"
-              className="text-flame-orange-500 font-bold hover:text-flame-orange-400 underline transition-colors text-sm"
+              className="text-flame-orange-500 font-bold bg-transparent  hover:bg-transparent hover:text-flame-orange-400 underline transition-colors text-sm"
               disabled={isPending}
             >
               {t("resend-code")}
