@@ -1,7 +1,6 @@
 import ArrowUpRight from "@/components/common/arrow-long-right";
 import DumbbellIcon from "@/components/common/dumbbell";
 import WorkoutsLogo from "@/components/common/workouts-logo";
-import Header from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 
@@ -30,8 +29,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="w-full bg-light-silver-300/95 dark:bg-dark-gray-900 backdrop-blur-[86px] font-baloo ">
-      <Header />
+    <section className="w-full bg-white dark:bg-dark-gray-900 backdrop-blur-[86px]">
       <div className="mx-auto px-4 sm:px-6 mb-32 md:mb-0 lg:py-8 max-w-screen-xl">
         {/*  Grid  */}
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 lg:gap-y-0 gap-y-12 items-center">
@@ -63,8 +61,8 @@ export default function AboutUs() {
           <div className="rtl:text-right mt-8 ">
             <div className="relative mb-8   ">
               {/* Title  */}
-              <span className="absolute sm:-top-4 ltr:left-0 rtl:right-0 rtl:left-auto z-0 ">
-                <WorkoutsLogo text={t("about-us-title")} />
+              <span className="absolute sm:-top-4 ltr:left-0 rtl:right-0 rtl:left-auto ">
+                <WorkoutsLogo text={t("aboutus")} />
               </span>
 
               {/* Icon and label for about us */}
@@ -74,13 +72,13 @@ export default function AboutUs() {
             </div>
 
             {/*  About us description */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 dark:text-light-silver-300 mb-4 leading-[1.2] ">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-dark-gray-800 dark:text-light-silver-300 mb-4 leading-[1.2] font-baloo me-4">
               {t.rich("fitness-headline", {
                 span: (v) => <span className="text-flame-orange-500">{v}</span>,
               })}
             </h2>
 
-            <p className="text-dark-gray-800 dark:text-light-silver-300 mb-12  pt-5 text-sm sm:text-base leading-10 font-rubik">
+            <p className="text-dark-gray-800 dark:text-light-silver-300 mb-12   pt-5 text-lg leading-10 font-rubik">
               {t("services-description")}
             </p>
 
@@ -98,15 +96,15 @@ export default function AboutUs() {
                           <div>
                             <div className="flex items-center ms-1 gap-2 mb-4">
                               {/* Icon */}
-                              <ArrowUpRight className="w-4 h-4 text-flame-orange-500 mt-1" />
+                              <ArrowUpRight className="w-4 h-4 text-flame-orange-500 " />
 
                               {/* Title */}
-                              <h4 className="font-bold text-dark-gray-800 dark:text-light-silver-300 text-base mb-1 capitalize">
+                              <h4 className="font-bold font-baloo text-dark-gray-800 dark:text-light-silver-300 text-base mb-1 capitalize">
                                 {service.title}
                               </h4>
                             </div>
                             {/*  Description */}
-                            <p className="text-lg font-normal  text-dark-gray-800 dark:text-light-silver-300 leading-relaxed">
+                            <p className="text-lg font-baloo text-dark-gray-800 dark:text-light-silver-300 leading-relaxed">
                               {service.description}
                             </p>
                           </div>
@@ -114,7 +112,7 @@ export default function AboutUs() {
                       ))}
                     </div>
                     {/* Border */}
-                    {i === 0 && <div className="w-full h-px bg-gray-100 my-3"></div>}
+                    {i === 0 && <div className="w-full h-px bg-gray-200 my-3"></div>}
                   </div>
                 );
               })}
@@ -123,7 +121,7 @@ export default function AboutUs() {
             {/* Get started button */}
 
             <div className="relative">
-              <Button className=" w-36 me-8 text-light-silver-300 rounded-2xl bg-flame-orange-500 relative capitalize">
+              <Button className=" w-36 me-8 text-light-silver-300 rounded-3xl bg-flame-orange-500 relative capitalize">
                 {t("get-started")}
               </Button>
               <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />

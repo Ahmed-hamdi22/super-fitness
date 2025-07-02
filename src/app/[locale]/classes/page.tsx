@@ -10,10 +10,10 @@ export default function Classes() {
   // useTranslation
   const t = useTranslations();
   return (
-    <>
+    <div className="w-full h-full bg-[url('/src/assets/images/transform-bg.jpg')] bg-cover bg-center">
       {/* Main section */}
-      <section className="bg-light-silver-300/50 dark:bg-dark-gray-900/50 backdrop-blur-2xl relative">
-      <Header/>
+      <div className="bg-light-silver-400/95  bg-opacity-30 dark:bg-dark-gray-900/50 backdrop-blur-2xl  relative ">
+        <Header />
         {/* Content container */}
         <div className="relative z-10 text-center mt-10">
           {/* Header content */}
@@ -37,7 +37,7 @@ export default function Classes() {
         </div>
         {/* Muscle Slider */}
         <MuscleGroupList variant="grid" />
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

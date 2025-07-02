@@ -3,16 +3,10 @@ import ForgotPasswordForm from "./_components/forgot-password-form";
 import VerifyOTPForm from "./_components/verify-otp-form";
 import NewPasswordForm from "./_components/new-password-form";
 import LoginForm from "../login-form";
-import { useEffect } from "react";
 
 export default function ForgotPasswordPage() {
   // Context
-  const { currentStep, setCurrentStep } = useEmail();
-
-  // Reset step on mount
-  useEffect(() => {
-    setCurrentStep(2);
-  }, [setCurrentStep]);
+  const { currentStep } = useEmail();
 
   // Functions
   const renderStep = () => {
