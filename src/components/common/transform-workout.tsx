@@ -67,7 +67,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
               image={muscle.image}
               actionLabel={t("explore")}
               actionIcon={<ArrowRight />}
-              className="w-[320px] h-[397px] sm:w-[400px] "
+              className=" w-full sm:w-[430px] h-96"
               mode="Exploer"
             />
           </div>
@@ -80,7 +80,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
       const grid = displayedMuscles.slice(i * 2, i * 2 + 2);
       return (
         <CarouselItem key={i} className="pl-4 basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
-          <div className="flex flex-col gap-6 w-full max-w-[403px] mx-auto cursor-pointer">
+          <div className="flex flex-col gap-6 w-full  mx-auto cursor-pointer">
             {grid.map((muscle: Muscle) => (
               <div key={muscle._id} onClick={() => navigate(`/classes/${muscle._id}`)}>
                 <Card
@@ -88,7 +88,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
                   image={muscle.image}
                   actionLabel={t("explore")}
                   actionIcon={<ArrowRight />}
-                  className="w-[380px] h-[350px] backdrop-blur-md "
+                  className="h-[397px] w-full sm:w-[430px]"
                   mode="Exploer"
                 />
               </div>
@@ -120,7 +120,9 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
             onDotClick={(index) => api?.scrollTo(index)}
             dotClassName={(index) =>
               `w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-flame-orange-500 w-5" : "dark:bg-soft-gray-400 bg-dark-gray-900"
+                index === currentIndex
+                  ? "bg-flame-orange-500 w-5"
+                  : "dark:bg-soft-gray-400 bg-dark-gray-900"
               }`
             }
           />
