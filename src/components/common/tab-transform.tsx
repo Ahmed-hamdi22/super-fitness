@@ -1,7 +1,8 @@
+import { useRandomMuscles } from "@/hooks/use-random-muscles";
 import { useForm } from "react-hook-form";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslations } from "use-intl";
-import { useRandomMuscles } from "@/hooks/use-random-muscles";
+
 
 type FormData = {
   muscleGroup: string;

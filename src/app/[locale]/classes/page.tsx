@@ -9,6 +9,7 @@ import Header from "@/components/layout/header";
 export default function Classes() {
   // useTranslation
   const t = useTranslations();
+  
   return (
     <>
       {/* Main section */}

@@ -11,13 +11,13 @@ export default function ForgotPasswordPage() {
 
   // Reset step on mount
   useEffect(() => {
-    setCurrentStep(2);
+    setCurrentStep(0);
   }, [setCurrentStep]);
 
   // Functions
   const renderStep = () => {
     switch (currentStep) {
-      case 1:
+      case 0:
         return <ForgotPasswordForm />;
       case 1:
         return <VerifyOTPForm />;

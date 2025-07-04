@@ -48,8 +48,10 @@ export default function Card({
   // Determine which label to show based on state
   const currentLabel = isExplorer ? actionLabel : isExpanded ? t("hide") : actionLabel;
 
+
   // Determine which icon to show based on state
   const currentIcon = isExplorer ? actionIcon : isExpanded ? hideIcon : actionIcon;
+ 
 
   return (
     <div className={`relative rounded-2xl overflow-hidden ${className}`} onClick={onClick}>

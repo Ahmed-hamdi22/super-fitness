@@ -11,6 +11,8 @@ import RegisterPage from "./app/[locale]/auth/_components/register-form";
 import ForgotPasswordPage from "./app/[locale]/auth/_components/forgot-password";
 import AccountModal from "./components/features/account";
 import ChangePasswordPage from "./app/[locale]/auth/_components/change-password";
+import MealDetails from "./app/[locale]/healthy/_components/meal-details";
+import ExercisesPage from "./app/[locale]/classes/_components/[primeMoverMuscleId]/page";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +21,10 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
       { path: "healthy", element: <HealthyPage /> },
+      { path: "/mealsdetails/:id", element: <MealDetails/> },
       { path: "classes", element: <Classes /> },
-      { path: "account", element: <AccountModal /> },
+      { path: "classes/:primeMoverMuscleId", element: <ExercisesPage /> },
+      { path: "account", element: <AccountModal /> }
     ],
   },
   {
@@ -34,5 +38,7 @@ const router = createBrowserRouter([
   },
   { path: "*", element: <NotFound /> },
 ]);
+
+
 
 export default router;

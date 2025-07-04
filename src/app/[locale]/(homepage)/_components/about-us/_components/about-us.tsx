@@ -1,3 +1,4 @@
+
 import ArrowUpRight from "@/components/common/arrow-long-right";
 import DumbbellIcon from "@/components/common/dumbbell";
 import WorkoutsLogo from "@/components/common/workouts-logo";
@@ -6,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 
 export default function AboutUs() {
-  // Translations
   const t = useTranslations();
 
   // Services data

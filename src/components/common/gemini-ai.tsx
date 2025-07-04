@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "../ui/card";
 import { Input } from "../ui/input";
-import { ScrollArea } from "../ui/scroll-area";
+
 import {
   Menu,
   PencilIcon,
@@ -20,6 +20,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import BotAIImage from "@/assets/bot.png";
 
 import { useTranslations } from "use-intl";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
   type Message = {
     role: "user" | "assistant";
