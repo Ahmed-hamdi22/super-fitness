@@ -73,7 +73,7 @@ export default function RegisterForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-5 min-w-96 border-2 border-soft-gray-400 px-14 py-5 rounded-3xl"
+          className="space-y-5 w-full max-w-md border-2 border-soft-gray-400 py-5 rounded-3xl flex flex-col items-center px-5"
         >
           <div className="text-center mb-6">
             <Heading mainTitle={t("register")} />

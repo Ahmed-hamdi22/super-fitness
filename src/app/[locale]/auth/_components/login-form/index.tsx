@@ -132,9 +132,9 @@ export default function LoginForm() {
                       onClick={() => setIsPasswordHidden(!isPasswordHidden)}
                     >
                       {isPasswordHidden ? (
-                        <Eye className="w-5 h-5 text-soft-gray-400 hover:text-flame-orange-500 " />
+                        <EyeOff className="w-5 h-5 text-soft-gray-400 hover:text-flame-orange-500 " />
                       ) : (
-                        <EyeOff className="w-5 h-5 text-soft-gray-400 hover:text-flame-orange-500" />
+                        <Eye className="w-5 h-5 text-soft-gray-400 hover:text-flame-orange-500" />
                       )}
                     </div>
                   </div>
