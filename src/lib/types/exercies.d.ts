@@ -35,12 +35,6 @@ declare type Exercise = {
   in_depth_youtube_explanation_link: string | null;
 } & DatabaseFields;
 
-// declare type ExercisesResponse = {
-//   message: string;
-//   exercises: Exercise[];
-// };
-
-// types/exercises.ts
 declare type ExercisesResponse = {
   message: string;
   totalExercises: number;

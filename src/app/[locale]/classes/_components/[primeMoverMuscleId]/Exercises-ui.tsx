@@ -46,12 +46,12 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
     return match && match[2].length === 11 ? match[2] : null;
   }
 
-  // Effect
+  // Effect;
   useEffect(() => {
-    if (levels?.difficulty_levels?.length > 0) {
+    if (levels?.difficulty_levels?.length && levels.difficulty_levels.length > 0) {
       setSelectedLevel(levels.difficulty_levels[0].id);
     }
-  }, [levels]);
+  }, [levels]);
 
   // Loading
   if (levelsLoading) {

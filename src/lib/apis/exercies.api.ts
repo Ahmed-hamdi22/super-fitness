@@ -15,6 +15,11 @@ export const getAllExercies = async (primeMoverMuscleId: string, difficultyLevel
   );
 
   const payload: APIResponse<ExercisesResponse> = await response.data;
+
+  if ("error" in payload) {
+    throw new Error(payload.error);
+  }
+
   return payload;
 };
 
