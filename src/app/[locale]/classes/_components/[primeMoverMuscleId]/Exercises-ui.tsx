@@ -6,12 +6,20 @@ import Card from "../card";
 import VideoSection from "./video-ui";
 import { Play } from "lucide-react";
 import Icons from "./icons-ui";
+import Header from "@/components/layout/header";
+import WorkoutsLogo from "@/components/common/workouts-logo";
+import { useTranslations } from "use-intl";
+import TabFitness from "@/components/common/tab-transform";
 
 interface ExercisesPageProps {
   primeMoverMuscleId: string;
 }
 
 export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPageProps) {
+
+    // useTranslation
+    const t = useTranslations();
+    
   // State
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
@@ -65,7 +73,18 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
 
 
   return (
-    <div className=" flex flex-col dark:bg-dark-gray-900  dark:text-light-silver-300 lg:flex-row pt-5 gap-6">
+    <div className="dark:bg-dark-gray-900  dark:text-light-silver-300">
+      {/* Header */}
+     <Header />
+     <div className="flex flex-col justify-center items-center relative">
+      <div className=" absolute -top-2 flex justify-center">
+         <WorkoutsLogo text={t("about-us-title")}   />
+      </div>     
+       <TabFitness />
+     </div>
+     
+    <div className=" flex flex-col  lg:flex-row pt-5 gap-6">
+     
       {/* Exercises */}
       <div className=" rounded-3xl border-2 border-dark-gray-700 w-full lg:w-[409px] px-3 py-6">
         {/* Levels */}
@@ -110,7 +129,7 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
                         {exercise.short_youtube_demonstration}
                       </p>
                     </div>
-                    <div className="bg-custom-orange-500 w-6 h-6 rounded-full flex justify-center items-center">
+                    <div className=" bg-flame-orange-500 text-black w-6 h-6 rounded-full flex justify-center items-center">
                       <Play />
                     </div>
                   </div>
@@ -136,6 +155,7 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
         {/* Card */}
         <Card />
       </div>
+    </div>
     </div>
   );
 }

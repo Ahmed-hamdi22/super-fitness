@@ -1,4 +1,4 @@
-import { Play } from "lucide-react";
+import Playicon from "./play-icon";
 
 interface ExerciseVideoSectionProps {
   selectedExercise: Exercise;
@@ -16,7 +16,7 @@ export default function VideoSection({
       {/* Image */}
       <img
         src={`https://img.youtube.com/vi/${extractYoutubeID(
-          selectedExercise.short_youtube_demonstration_link
+          selectedExercise.short_youtube_demonstration_link,
         )}/hqdefault.jpg`}
         alt="Exercise Thumbnail"
         className="absolute w-full h-full object-cover  opacity-80  "
@@ -30,7 +30,7 @@ export default function VideoSection({
           className="inline-flex justify-center items-center bg-custom-orange-500 w-16 h-16 rounded-full text-white text-2xl"
         >
           {/* Icon */}
-          <Play />
+          <Playicon />
         </a>
 
         {/* Exercise */}
