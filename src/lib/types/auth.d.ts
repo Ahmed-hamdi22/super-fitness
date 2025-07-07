@@ -100,3 +100,18 @@ declare type ChangePasswordResponse = {
   message: string;
   token: string;
 };
+
+// Delete account response
+declare type DeleteAccountResponse = {
+  message: string;
+};
+
+// Upload photo fields
+declare type UploadPhotoFields = {
+  photo: File;
+};
+
+// Upload photo response
+declare type UploadPhotoResponse = {
+  message: string;
+};

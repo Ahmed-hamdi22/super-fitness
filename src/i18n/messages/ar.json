@@ -164,5 +164,7 @@
   "no-authentication-token": "لا يوجد رمز مصادقة",
   "healthy-nutrltions": "غذائيات صحية",
   "aboutus": "معلومات عنا",
-  "why-us": "لماذا نحن"
+  "why-us": "لماذا نحن",
+  "account-deleted-successfully": "تم حذف الحساب بنجاح!",
+  "photo-uploaded-successfully": "تم تحميل الصورة بنجاح"
 }
