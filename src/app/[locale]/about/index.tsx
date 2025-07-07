@@ -3,9 +3,9 @@ import AboutUs from "../(homepage)/_components/about-us/_components/about-us";
 
 export default function AboutPage() {
   return (
-    <>
-      <Header/>
-      <AboutUs/>
-    </>
-  )
+    <div className="dark:bg-dark-gray-900">
+      <Header />
+      <AboutUs />
+    </div>
+  );
 }
