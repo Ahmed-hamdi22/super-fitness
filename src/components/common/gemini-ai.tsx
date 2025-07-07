@@ -83,7 +83,7 @@ export default function Chat() {
             <div className="w-[200px] cursor-pointer rounded-xl p-2" onClick={toggleChat}>
               <img src={BotAIImage} alt="AI Bot" className="mx-auto mb-2" />
 
-              <h1 className="text-center bg-[#FF5E00] text-white rounded-full py-2 px-4 font-bold shadow-[0_0_15px_#FF5E00] transition-transform hover:scale-105">
+              <h1 className="text-center bg-flame-orange-500 text-white rounded-full py-2 px-4 font-bold shadow-[0_0_15px_#FF5E00] transition-transform hover:scale-105">
                 {t("hey-ask-me")}
               </h1>
             </div>

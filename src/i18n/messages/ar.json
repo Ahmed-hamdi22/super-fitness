@@ -161,6 +161,7 @@
   "master": "متقن",
   "your-password-has-been-changed-successfully": "تم تغيير كلمة المرور الخاصة بك بنجاح!",
   "change-your-password": "تغيير كلمة المرور الخاصة بك",
+  "no-authentication-token": "لا يوجد رمز مصادقة",
   "healthy-nutrltions": "غذائيات صحية",
   "aboutus": "معلومات عنا",
   "why-us": "لماذا نحن"
