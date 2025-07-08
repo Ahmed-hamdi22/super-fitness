@@ -166,5 +166,17 @@
   "aboutus": "معلومات عنا",
   "why-us": "لماذا نحن",
   "account-deleted-successfully": "تم حذف الحساب بنجاح!",
-  "photo-uploaded-successfully": "تم تحميل الصورة بنجاح"
+  "photo-uploaded-successfully": "تم تحميل الصورة بنجاح",
+  "your-data-has-been-changed-successfully": "تم تغيير بياناتك بنجاح!",
+  "age-is-required": "العمر مطلوب",
+  "gender-is-required": "الجنس مطلوب",
+  "deleting-account": "حساب الحساب",
+  "delete-account-failed": "فشل حساب الحساب",
+  "danger-zone": "منطقة الخطر",
+  "delete-account-warning": "حذف تحذير الحساب",
+  "delete-account": "حذف الحساب",
+  "delete-account-confirmation-title": "حذف عنوان تأكيد الحساب",
+  "deleting": "حذف",
+  "yes-delete-account": "نعم ، احذف حسابي",
+  "cancel": "يلغي"
 }
