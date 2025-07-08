@@ -4,6 +4,7 @@ import Header from "@/components/layout/header";
 import React, { useState } from "react";
 import { Camera, User, Mail, Phone, Lock, Trash2, Save, Edit3, X } from "lucide-react";
 import { useUploadPhoto } from "@/hooks/auth/use-upload-photo";
+import ProfileInformation from "./_components/profile-information";
 
 export default function SettingsPage() {
   const [userData, setUserData] = useState({
@@ -17,9 +18,9 @@ export default function SettingsPage() {
   });
 
   const [isEditing, setIsEditing] = useState(false);
+  const [profileImage, setProfileImage] = useState();
   const [editData, setEditData] = useState(userData);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [profileImage, setProfileImage] = useState();
 
   const { uploadPhoto, isPending: isUploading } = useUploadPhoto();
 
@@ -74,157 +75,8 @@ export default function SettingsPage() {
         <div className="bg-gray-900 text-white">
 
           <div className="p-6">
-            {/* Profile Section */}
-            <div className="bg-gray-800 rounded-lg p-6 mb-8">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold text-white">Profile Information</h2>
-                <button
-                  onClick={() => setIsEditing(!isEditing)}
-                  className="flex items-center gap-2 px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors"
-                >
-                  {isEditing ? <X size={16} /> : <Edit3 size={16} />}
-                  {isEditing ? "Cancel" : "Edit"}
-                </button>
-              </div>
 
-              {/* Profile Picture */}
-              <div className="flex items-center gap-6 mb-8">
-                <div className="relative">
-                  <img
-                    src={profileImage}
-                    alt="Profile"
-                    className="w-24 h-24 rounded-full object-cover border-4 border-gray-600"
-                  />
-                  <label className={`absolute bottom-0 right-0 ${isUploading ? 'bg-gray-500' : 'bg-orange-600 hover:bg-orange-700'} p-2 rounded-full cursor-pointer transition-colors ${isUploading ? 'cursor-not-allowed' : ''}`}>
-                    <Camera size={16} />
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageUpload}
-                      disabled={isUploading}
-                      className="hidden"
-                    />
-                  </label>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">{userData.name}</h3>
-                  <p className="text-gray-400">{userData.email}</p>
-                </div>
-              </div>
-
-              {/* Profile Form */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* First name */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    <User size={16} className="inline mr-2" />
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    value={isEditing ? editData.name : userData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    <Mail size={16} className="inline mr-2" />
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    value={isEditing ? editData.email : userData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    <Phone size={16} className="inline mr-2" />
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    value={isEditing ? editData.phone : userData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Age</label>
-                  <input
-                    type="number"
-                    value={isEditing ? editData.age : userData.age}
-                    onChange={(e) => handleInputChange("age", parseInt(e.target.value))}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Weight (kg)
-                  </label>
-                  <input
-                    type="number"
-                    value={isEditing ? editData.weight : userData.weight}
-                    onChange={(e) => handleInputChange("weight", parseInt(e.target.value))}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Height (cm)
-                  </label>
-                  <input
-                    type="number"
-                    value={isEditing ? editData.height : userData.height}
-                    onChange={(e) => handleInputChange("height", parseInt(e.target.value))}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Fitness Goal
-                  </label>
-                  <select
-                    value={isEditing ? editData.fitnessGoal : userData.fitnessGoal}
-                    onChange={(e) => handleInputChange("fitnessGoal", e.target.value)}
-                    disabled={!isEditing}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50"
-                  >
-                    <option value="Build Muscle">Build Muscle</option>
-                    <option value="Lose Weight">Lose Weight</option>
-                    <option value="Maintain Weight">Maintain Weight</option>
-                    <option value="Improve Endurance">Improve Endurance</option>
-                    <option value="General Fitness">General Fitness</option>
-                  </select>
-                </div>
-              </div>
-
-              {isEditing && (
-                <div className="flex gap-4 mt-6">
-                  <button
-                    onClick={handleSave}
-                    className="flex items-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors"
-                  >
-                    <Save size={16} />
-                    Save Changes
-                  </button>
-                </div>
-              )}
-            </div>
+            <ProfileInformation />
 
             {/* Security Section */}
             <div className="bg-gray-800 rounded-lg p-6 mb-8">
