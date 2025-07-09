@@ -15,7 +15,7 @@ import { useForgotPassword } from "@/hooks/auth/use-forgot-password";
 import Heading from "@/components/common/heading";
 import { useEmail } from "@/context/auth/email";
 import { useTranslations } from "use-intl";
-import AuthButton from "@/components/ui/auth-button";
+import AuthButton from "@/components/common/auth-button";
 
 export default function ForgotPasswordForm() {
   // Translation
@@ -64,7 +64,6 @@ export default function ForgotPasswordForm() {
           <div className="text-center  mb-4">
             <Heading headTitle={t("forgot-password")} />
           </div>
-
           {/* Forgot password form */}
           <form
             onSubmit={emailForm.handleSubmit(handleSubmit)}

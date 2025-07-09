@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Eye, EyeOff, Lock } from "lucide-react";
 import Heading from "@/components/common/heading";
 import { useEmail } from "@/context/auth/email";
-import AuthButton from "@/components/ui/auth-button";
+import AuthButton from "@/components/common/auth-button";
 
 export default function NewPasswordForm() {
   // Translation

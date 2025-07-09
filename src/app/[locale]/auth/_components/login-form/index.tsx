@@ -17,7 +17,7 @@ import Heading from "@/components/common/heading";
 import { useLogin } from "@/hooks/auth/use-login";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import AuthButton from "@/components/ui/auth-button";
+import AuthButton from "@/components/common/auth-button";
 
 export default function LoginForm() {
   // Translations
@@ -39,9 +39,9 @@ export default function LoginForm() {
       .string()
       .nonempty(t("password-is-required"))
       .min(8, { message: t("password-is-too-short") })
-      .regex(/[A-Z]/, t("password-must-contain-at-least-one-uppercase-letter"))
-      .regex(/[a-z]/, t("password-must-contain-at-least-one-lowercase-letter"))
-      .regex(/[0-9]/, t("password-must-contain-at-least-one-number")),
+      .regex(/[A-Z]/, t("password-must-have-uppercase"))
+      .regex(/[a-z]/, t("password-must-have-lowercase"))
+      .regex(/[0-9]/, t("password-must-have-number")),
   });
   type Inputs = z.infer<typeof Schema>;
 
