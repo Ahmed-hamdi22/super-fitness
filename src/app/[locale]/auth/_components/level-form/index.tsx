@@ -3,6 +3,8 @@ import Heading from "@/components/common/heading";
 import AuthButton from "@/components/common/auth-button";
 import { useState } from "react";
 import { useTranslations } from "use-intl";
+import { useRegistration } from "@/context/auth/register";
+import { useRegister } from "@/hooks/auth/use-register";
 
 export default function LevelForm() {
   // Translations
@@ -11,8 +13,23 @@ export default function LevelForm() {
   // State
   const [selectedOption, setSelectedOption] = useState<string>("");
 
+  // Context
+  const { formData, setFormData } = useRegistration();
+
+  // Mutation
+const { register, isPending, error } = useRegister();
+
   // Variables
   const options = [t("rookie"), t("beginner"), t("intermediate"), t("advance"), t("true-beast")];
+
+  // Functions
+  const handleSelect = (level: string) => {
+    setFormData(prev => ({ ...prev, activityLevel: level }));
+  };
+
+  const handleSubmit = () => {
+    register(formData);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8">
@@ -41,7 +58,7 @@ export default function LevelForm() {
                     : "border-white text-white hover:border-gray-500 hover:bg-gray-800/70"
                 }
               `}
-              onClick={() => setSelectedOption(option)}
+              onClick={() => handleSelect(option)}
             >
               {/* Option text */}
               <span className="text-base font-bold">{option}</span>
@@ -76,7 +93,9 @@ export default function LevelForm() {
 
         {/* Next button */}
         <div className="flex justify-center mt-8">
-          <AuthButton label={t("next")} type="button" className="w-[343px]" />
+          <AuthButton label={t("next")} type="button" className="w-[343px]"  onClick={handleSubmit}
+        disabled={isPending || !formData.activityLevel} />
+        {error && <div>{error.message}</div>}
         </div>
       </div>
     </div>

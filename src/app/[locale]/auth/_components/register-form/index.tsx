@@ -23,7 +23,9 @@ export default function RegisterPage() {
         initialValue={25}
         step={2}
         nextStep={3}
-        windowSize={7} />;
+        windowSize={7}
+        field="age"
+        />;
       case 3:
         return <Slider
           title="What is your weight"
@@ -34,6 +36,7 @@ export default function RegisterPage() {
           step={3}
           nextStep={4}
           windowSize={7}
+        field="weight"
         />
       case 4:
         return <Slider
@@ -45,6 +48,7 @@ export default function RegisterPage() {
           step={4}
           nextStep={5}
           windowSize={7}
+        field="height"
         />
       case 5:
         return <GoalForm/>;

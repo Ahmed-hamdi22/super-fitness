@@ -14,6 +14,7 @@ type SliderProps = {
   windowSize: number;
   nextStep:number;
   measure: string;
+  field: "age" | "weight" | "height";
 };
 
 const Slider = ({
@@ -25,10 +26,11 @@ const Slider = ({
   nextStep,
   initialValue = 40,
   windowSize = 7,
+  field,
 }: SliderProps) => {
   const t = useTranslations();
 
-      const { setCurrentStep } = useRegistration();
+      const { setCurrentStep, setFormData } = useRegistration();
 
   
   const [selected, setSelected] = useState(initialValue);
@@ -90,6 +92,7 @@ const Slider = ({
 
   const handleSubmit = () => {
     console.log(selected)
+    setFormData(prev => ({ ...prev, [field]: selected }))
     setCurrentStep(nextStep)
   }
 

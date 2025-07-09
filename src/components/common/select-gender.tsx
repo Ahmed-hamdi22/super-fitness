@@ -9,7 +9,7 @@ export function SelectGender() {
     // Translations
     const t = useTranslations();
 
-      const { setCurrentStep } = useRegistration();
+      const { setFormData, setCurrentStep } = useRegistration();
     
 
     //   State
@@ -21,6 +21,7 @@ export function SelectGender() {
     };
 
     const handleSubmit = () => {
+        setFormData(prev => ({ ...prev, gender: selectedGender }))
         setCurrentStep(2)
     }
 
