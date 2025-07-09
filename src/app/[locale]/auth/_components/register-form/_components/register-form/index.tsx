@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "use-intl";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import Heading from "../../../../../../components/common/heading";
+import Heading from "../../../../../../../components/common/heading";
 import { useRegistration } from "@/context/auth/register";
 import AuthButton from "@/components/common/auth-button";
 import { Link } from "react-router-dom";
@@ -67,7 +67,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <>
+    <div className="font-baloo">
       <div className="mb-4">
         <Heading welcomeText={t("hey-there")} headTitle={t("create-an-account")} />
       </div>
@@ -229,6 +229,6 @@ export default function RegisterForm() {
           </div>
         </form>
       </Form>
-    </>
+    </div>
   );
 }
