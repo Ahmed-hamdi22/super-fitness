@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -7,7 +8,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useEditProfile } from "@/hooks/auth/use-edit-profile";
 import { useGetUserData } from "@/hooks/auth/use-get-user-data";
 import { useUploadPhoto } from "@/hooks/auth/use-upload-photo";
@@ -25,7 +32,7 @@ export default function ProfileInformation() {
   // Translations
   const t = useTranslations();
 
-  // Query
+  // Queries
   const { user } = useGetUserData();
 
   // Mutation
@@ -65,24 +72,10 @@ export default function ProfileInformation() {
   const { isDirty } = form.formState;
   const { reset } = form;
 
-  // Reset form when user data changes
-  useEffect(() => {
-    if (user) {
-      reset({
-        firstName: user.firstName || "",
-        lastName: user.lastName || "",
-        email: user.email || "",
-        age: user.age ?? 0,
-        gender: user.gender || "",
-        height: user.height ?? 0,
-      });
-      setProfileImage(user.photo);
-    }
-  }, [user, reset]);
-
   // Functions
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
+
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -97,7 +90,6 @@ export default function ProfileInformation() {
   const handleSave = form.handleSubmit(async (data) => {
     const updatedFields: Partial<z.infer<typeof formSchema>> = {};
 
-    // Compare each field with the original user data
     if (data.firstName !== user?.firstName) updatedFields.firstName = data.firstName;
     if (data.lastName !== user?.lastName) updatedFields.lastName = data.lastName;
     if (data.email !== user?.email) updatedFields.email = data.email;
@@ -105,7 +97,6 @@ export default function ProfileInformation() {
     if (data.gender !== user?.gender) updatedFields.gender = data.gender;
     if (data.height !== user?.height) updatedFields.height = data.height;
 
-    // Only submit if there are changes
     if (Object.keys(updatedFields).length > 0) {
       editProfile(updatedFields);
     }
@@ -118,39 +109,60 @@ export default function ProfileInformation() {
     setIsEditing(false);
   };
 
+  // Effects
+  useEffect(() => {
+    if (user) {
+      reset({
+        firstName: user.firstName || "",
+        lastName: user.lastName || "",
+        email: user.email || "",
+        age: user.age ?? 0,
+        gender: user.gender || "",
+        height: user.height ?? 0,
+      });
+      setProfileImage(user.photo);
+    }
+  }, [user, reset]);
+
   return (
-    <div className="bg-gray-800 rounded-lg p-6 mb-8">
+    <div className="border-dark-light-silver-900 dark:border-light-silver-900 border rounded-lg p-6 mb-8">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-white">Profile Information</h2>
+        {/* Title */}
+        <h2 className="text-xl font-semibold text-dark-gray-800 dark:text-white">{t("profile-information")}</h2>
+
+        {/* Actions */}
         {!isEditing ? (
-          <button
+          <Button
             onClick={() => setIsEditing(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-flame-orange-600 hover:bg-flame-orange-700 rounded-lg transition-colors"
           >
             <Edit3 size={16} />
-            Edit
-          </button>
+            {t("edit")}
+          </Button>
         ) : (
-          <button
+          <Button
             onClick={handleCancel}
-            className="flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded-lg transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-light-silver-600 hover:bg-light-silver-700 rounded-lg transition-colors"
           >
             <X size={16} />
-            Cancel
-          </button>
+            {t("cancel")}
+          </Button>
         )}
       </div>
 
-      {/* Profile Picture */}
+      {/* Profile picture */}
       <div className="flex items-center gap-6 mb-8">
         <div className="relative">
+          {/* Image */}
           <img
             src={profileImage || "/default-avatar.png"}
             alt="Profile"
-            className="w-24 h-24 rounded-full object-cover border-4 border-soft-gray-900"
+            className="w-24 h-24 rounded-full object-cover border-4 border-soft-light-silver-900"
           />
+
+          {/* Upload image */}
           <label
-            className={`absolute bottom-0 right-0 ${isUploading ? "bg-gray-500" : "bg-orange-600 hover:bg-orange-700"} p-2 rounded-full cursor-pointer transition-colors ${isUploading ? "cursor-not-allowed" : ""}`}
+            className={`absolute bottom-0 right-0 ${isUploading ? "bg-light-silver-500" : "bg-flame-orange-600 hover:bg-flame-orange-700"} p-2 rounded-full cursor-pointer transition-colors ${isUploading ? "cursor-not-allowed" : ""}`}
           >
             <Camera size={16} />
             <input
@@ -163,10 +175,13 @@ export default function ProfileInformation() {
           </label>
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-white">
+          {/* Full name */}
+          <h3 className="text-lg font-semibold text-dark-gray-800 dark:text-white ">
             {user?.firstName} {user?.lastName}
           </h3>
-          <p className="text-gray-400">{user?.email}</p>
+
+          {/* Email */}
+          <p className="text-dark-gray-800 dark:text-white ">{user?.email}</p>
         </div>
       </div>
 
@@ -181,14 +196,14 @@ export default function ProfileInformation() {
               <FormItem>
                 <FormLabel>
                   <User size={16} className="inline mr-2" />
-                  First Name
+                  {t("first-name")}
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="text"
                     {...field}
                     disabled={!isEditing}
-                    className="w-full px-4 py-5 bg-dark-gray-900 border border-soft-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-flame-orange-500 disabled:opacity-50"
+                    className="w-full px-4 py-5 bg-dark-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-flame-orange-500 disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -204,14 +219,14 @@ export default function ProfileInformation() {
               <FormItem>
                 <FormLabel>
                   <User size={16} className="inline mr-2" />
-                  Last Name
+                  {t("last-name")}
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="text"
                     {...field}
                     disabled={!isEditing}
-                    className="w-full px-4 py-5 bg-dark-gray-900 border border-soft-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
+                    className="w-full px-4 py-5 bg-dark-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -227,14 +242,14 @@ export default function ProfileInformation() {
               <FormItem>
                 <FormLabel>
                   <Mail size={16} className="inline mr-2" />
-                  Email
+                  {t("email")}
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="email"
                     {...field}
                     disabled={!isEditing}
-                    className="w-full px-4 py-5 bg-dark-gray-900 border border-soft-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
+                    className="w-full px-4 py-5 bg-dark-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -248,20 +263,18 @@ export default function ProfileInformation() {
             name="gender"
             render={({ field }) => (
               <FormItem>
-                <FormLabel><BsGenderMale size={16} className="inline" /><BsGenderFemale size={16} className="inline mr-2" /> Gender</FormLabel>
+                <FormLabel>
+                  <BsGenderMale size={16} className="inline" />
+                  <BsGenderFemale size={16} className="inline mr-2" /> {t("gender")}
+                </FormLabel>
                 <FormControl>
-                  <Select
-                    disabled={!isEditing}
-                    onValueChange={field.onChange}
-                    value={field.value}
-                  >
-                    <SelectTrigger className="w-full px-4 py-5 bg-dark-gray-900 border border-soft-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
+                  <Select disabled={!isEditing} onValueChange={field.onChange} value={field.value}>
+                    <SelectTrigger className="w-full px-4 py-5 bg-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
                       <SelectValue placeholder="Select gender" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="male">{t("male")}</SelectItem>
+                      <SelectItem value="female">{t("female")}</SelectItem>
                     </SelectContent>
                   </Select>
                 </FormControl>
@@ -276,19 +289,24 @@ export default function ProfileInformation() {
             name="age"
             render={({ field }) => (
               <FormItem>
-                <FormLabel><MdOutlineNumbers size={16} className="inline mr-2" />Age</FormLabel>
+                <FormLabel>
+                  <MdOutlineNumbers size={16} className="inline mr-2" />
+                  {t("age")}
+                </FormLabel>
                 <FormControl>
                   <Select
                     disabled={!isEditing}
                     onValueChange={field.onChange}
                     value={String(field.value)}
                   >
-                    <SelectTrigger className="w-full px-4 py-5 bg-dark-gray-900 border border-soft-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
+                    <SelectTrigger className="w-full px-4 py-5 bg-dark-light-silver-900 border border-soft-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
                       <SelectValue placeholder="Select age" />
                     </SelectTrigger>
                     <SelectContent className="max-h-60 overflow-y-auto">
                       {[...Array(132)].map((_, i) => (
-                        <SelectItem key={i + 18} value={String(i + 18)}>{i + 18}</SelectItem>
+                        <SelectItem key={i + 18} value={String(i + 18)}>
+                          {i + 18}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -304,19 +322,24 @@ export default function ProfileInformation() {
             name="height"
             render={({ field }) => (
               <FormItem>
-                <FormLabel><FaPersonArrowUpFromLine size={16} className="inline mr-2" />Height (cm)</FormLabel>
+                <FormLabel>
+                  <FaPersonArrowUpFromLine size={16} className="inline mr-2" />
+                  {t("height")}
+                </FormLabel>
                 <FormControl>
                   <Select
                     disabled={!isEditing}
                     onValueChange={field.onChange}
                     value={String(field.value)}
                   >
-                    <SelectTrigger className="w-full px-4 py-5 bg-dark-gray-900 border border-soft-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
+                    <SelectTrigger className="w-full px-4 py-5 bg-dark-light-silver-900 border border-soft-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
                       <SelectValue placeholder="Select height" />
                     </SelectTrigger>
                     <SelectContent className="max-h-60 overflow-y-auto">
                       {[...Array(81)].map((_, i) => (
-                        <SelectItem key={i + 140} value={String(i + 140)}>{i + 140}</SelectItem>
+                        <SelectItem key={i + 140} value={String(i + 140)}>
+                          {i + 140}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -331,10 +354,10 @@ export default function ProfileInformation() {
               <button
                 type="submit"
                 disabled={!isDirty || isEditingProfile}
-                className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-colors ${!isDirty || isEditingProfile ? 'bg-gray-600 cursor-not-allowed' : 'bg-orange-600 hover:bg-orange-700'}`}
+                className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-colors ${!isDirty || isEditingProfile ? "bg-light-silver-600 cursor-not-allowed" : "bg-flame-orange-600 hover:bg-flame-orange-700"}`}
               >
                 <Save size={16} />
-                {isEditingProfile ? "Saving..." : "Save Changes"}
+                {isEditingProfile ? t("saving") : t("save-changes")}
               </button>
             </div>
           )}

@@ -189,5 +189,15 @@
   "delete-account-confirmation-description": "Delete account confirmation description",
   "deleting": "Deleting",
   "yes-delete-account": "Yes, delete my account",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "manage-your-account-and-preferences": "Manage your account and preferences",
+  "profile-information": "Profile Information",
+  "edit": "Edit",
+  "male": "Male",
+  "female": "Female",
+  "age": "Age",
+  "gender": "Gender",
+  "height": "Height",
+  "saving": "Saving...",
+  "save-changes": "Save Changes"
 }

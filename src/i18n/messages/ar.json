@@ -178,5 +178,16 @@
   "delete-account-confirmation-title": "حذف عنوان تأكيد الحساب",
   "deleting": "حذف",
   "yes-delete-account": "نعم ، احذف حسابي",
-  "cancel": "يلغي"
+  "cancel": "تراجع",
+  "settings": "إعدادات",
+  "manage-your-account-and-preferences": "إدارة حسابك وتفضيلاتك",
+  "profile-information": "معلومات الملف الشخصي",
+  "edit": "عدل",
+  "male": "ذكر",
+  "female": "أنثى",
+  "age": "سن",
+  "gender": "جنس",
+  "height": "طول",
+  "saving": "حفظ...",
+  "save-changes": "حفظ التعديلات"
 }

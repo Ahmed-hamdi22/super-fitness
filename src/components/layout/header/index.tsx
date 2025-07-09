@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-    <header className="relative z-20 px-8 mx-auto flex justify-between items-center backdrop:bg-inherit">
+    <header className="relative z-20 px-8 mx-auto flex justify-between items-center backdrop:bg-inherit dark:bg-dark-gray-900">
       <Link to={`/`}>
         <img src={LogoImg} className="w-[100px] h-[100px]" />
       </Link>
