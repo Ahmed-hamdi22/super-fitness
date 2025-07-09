@@ -9,7 +9,7 @@ import Header from "@/components/layout/header";
 export default function Classes() {
   // useTranslation
   const t = useTranslations();
-  
+
   return (
     <div className="w-full h-full bg-[url('/src/assets/images/transform-bg.jpg')] bg-cover bg-center">
       {/* Main section */}

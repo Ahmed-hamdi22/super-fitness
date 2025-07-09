@@ -34,11 +34,11 @@ export default function CategoriesCarousel() {
 
   return (
     <>
-      <div className="bg-light-silver-600 py-5 dark:bg-dark-gray-900">
+      <div className="bg-light-silver-200 py-5 dark:bg-dark-gray-900">
         <Header />
       </div>
 
-      <div className="relative w-full">
+      <div className="relative w-full bg-white">
         <div className="absolute inset-0 z-0">
           {/* Healthy logo */}
           <div className="absolute -top-6 left-0 z-10 right-0 flex justify-center items-center gap-2">
@@ -51,10 +51,10 @@ export default function CategoriesCarousel() {
           </div>
 
           {/* Background image */}
-          <div className="w-full h-full bg-healthy bg-cover bg-center" />
+          <div className="w-full h-full bg-healthy bg-cover bg-center hidden dark:block" />
 
           {/* Layout */}
-          <div className="absolute top-0 left-0 right-0 h-full bg-light-silver-300 bg-opacity-60 inset-0 backdrop-blur-2xl dark:bg-dark-gray-900/50" />
+          <div className="absolute top-0 hidden dark:block left-0 right-0 h-full bg-light-silver-300 bg-opacity-60 inset-0 backdrop-blur-2xl dark:bg-dark-gray-900/50" />
         </div>
 
         {/* Content */}
@@ -89,7 +89,7 @@ export default function CategoriesCarousel() {
               >
                 <CarouselContent className="flex flex-row rtl:flex-row-reverse">
                   {chunkedMeals.map((meals) => (
-                    <CarouselItem>
+                    <CarouselItem key={meals[0].idMeal}>
                       {/* Card */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         {meals.map((meal: MealByCategory) => (
@@ -99,7 +99,7 @@ export default function CategoriesCarousel() {
                             image={meal.strMealThumb}
                             actionLabel={t("explore")}
                             actionIcon={<ArrowRight />}
-                            className="h-[397px] w-full sm:w-[403px]"
+                            className="h-[397px] w-full sm:w-[403px] cursor-pointer"
                             mode="Exploer"
                             onClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
                             onActionClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
@@ -120,7 +120,9 @@ export default function CategoriesCarousel() {
                     dotClassName={(index) =>
                       cn(
                         "w-2 h-2 rounded-full transition-all mx-1",
-                        current === index ? "bg-flame-orange-500 w-5" : "bg-white",
+                        current === index
+                          ? "bg-flame-orange-500 w-5"
+                          : "bg-dark-gray-800 dark:bg-white",
                       )
                     }
                   />
