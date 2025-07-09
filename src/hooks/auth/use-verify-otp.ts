@@ -25,5 +25,5 @@ export function useVerifyOtp() {
     },
   });
 
-  return { verifyOTP: mutate, isPending, error };
+  return { verifyOTP: mutate, isVerifying:isPending, error };
 }

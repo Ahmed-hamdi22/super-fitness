@@ -1,6 +1,7 @@
 import { AlertTriangle, RefreshCw, Home } from "lucide-react";
 import { Button } from "../ui/button";
 import { MdOutlineKeyboardReturn } from "react-icons/md";
+import { useTranslations } from "use-intl";
 
 type ErrorComponentProps = {
   message?: string;
@@ -15,6 +16,9 @@ export default function ErrorComponent({
   onGoHome,
   onRedirect,
 }: ErrorComponentProps) {
+  // Translations
+  const t = useTranslations();
+
   return (
     <div className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center p-4">
       <div className="text-center max-w-md w-full space-y-6">
@@ -27,7 +31,7 @@ export default function ErrorComponent({
 
         {/* Error title */}
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Oops! Something went wrong
+          {t('oops-something-went-wrong')}
         </h1>
 
         {/* Error message */}

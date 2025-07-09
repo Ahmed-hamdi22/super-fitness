@@ -46,14 +46,7 @@ export default function GoalForm() {
           <Heading discripton={t("this-helps-us-create-your-personalized-plan")} />
         </div>
         {/* Radio group */}
-        <RadioForm options={options} selectedValue={selectedOption} onChange={setSelectedOption} />
-
-        {/* Selected value display */}
-        <div className="text-center mt-8">
-          <p className="text-gray-400 text-sm">
-            Selected: <span className="text-flame-orange-500 font-medium">{selectedOption}</span>
-          </p>
-        </div>
+        <RadioForm options={options} selectedValue={selectedOption} onChange={setSelectedOption} />    
 
         {/* Next button */}
         <div className="flex justify-center mt-8 w-full">
