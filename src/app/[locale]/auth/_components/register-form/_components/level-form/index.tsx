@@ -72,14 +72,6 @@ export default function LevelForm() {
             {/* Radio group */}
             <RadioForm options={options} selectedValue={selectedOption} onChange={handleSelect} />
 
-            {/* Selected value display */}
-            <div className="text-center mt-8">
-              <p className="text-gray-400 text-sm">
-                Selected:{" "}
-                <span className="text-flame-orange-500 font-medium">{selectedOption}</span>
-              </p>
-            </div>
-
             {/* Next button */}
             <div className="flex justify-center mt-8">
               <AuthButton

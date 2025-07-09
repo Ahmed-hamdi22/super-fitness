@@ -136,7 +136,7 @@
   "dont-have-an-account": "Don't have an account yet ?",
   "email-invalid": "Email Is Invalid",
   "password-required": "Password Required",
-  "otp-code": "otp code",
+  "otp-code": "OTP Code",
   "welcome-to-super-fitness": "Welcome to Super Fitness",
   "re-password-is-required": "Re-password is required",
   "send-otp": "Send OTP",
@@ -177,5 +177,6 @@
   "aboutus": "aboutus",
   "healthy-nutrltions": "Healthy Nutrltions",
   "why-us": "why us",
-  "why-us-": "why us"
+  "why-us-": "why us",
+  "oops-something-went-wrong": "Oops! Something went wrong"
 }

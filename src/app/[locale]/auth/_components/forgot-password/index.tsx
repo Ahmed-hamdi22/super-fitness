@@ -20,5 +20,5 @@ export default function ForgotPasswordPage() {
     }
   };
 
-  return <>{renderStep()}</>;
+  return <div className="font-baloo">{renderStep()}</div>;
 }
