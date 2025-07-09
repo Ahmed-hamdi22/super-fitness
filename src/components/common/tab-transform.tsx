@@ -1,8 +1,7 @@
 import { useRandomMuscles } from "@/hooks/use-random-muscles";
 import { useForm } from "react-hook-form";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslations } from "use-intl";
-
 
 type FormData = {
   muscleGroup: string;
@@ -15,6 +14,7 @@ export default function TabFitness() {
   // Navigation
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Get initial category
   const initialMuscle = searchParams.get("muscleGroup") || "";
@@ -32,23 +32,29 @@ export default function TabFitness() {
   // Fetch muscle groups
   const { data, isLoading } = useRandomMuscles();
 
-  // Handle button click
+  // Check if user is inside /classes page
+  const isInsideClassesPage = location.pathname.startsWith("/classes/");
+
+  // Handle tab click
   const handleClick = (value: string) => {
     setValue("muscleGroup", value);
 
-    // Create new urlsearchparams object
-    const params = new URLSearchParams(searchParams.toString());
-
-    if (value) {
-      params.set("muscleGroup", value);
+    if (isInsideClassesPage) {
+      // If inside classes page
+      if (value) {
+        navigate(`/classes/${value}`);
+      }
     } else {
-      params.delete("muscleGroup");
+      // If outside classes page
+      const params = new URLSearchParams(searchParams.toString());
+      if (value) {
+        params.set("muscleGroup", value);
+      } else {
+        params.delete("muscleGroup");
+      }
+      // Update URL
+      navigate(`?${params.toString()}`, { replace: true });
     }
-
-    // Update URL
-    navigate(`?${params.toString()}`, {
-      replace: true,
-    });
   };
 
   //  Loading message
