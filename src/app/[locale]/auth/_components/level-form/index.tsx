@@ -28,6 +28,7 @@ const { register, isPending, error } = useRegister();
   };
 
   const handleSubmit = () => {
+    console.log(formData)
     register(formData);
   };
 

@@ -7,7 +7,7 @@ import { useTranslations } from "use-intl";
 import { useState } from "react";
 import { Eye, EyeOff, Lock } from "lucide-react";
 import Heading from "@/components/common/heading";
-import AuthButton from "@/components/ui/auth-button";
+// import AuthButton from "@/components/ui/auth-button";
 import { useChangePassword } from "@/hooks/auth/use-change-password";
 
 export default function NewPasswordForm() {
@@ -15,7 +15,7 @@ export default function NewPasswordForm() {
   const t = useTranslations();
 
   // Mutation
-  const { changePassword, isPending, error } = useChangePassword();
+  const { changePassword, isPending } = useChangePassword();
 
   // State
   const [hidePassword, setHidePassword] = useState(true);

@@ -43,8 +43,8 @@ export function SelectGender() {
                     {/* Gender options */}
                     <div className="flex gap-8">
                         <button
-                            onClick={() => handleSelect("Male")}
-                            className={`flex flex-col items-center justify-center w-24 h-24 rounded-full border-2 text-white ${selectedGender === "Male"
+                            onClick={() => handleSelect("male")}
+                            className={`flex flex-col items-center justify-center w-24 h-24 rounded-full border-2 text-white ${selectedGender === "male"
                                     ? "border-blue-500"
                                     : "border-gray-400"
                                 } transition`}
@@ -54,8 +54,8 @@ export function SelectGender() {
                         </button>
 
                         <button
-                            onClick={() => handleSelect("Female")}
-                            className={`flex flex-col text-white items-center justify-center w-24 h-24 rounded-full border-2 ${selectedGender === "Female"
+                            onClick={() => handleSelect("female")}
+                            className={`flex flex-col text-white items-center justify-center w-24 h-24 rounded-full border-2 ${selectedGender === "female"
                                     ? "border-pink-500"
                                     : "border-gray-400"
                                 } transition`}

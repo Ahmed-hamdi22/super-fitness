@@ -98,3 +98,30 @@ a:hover {
 .bg-healthy {
   background-image: url("/src/assets/images/transform-bg.jpg");
 }
+
+
+.chat-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/chat-image.jpg'); /* remove /public — Next.js serves /public as root */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9; /* Adjust opacity */
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.chat-image > * {
+  position: relative;
+  z-index: 1;
+}

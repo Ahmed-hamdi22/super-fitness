@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Chat from "@/components/common/gemini-ai";
 import AutoScrollBanner from "@/components/common/auto-scroll";

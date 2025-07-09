@@ -107,9 +107,9 @@ export default function Chat() {
                 {t("tap-to-close")}
               </h1>
             </div>{" "}
-            <Card className="m-10 mt-1">
+            <Card className="m-10 mt-1 chat-image font-baloo">
               <CardHeader className="flex flex-row items-center justify-between space-y-0">
-                <CardTitle className="text-lg font-bold">{t("smart-coach")}</CardTitle>
+                <CardTitle className="text-lg font-bold text-white">{t("smart-coach")}</CardTitle>
                 <Button onClick={toggleChat} size="sm" variant="ghost" className="px-2 py-0">
                   <Menu className="size-10 text-flame-orange-500" />
                   <span className="sr-only">{t("close-chat")}</span>
@@ -132,7 +132,7 @@ export default function Chat() {
                         <div
                           className={`inline-block rounded-lg px-4 py-2 ${
                             message.role === "user"
-                              ? "bg-[#FF6A0080] text-white"
+                              ? "bg-flame-orange-400 text-white"
                               : "bg-[#00000040] text-white"
                           }`}
                         >
@@ -163,7 +163,7 @@ export default function Chat() {
                     <Input
                       value={input}
                       onChange={handleInputChange}
-                      className="w-full pl-10" // Add padding-left for icon space
+                      className="w-full pl-10 bg-inherit placeholder:text-white text-white" // Add padding-left for icon space
                       placeholder={t("ask-me-anything")}
                     />
                   </div>
