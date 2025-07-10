@@ -67,7 +67,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
               image={muscle.image}
               actionLabel={t("explore")}
               actionIcon={<ArrowRight />}
-              className=" w-full sm:w-[430px] h-96"
+              className="h-[397px] w-full max-w-[430px] mx-auto"
               mode="Exploer"
               onActionClick={() => navigate(`/classes/${muscle._id}`)}
             />
@@ -89,7 +89,7 @@ export default function MuscleGroupList({ variant }: { variant?: "carousel" | "g
                   image={muscle.image}
                   actionLabel={t("explore")}
                   actionIcon={<ArrowRight />}
-                  className="h-[397px] w-full sm:w-[430px]"
+                  className="h-[397px] w-full max-w-[430px] mx-auto"
                   mode="Exploer"
                   onActionClick={() => navigate(`/classes/${muscle._id}`)}
                 />
