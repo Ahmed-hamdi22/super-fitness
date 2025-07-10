@@ -130,7 +130,7 @@ export default function MainSettings() {
       ),
       title: t("mood"),
       hasValue: true,
-      value: theme,
+      value: theme === "light" ? t("light") : t("dark"),
       toggle: isDark,
       onClick: toggleTheme,
       isThemeToggle: true,
@@ -165,7 +165,7 @@ export default function MainSettings() {
     <>
       <div className="font-baloo flex flex-col items-center">
         {/* Menu items grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mb-4">
+        <div className="grid grid-cols-1 w-52 md:w-settings-grid sm:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mb-4">
           {menuItems.map((item, index) => (
             // Buttons of menu items
             <Button

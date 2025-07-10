@@ -60,7 +60,7 @@ export default function FitnessSettings() {
       {/* Top Settings Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 font-baloo text-dark-gray-800 dark:text-white">
         {topSettings.map((setting, index) => (
-          <div key={index} className="text-center">
+          <div key={index} className="text-center w-60">
             {/* Title */}
             <h3 className=" text-3xl font-extrabold">{setting.title}</h3>
 
