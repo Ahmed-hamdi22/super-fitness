@@ -11,7 +11,7 @@ import WorkoutsLogo from "@/components/common/workouts-logo";
 import { useTranslations } from "use-intl";
 import TabFitness from "@/components/common/tab-transform";
 
-interface ExercisesPageProps {
+type ExercisesPageProps=  {
   primeMoverMuscleId: string;
 }
 
@@ -88,10 +88,14 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
     <div className="w-full h-full px-4 sm:px-6 lg:px-16 py-5 dark:bg-dark-gray-900 dark:text-light-silver-300">
       {/* Header */}
       <Header />
+
+      {/* Worksout logo */}
       <div className="flex flex-col justify-center items-center relative ">
         <div className=" absolute -top-2  flex justify-center pointer-events-none">
           <WorkoutsLogo text={t("about-us-title")} />
         </div>
+
+        {/* Tabfitness nav */}
         <TabFitness />
       </div>
 
@@ -110,7 +114,7 @@ export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPagePr
                 className={`p-3 font-semibold ${
                   selectedLevel === level.id
                     ? "bg-flame-orange-500 rounded-3xl text-white"
-                    : "text-dark-gray-900"
+                    : "text-dark-gray-900 dark:text-soft-gray-500"
                 }`}
               >
                 {level.name}

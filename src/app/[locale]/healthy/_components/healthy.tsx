@@ -90,6 +90,7 @@ export default function CategoriesCarousel() {
                 <CarouselContent className="flex flex-row rtl:flex-row-reverse">
                   {chunkedMeals.map((meals) => (
                     <CarouselItem key={meals[0].idMeal}>
+
                       {/* Card */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         {meals.map((meal: MealByCategory) => (
@@ -101,8 +102,8 @@ export default function CategoriesCarousel() {
                             actionIcon={<ArrowRight />}
                             className="h-[397px] w-full sm:w-[403px] cursor-pointer"
                             mode="Exploer"
-                            onClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
-                            onActionClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
+                            onClick={() => navigate(`/mealdetails/${meal.idMeal}`)}
+                            onActionClick={() => navigate(`/mealdetails/${meal.idMeal}`)}
                           />
                         ))}
                       </div>

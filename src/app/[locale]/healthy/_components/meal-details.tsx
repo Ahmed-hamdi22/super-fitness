@@ -8,7 +8,8 @@ import useMealDetails from "@/lib/apis/meals/meal-details.api";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslations } from "use-intl";
 
-export default function Modal() {
+
+export default function Mealdetails() {
   // Translations
   const t = useTranslations();
 

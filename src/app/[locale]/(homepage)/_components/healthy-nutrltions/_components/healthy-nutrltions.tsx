@@ -11,10 +11,9 @@ export default function HealthyNutrltions() {
   // Translation
   const t = useTranslations();
 
-  //
+  // Hooks
   const { data: meals, isLoading, error } = useMealsCategories();
 
-  // Selecting the first three categories
   const threeMeals = meals?.slice(0, 3) || [];
 
   return (
@@ -24,7 +23,7 @@ export default function HealthyNutrltions() {
         <div className="absolute top-12 left-0 right-0 z-10 flex justify-center items-center gap-2 mb-8">
           <WorkoutsLogo text={t("healthy")} />
 
-          {/* Icon and label for healthy nutrltions */}
+          {/* Healthy nutrltions icon */}
           <div className="relative z-10 flex items-center top-8 left-4">
             <DumbbellIcon text={t("healthy-nutrltions")} />
           </div>

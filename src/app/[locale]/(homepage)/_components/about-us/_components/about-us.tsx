@@ -1,4 +1,3 @@
-
 import ArrowUpRight from "@/components/common/arrow-long-right";
 import DumbbellIcon from "@/components/common/dumbbell";
 import WorkoutsLogo from "@/components/common/workouts-logo";
@@ -6,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
 
 export default function AboutUs() {
+  // Translations
   const t = useTranslations();
 
-  // Services data
   const services = [
     {
       title: t("personal-trainer"),
@@ -65,7 +64,7 @@ export default function AboutUs() {
                 <WorkoutsLogo text={t("aboutus")} />
               </span>
 
-              {/* Icon and label for about us */}
+              {/* Icon for about us */}
               <div className="relative z-10 flex items-center gap-2 -bottom-6 capitalize ">
                 <DumbbellIcon text={t("about-us")} />
               </div>
@@ -83,7 +82,6 @@ export default function AboutUs() {
             </p>
 
             {/* Services grid */}
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 mb-8 border-gray-200 pt-6 ">
               {Array.from({ length: Math.floor(services.length / 2) }, (_, i) => {
                 const group = services.slice(i * 2, i * 2 + 2);
@@ -103,6 +101,7 @@ export default function AboutUs() {
                                 {service.title}
                               </h4>
                             </div>
+
                             {/*  Description */}
                             <p className="text-lg font-baloo text-dark-gray-800 dark:text-light-silver-300 leading-relaxed">
                               {service.description}
@@ -111,6 +110,7 @@ export default function AboutUs() {
                         </div>
                       ))}
                     </div>
+
                     {/* Border */}
                     {i === 0 && <div className="w-full h-px bg-gray-200 my-3"></div>}
                   </div>
@@ -118,7 +118,7 @@ export default function AboutUs() {
               })}
             </div>
 
-            {/* Get started button */}
+            {/* Button */}
 
             <div className="relative">
               <Button className=" w-36 me-8 text-light-silver-300 rounded-3xl bg-flame-orange-500 relative capitalize">
