@@ -1,85 +1,74 @@
 // Import necessary dialog components from your UI library
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-  } from "@/components/ui/dialog"
+  Dialog,
+  DialogContent,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { useTranslations } from "use-intl";
 
-  type PolicyDialogProps = {
-    open: boolean;
-    onOpenChange: (open: boolean) => void;
-  };
+type PolicyDialogProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+};
 
-export default function PolicyDialog({
-    open,
-    onOpenChange,
+export default function PolicyDialog({ open, onOpenChange }: PolicyDialogProps) {
+  // Translations
+  const t = useTranslations();
 
-  }:PolicyDialogProps) {
+  return (
+    // Dialog
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      {/* Dialog content container */}
+      <DialogContent className="font-baloo bg-dark-gray-900 border-none overflow-y-auto">
+        {/* Dialog header section */}
+        <div className="text-center mb-8">
+          {/* Title */}
+          <h1 className="text-5xl text-white mb-2 font-extrabold capitalize">
+          {t('website-policies')}
+          </h1>
 
-    return(
-        // Dialog
-        <Dialog open={open} onOpenChange={onOpenChange}>
-            {/* Dialog content container */}
-        <DialogContent className="font-baloo bg-dark-gray-900 border-none max-h-[80vh] overflow-y-auto">
-          {/* Dialog header section */}
-          <DialogHeader>
-            {/* Dialog title */}
-            <DialogTitle className="text-white">Website Policies</DialogTitle>
+          {/* Description */}
+          <p className="text-white capitalize text-lg">{t('please-read-and-agree-to-our-terms-before-continuing')}</p>
+        </div>
 
-            {/* Dialog description */}
-            <DialogDescription className="text-gray-400">
-              Please read and agree to our terms before continuing
-            </DialogDescription>
-          </DialogHeader>
-  
-          {/* Main policy content */}
-          <div className="space-y-4 text-gray-300">
-            {/* Policy 1: Content Use */}
-            <div>
-              <h3 className="font-medium text-white mb-2">1. Content Use</h3>
-              <p className="text-sm">
-                Workouts, meal plans, and advice are for informational purposes only. 
-                Consult a doctor before starting any new fitness/diet program.
-              </p>
-            </div>
-  
-            {/* Policy 2: Privacy */}
-            <div>
-              <h3 className="font-medium text-white mb-2">2. Privacy</h3>
-              <p className="text-sm">
-                We collect minimal data (email, goals) to personalize your experience.
-                No spam or data sales—ever.
-              </p>
-            </div>
-  
-            {/* Policy 3: No Guarantees */}
-            <div>
-              <h3 className="font-medium text-white mb-2">3. No Guarantees</h3>
-              <p className="text-sm">
-                Results vary based on effort and commitment. You're responsible for 
-                your own health and safety.
-              </p>
-            </div>
-  
-            {/* Policy 4: Changes */}
-            <div>
-              <h3 className="font-medium text-white mb-2">4. Changes</h3>
-              <p className="text-sm">
-                Policies may update; continued use means you agree.
-              </p>
-            </div>
-          </div>
-  
-          {/* Dialog footer with acceptance note */}
-          <DialogFooter className="mt-4">
-            <p className="text-sm text-gray-400">
-              By using this site, you accept these terms.
+        {/* Main policy content */}
+        <div className="space-y-4 text-gray-300">
+          {/* Policy 1: Content Use */}
+          <div>
+            <h3 className="font-medium text-white mb-2">{t('1-content-use')}</h3>
+            <p className="text-sm">
+              {t('policy-1')}
             </p>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    )
+          </div>
+
+          {/* Policy 2: Privacy */}
+          <div>
+            <h3 className="font-medium text-white mb-2">{t('2-privacy')}</h3>
+            <p className="text-sm">
+              {t('policy-2')}
+            </p>
+          </div>
+
+          {/* Policy 3: No guarantees */}
+          <div>
+            <h3 className="font-medium text-white mb-2">{t('3-no-guarantees')}</h3>
+            <p className="text-sm">
+              {t('policy-3')}
+            </p>
+          </div>
+
+          {/* Policy 4: Changes */}
+          <div>
+            <h3 className="font-medium text-white mb-2">{t('4-changes')}</h3>
+            <p className="text-sm">{t('policy-4')}</p>
+          </div>
+        </div>
+
+        {/* Dialog footer with acceptance note */}
+        <DialogFooter className="mt-4">
+          <p className="text-sm text-gray-400">{t('by-using-this-site-you-accept-these-terms')}</p>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
 }

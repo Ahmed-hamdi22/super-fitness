@@ -9,7 +9,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import AccountModal from "../../features/account";
@@ -17,8 +17,7 @@ import { Sheet } from "../../custom/sheet";
 import { useToken } from "@/context/auth/token";
 
 export default function Header() {
-
-  const { token } = useToken()
+  const { token } = useToken();
   const t = useTranslations();
   const [isAccountSheetOpen, setIsAccountSheetOpen] = useState(false);
   const user = token;
@@ -32,7 +31,11 @@ export default function Header() {
         <div className="hidden md:flex gap-5 text-lg">
           <span>
             <NavLink
-              className={({ isActive }) => (isActive ? "text-flame-orange-500 hover:text-flame-orange-300" : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300")}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-flame-orange-500 hover:text-flame-orange-300"
+                  : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300"
+              }
               to={`/`}
             >
               {t("home")}
@@ -40,7 +43,11 @@ export default function Header() {
           </span>
           <span>
             <NavLink
-              className={({ isActive }) => (isActive ? "text-flame-orange-500 hover:text-flame-orange-300" : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300")}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-flame-orange-500 hover:text-flame-orange-300"
+                  : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300"
+              }
               to={`/about`}
             >
               {t("about")}
@@ -48,7 +55,11 @@ export default function Header() {
           </span>
           <span>
             <NavLink
-              className={({ isActive }) => (isActive ? "text-flame-orange-500 hover:text-flame-orange-300" : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300")}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-flame-orange-500 hover:text-flame-orange-300"
+                  : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300"
+              }
               to={`/classes`}
             >
               {t("classes")}
@@ -56,7 +67,11 @@ export default function Header() {
           </span>
           <span>
             <NavLink
-              className={({ isActive }) => (isActive ? "text-flame-orange-500 hover:text-flame-orange-300" : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300")}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-flame-orange-500 hover:text-flame-orange-300"
+                  : "text-dark-gray-800 hover:text-dark-gray-800/80 dark:text-light-silver-300"
+              }
               to={`/healthy`}
             >
               {t("healthy")}
@@ -66,19 +81,17 @@ export default function Header() {
         <div className="hidden md:block">
           {user ? (
             // Will be used to open account sheet
-            <button
-              onClick={() => setIsAccountSheetOpen(true)}
-              className="focus:outline-none"
-            >
+            <button onClick={() => setIsAccountSheetOpen(true)} className="focus:outline-none">
               <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
             </button>
           ) : (
             <div className="flex gap-5">
               <div className="flex rtl:ml-4">
-                <Button asChild className="bg-flame-orange-500 hover:bg-flame-orange-400 text-white rounded-full rtl:ml-5 ltr:mr-3">
-                  <Link to="/login">
-                    {t("login")}
-                  </Link>
+                <Button
+                  asChild
+                  className="bg-flame-orange-500 hover:bg-flame-orange-400 text-white rounded-full rtl:ml-5 ltr:mr-3"
+                >
+                  <Link to="/login">{t("login")}</Link>
                 </Button>
                 <ArrowUpRight className="w-8 h-8 bg-flame-orange-500 border border-white rounded-full text-white p-2 -ml-5 rtl:-mr-8" />
               </div>
@@ -88,9 +101,7 @@ export default function Header() {
                   className="rounded-full border-flame-orange-500 text-flame-orange-500"
                   asChild
                 >
-                  <Link to="/register">
-                    {t("sign-up")}
-                  </Link>
+                  <Link to="/register">{t("sign-up")}</Link>
                 </Button>
                 <ArrowUpRight className="w-8 h-8 bg-flame-orange-500 border border-white rounded-full text-white p-2 -ml-3 rtl:-mr-2" />
               </div>
@@ -98,7 +109,9 @@ export default function Header() {
           )}
         </div>
         <div className="md:hidden flex gap-5">
-          <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
+          <button onClick={() => setIsAccountSheetOpen(true)} className="focus:outline-none">
+            <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
+          </button>
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Menu className="w-10 h-10 bg-flame-orange-500 p-2 rounded-full text-white" />

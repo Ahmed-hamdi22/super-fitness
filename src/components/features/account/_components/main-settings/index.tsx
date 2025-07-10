@@ -18,7 +18,7 @@ type MenuItem = {
   title: string;
   hasValue?: boolean;
   value?: string;
-  onClick?: () => void;
+  onClick: () => void;
   toggle?: boolean;
   isThemeToggle?: boolean;
 };
@@ -57,6 +57,10 @@ export default function MainSettings() {
     navigate("/settings");
   };
 
+  const handleHelp = () => {
+    navigate("/contact-us");
+  };
+
   // Variables
   const menuItems: MenuItem[] = [
     {
@@ -68,7 +72,7 @@ export default function MainSettings() {
       ),
       title: t("change-password"),
       hasValue: false,
-      onClick: handleChangePassword
+      onClick: handleChangePassword,
     },
     {
       icon: (
@@ -136,7 +140,7 @@ export default function MainSettings() {
         <HiOutlineCog className="text-flame-orange-500" style={{ width: "24px", height: "24px" }} />
       ),
       title: t("settings"),
-      onClick: handleSettings
+      onClick: handleSettings,
     },
     {
       icon: (
@@ -146,13 +150,14 @@ export default function MainSettings() {
         />
       ),
       title: t("privacy-policy"),
-      onClick: handlePolicy
+      onClick: handlePolicy,
     },
     {
       icon: (
         <IoHelpBuoy className="text-flame-orange-500" style={{ width: "24px", height: "24px" }} />
       ),
       title: t("help"),
+      onClick: handleHelp,
     },
   ];
 
@@ -160,12 +165,12 @@ export default function MainSettings() {
     <>
       <div className="font-baloo flex flex-col items-center">
         {/* Menu items grid */}
-        <div className="grid grid-cols-3 gap-4 mt-8 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mb-4">
           {menuItems.map((item, index) => (
             // Buttons of menu items
             <Button
               key={index}
-              className="bg-transparent border border-dark-gray-800 dark:border-light-silver-300 rounded-2xl w-52 h-40 transition-colors group hover:bg-transparent"
+              className="bg-transparent border border-dark-gray-800 dark:border-light-silver-300 rounded-2xl w-full max-w-52 h-40 transition-colors group hover:bg-transparent"
               onClick={item.onClick}
             >
               {/* Buttons container */}
@@ -230,10 +235,7 @@ export default function MainSettings() {
       </div>
 
       {/* Policy dialog */}
-      <PolicyDialog
-              open={openDialog}
-              onOpenChange={setOpenDialog}
-      />
+      <PolicyDialog open={openDialog} onOpenChange={setOpenDialog} />
     </>
   );
 }
