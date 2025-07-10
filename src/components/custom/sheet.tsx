@@ -52,6 +52,15 @@ export function Sheet({ isOpen, onClose, children }: SheetProps) {
                 className="relative transform text-left shadow-xl transition-all w-full bg-white bg-opacity-60 dark:bg-dark-gray-900 dark:bg-opacity-60 backdrop-blur-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
+                {/* Close button */}
+                <button
+                  onClick={onClose}
+                  className="absolute top-4 right-4 text-2xl text-gray-700 dark:text-white hover:text-flame-orange-500 focus:outline-none"
+                  aria-label="Close"
+                  type="button"
+                >
+                  &times;
+                </button>
                 {children}
               </div>
             </div>

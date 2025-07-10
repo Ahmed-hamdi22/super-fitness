@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MdLanguage, MdOutlinePublishedWithChanges, MdSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { HiOutlineCog } from "react-icons/hi";
@@ -8,10 +7,21 @@ import { useLogout } from "@/hooks/auth/use-logout";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/context/theme";
 import { IoArrowForwardCircleOutline, IoHelpBuoy } from "react-icons/io5";
-import SettingsDialog from "./components/main-settings-dialog";
 import { useLocale } from "@/i18n/provider";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import PolicyDialog from "../policy-dialog";
+import { useState, type ReactNode } from "react";
+
+type MenuItem = {
+  icon: ReactNode;
+  title: string;
+  hasValue?: boolean;
+  value?: string;
+  onClick?: () => void;
+  toggle?: boolean;
+  isThemeToggle?: boolean;
+};
 
 export default function MainSettings() {
   // Translations
@@ -20,12 +30,12 @@ export default function MainSettings() {
   // Navigation
   const navigate = useNavigate();
 
+  // State
+  const [openDialog, setOpenDialog] = useState<boolean>(false);
+
   // Context
   const { locale, setLocale } = useLocale();
   const { theme, toggleTheme, isDark } = useTheme();
-
-  // States
-  const [openDialog, setOpenDialog] = useState<boolean>(false);
 
   // Hooks
   const { logout } = useLogout();
@@ -33,6 +43,10 @@ export default function MainSettings() {
   // Functions
   const handleLogout = () => {
     logout();
+  };
+
+  const handlePolicy = () => {
+    setOpenDialog(true);
   };
 
   const handleChangePassword = () => {
@@ -44,7 +58,7 @@ export default function MainSettings() {
   };
 
   // Variables
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       icon: (
         <MdOutlinePublishedWithChanges
@@ -132,6 +146,7 @@ export default function MainSettings() {
         />
       ),
       title: t("privacy-policy"),
+      onClick: handlePolicy
     },
     {
       icon: (
@@ -214,7 +229,11 @@ export default function MainSettings() {
         </Button>
       </div>
 
-      <SettingsDialog open={openDialog} onOpenChange={setOpenDialog} />
+      {/* Policy dialog */}
+      <PolicyDialog
+              open={openDialog}
+              onOpenChange={setOpenDialog}
+      />
     </>
   );
 }

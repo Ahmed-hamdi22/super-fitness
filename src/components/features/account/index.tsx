@@ -3,8 +3,8 @@ import MainSettings from "./_components/main-settings";
 
 export default function AccountModal() {
   return (
-    <div className="bg-orange-300">
-      <div className="flex justify-center items-center flex-col gap-4 p-4  h-screen">
+    <div className="bg-opacity-60">
+      <div className="flex justify-center items-center flex-col gap-4 p-4 container">
         {/* Fitness Settings */}
         <FitnessSettings />
 

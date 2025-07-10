@@ -9,6 +9,7 @@ import { Eye, EyeOff, Lock } from "lucide-react";
 import Heading from "@/components/common/heading";
 // import AuthButton from "@/components/ui/auth-button";
 import { useChangePassword } from "@/hooks/auth/use-change-password";
+import AuthButton from "@/components/common/auth-button";
 
 export default function NewPasswordForm() {
   // Translation
@@ -150,7 +151,6 @@ export default function NewPasswordForm() {
           />
 
           {/* Create new password button */}
-
           <AuthButton
             type="submit"
             disabled={isPending}
