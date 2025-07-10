@@ -12,8 +12,6 @@ export async function logout(token: string) {
   });
   const payload: APIResponse<object> = await response.data;
 
-  console.log("Logout Payload:", payload)
-
   if ("error" in payload) {
     throw new Error(payload.error);
   }

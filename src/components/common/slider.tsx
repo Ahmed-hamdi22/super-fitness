@@ -91,7 +91,6 @@ const Slider = ({
   });
 
   const handleSubmit = () => {
-    console.log(selected)
     setFormData(prev => ({ ...prev, [field]: selected }))
     setCurrentStep(nextStep)
   }

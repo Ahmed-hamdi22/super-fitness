@@ -72,7 +72,6 @@ export default function SettingForm({
     try {
       if (!token) return;
       await editProfile(token, data);
-      console.log("Submit Changes", data);
       onRefresh();
       onCancel();
     } catch (error) {

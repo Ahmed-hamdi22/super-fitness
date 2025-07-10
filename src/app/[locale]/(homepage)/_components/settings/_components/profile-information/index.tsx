@@ -87,8 +87,6 @@ export default function ProfileInformation() {
     }
   };
 
-  console.log("Height:", user?.height);
-
   const handleSave = form.handleSubmit(async (data) => {
     const updatedFields: Partial<z.infer<typeof formSchema>> = {};
 
