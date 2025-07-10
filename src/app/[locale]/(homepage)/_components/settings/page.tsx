@@ -13,7 +13,7 @@ export default function SettingsPage() {
     <>
       {/* Header */}
       <Header />
-      <div className=" font-baloo mb-3 dark:bg-dark-gray-900 pt-5">
+      <div className=" font-baloo py-5 dark:bg-dark-gray-900">
         <div className="container">
           <div className="relative mb-8">
             {/* Title  */}

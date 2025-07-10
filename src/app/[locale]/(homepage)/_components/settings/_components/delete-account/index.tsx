@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -36,7 +37,6 @@ export default function DeleteAccount() {
       {
         loading: t('deleting-account'),
         success: () => {
-          // The actual redirect/logout should be handled in the auth flow
           navigate("/register");
           return t('account-deleted-successfully');
         },
@@ -47,44 +47,55 @@ export default function DeleteAccount() {
 
   return (
     <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-6">
+      {/* Title */}
       <h2 className="text-xl font-semibold text-red-400 mb-4">{t('danger-zone')}</h2>
-      <p className="text-gray-300 mb-6">
+
+      {/* Warning text */}
+      <p className="text-dark-gray-900 dark:text-light-silver-300 mb-6">
         {t('delete-account-warning')}
       </p>
       
+      {/* Dialog */}
       <Dialog>
+        {/* Dialog trigger */}
         <DialogTrigger asChild>
+          {/* Delete button */}
           <Button 
             variant="destructive"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 dark:text-dark-gray-900"
           >
             <Trash2 size={16} />
             {t('delete-account')}
           </Button>
         </DialogTrigger>
         
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle className="text-red-400">{t('delete-account-confirmation-title')}</DialogTitle>
-            <DialogDescription className="text-gray-300">
-              {t('delete-account-confirmation-description')}
+        {/* Dialog content */}
+        <DialogContent className='bg-dark-gray-900 border-none'>
+          {/* Dialog header */}
+          <DialogHeader className='mb-5'>
+            {/* Dialog title */}
+            <DialogTitle className="text-red-400">Are you sure you want to delete your account?</DialogTitle>
+
+            {/* Dialog description */}
+            <DialogDescription>
             </DialogDescription>
           </DialogHeader>
           
+          {/* Dialog footer */}
           <DialogFooter>
             <Button 
               variant="destructive"
               onClick={handleDeleteAccount}
               disabled={isPending}
+              className='text-dark-gray-800 dark:text-white'
             >
               {isPending ? t('deleting') : t('yes-delete-account')}
             </Button>
-            <Button 
-              variant="secondary"
-              disabled={isPending}
-            >
-              {t('cancel')}
-            </Button>
+            <DialogClose asChild>
+    <Button variant="secondary">
+      {t('cancel')}
+    </Button>
+  </DialogClose>
           </DialogFooter>
         </DialogContent>
       </Dialog>

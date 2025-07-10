@@ -87,6 +87,8 @@ export default function ProfileInformation() {
     }
   };
 
+  console.log("Height:", user?.height);
+
   const handleSave = form.handleSubmit(async (data) => {
     const updatedFields: Partial<z.infer<typeof formSchema>> = {};
 
@@ -134,7 +136,7 @@ export default function ProfileInformation() {
         {!isEditing ? (
           <Button
             onClick={() => setIsEditing(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-flame-orange-600 hover:bg-flame-orange-700 rounded-lg transition-colors"
+            className="flex items-center dark:text-dark-gray-900 gap-2 px-4 py-2 bg-flame-orange-600 hover:bg-flame-orange-700 rounded-lg transition-colors"
           >
             <Edit3 size={16} />
             {t("edit")}
@@ -142,7 +144,7 @@ export default function ProfileInformation() {
         ) : (
           <Button
             onClick={handleCancel}
-            className="flex items-center gap-2 px-4 py-2 bg-light-silver-600 hover:bg-light-silver-700 rounded-lg transition-colors"
+            className="flex items-center dark:text-dark-gray-900 gap-2 px-4 py-2 bg-light-silver-600 hover:bg-light-silver-700 rounded-lg transition-colors"
           >
             <X size={16} />
             {t("cancel")}
@@ -203,7 +205,7 @@ export default function ProfileInformation() {
                     type="text"
                     {...field}
                     disabled={!isEditing}
-                    className="w-full px-4 py-5 bg-dark-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-flame-orange-500 disabled:opacity-50"
+                    className="w-full px-4 py-5 bg-light-silver-300 dark:bg-dark-gray-900 border border-light-silver-900 rounded-lg text-dark-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-flame-orange-500 disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -226,7 +228,7 @@ export default function ProfileInformation() {
                     type="text"
                     {...field}
                     disabled={!isEditing}
-                    className="w-full px-4 py-5 bg-dark-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
+                    className="w-full px-4 py-5 bg-light-silver-300 dark:bg-dark-gray-900 border border-light-silver-900 rounded-lg text-dark-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -249,7 +251,7 @@ export default function ProfileInformation() {
                     type="email"
                     {...field}
                     disabled={!isEditing}
-                    className="w-full px-4 py-5 bg-dark-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
+                    className="w-full px-4 py-5 bg-light-silver-300 dark:bg-dark-gray-900 border border-light-silver-900 rounded-lg text-dark-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -269,7 +271,7 @@ export default function ProfileInformation() {
                 </FormLabel>
                 <FormControl>
                   <Select disabled={!isEditing} onValueChange={field.onChange} value={field.value}>
-                    <SelectTrigger className="w-full px-4 py-5 bg-light-silver-900 border border-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
+                    <SelectTrigger className="w-full px-4 py-5 bg-light-silver-300 dark:bg-dark-gray-900 border border-light-silver-900 rounded-lg text-dark-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
                       <SelectValue placeholder="Select gender" />
                     </SelectTrigger>
                     <SelectContent>
@@ -299,7 +301,7 @@ export default function ProfileInformation() {
                     onValueChange={field.onChange}
                     value={String(field.value)}
                   >
-                    <SelectTrigger className="w-full px-4 py-5 bg-dark-light-silver-900 border border-soft-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
+                    <SelectTrigger className="w-full px-4 py-5 bg-light-silver-300 dark:bg-dark-gray-900 border border-light-silver-900 rounded-lg text-dark-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
                       <SelectValue placeholder="Select age" />
                     </SelectTrigger>
                     <SelectContent className="max-h-60 overflow-y-auto">
@@ -332,13 +334,13 @@ export default function ProfileInformation() {
                     onValueChange={field.onChange}
                     value={String(field.value)}
                   >
-                    <SelectTrigger className="w-full px-4 py-5 bg-dark-light-silver-900 border border-soft-light-silver-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
+                    <SelectTrigger className="w-full px-4 py-5 bg-light-silver-300 dark:bg-dark-gray-900 border border-light-silver-900 rounded-lg text-dark-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-custom-o disabled:opacity-50">
                       <SelectValue placeholder="Select height" />
                     </SelectTrigger>
                     <SelectContent className="max-h-60 overflow-y-auto">
-                      {[...Array(81)].map((_, i) => (
-                        <SelectItem key={i + 140} value={String(i + 140)}>
-                          {i + 140}
+                      {[...Array(188)].map((_, i) => (
+                        <SelectItem key={i + 33} value={String(i + 33)}>
+                          {i + 33}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -351,14 +353,14 @@ export default function ProfileInformation() {
 
           {isEditing && (
             <div className="md:col-span-2 flex gap-4 mt-6">
-              <button
+              <Button
                 type="submit"
                 disabled={!isDirty || isEditingProfile}
-                className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-colors ${!isDirty || isEditingProfile ? "bg-light-silver-600 cursor-not-allowed" : "bg-flame-orange-600 hover:bg-flame-orange-700"}`}
+                className={`flex items-center gap-2 px-6 py-3 dark:text-dark-gray-900 rounded-lg transition-colors ${!isDirty || isEditingProfile ? "bg-light-silver-900 cursor-not-allowed" : "bg-flame-orange-600 hover:bg-flame-orange-700"}`}
               >
                 <Save size={16} />
                 {isEditingProfile ? t("saving") : t("save-changes")}
-              </button>
+              </Button>
             </div>
           )}
         </form>
