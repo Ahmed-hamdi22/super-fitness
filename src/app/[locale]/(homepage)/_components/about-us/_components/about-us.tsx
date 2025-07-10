@@ -1,4 +1,3 @@
-
 import ArrowUpRight from "@/components/common/arrow-long-right";
 import DumbbellIcon from "@/components/common/dumbbell";
 import WorkoutsLogo from "@/components/common/workouts-logo";
@@ -121,7 +120,7 @@ export default function AboutUs() {
             {/* Get started button */}
 
             <div className="relative">
-              <Button className=" w-36 me-8 text-light-silver-300 rounded-3xl bg-flame-orange-500 relative capitalize">
+              <Button className=" w-36 me-8 text-light-silver-300 rounded-3xl bg-flame-orange-500 relative capitalize font-baloo">
                 {t("get-started")}
               </Button>
               <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
