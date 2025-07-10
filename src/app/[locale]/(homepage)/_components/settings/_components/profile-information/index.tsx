@@ -128,7 +128,9 @@ export default function ProfileInformation() {
     <div className="border-dark-light-silver-900 dark:border-light-silver-900 border rounded-lg p-6 mb-8">
       <div className="flex items-center justify-between mb-6">
         {/* Title */}
-        <h2 className="text-xl font-semibold text-dark-gray-800 dark:text-white">{t("profile-information")}</h2>
+        <h2 className="text-xl font-semibold text-dark-gray-800 dark:text-white">
+          {t("profile-information")}
+        </h2>
 
         {/* Actions */}
         {!isEditing ? (
@@ -185,7 +187,7 @@ export default function ProfileInformation() {
         </div>
       </div>
 
-      {/* Profile Form */}
+      {/* Profile form */}
       <Form {...form}>
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSave}>
           {/* First name */}
@@ -349,6 +351,7 @@ export default function ProfileInformation() {
             )}
           />
 
+          {/* Save button */}
           {isEditing && (
             <div className="md:col-span-2 flex gap-4 mt-6">
               <Button
