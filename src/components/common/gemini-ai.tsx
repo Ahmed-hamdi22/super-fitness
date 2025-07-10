@@ -70,7 +70,7 @@ export default function Chat() {
   }
 
   return (
-    <>
+    <div className="font-baloo">
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -173,6 +173,6 @@ export default function Chat() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
