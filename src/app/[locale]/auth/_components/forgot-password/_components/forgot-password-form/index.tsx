@@ -22,9 +22,6 @@ export default function ForgotPasswordForm() {
   // Translation
   const t = useTranslations();
 
-  // // Navigation
-  // const navigate = useNavigate();
-
   // Context
   const { setEmail, setCurrentStep } = useEmail();
 

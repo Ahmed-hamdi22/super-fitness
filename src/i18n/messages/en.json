@@ -232,5 +232,7 @@
   "send-message": "Send Message",
   "type-your-email-here": "Type your Email here",
   "type-your-name-here": "Type your Name here",
-  "enter-your-current-weight": "Enter your current weight"
+  "enter-your-current-weight": "Enter your current weight",
+  "dialog-title": "DialogTitle",
+  "dialog-description": "description"
 }

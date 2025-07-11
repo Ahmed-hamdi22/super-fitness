@@ -8,6 +8,7 @@ export function useLogin() {
   // Navigate
   const navigate = useNavigate();
 
+  // useToken
   const { login } = useToken();
 
   // Mutation
@@ -16,7 +17,7 @@ export function useLogin() {
     onSuccess: (data) => {
       //   Store token in localStorage
       login(data.token);
-      // localStorage.setItem("token", data.token);
+      
       toast.success(data.message);
 
       navigate("/");
