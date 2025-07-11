@@ -6,10 +6,10 @@ import LoginForm from "../login-form";
 import { useEffect } from "react";
 
 export default function ForgotPasswordPage() {
-  const {  currentStep, setCurrentStep } = useEmail();
+  const { currentStep, setCurrentStep } = useEmail();
 
-   useEffect(() => {
-    setCurrentStep(0); 
+  useEffect(() => {
+    setCurrentStep(0);
   }, [setCurrentStep]);
 
   const renderStep = () => {
