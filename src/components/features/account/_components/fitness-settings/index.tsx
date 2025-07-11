@@ -58,9 +58,9 @@ export default function FitnessSettings() {
   return (
     <>
       {/* Top Settings Row */}
-      <div className="grid grid-cols-3 gap-4 font-baloo text-dark-gray-800 dark:text-white">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 font-baloo text-dark-gray-800 dark:text-white">
         {topSettings.map((setting, index) => (
-          <div key={index} className="text-center">
+          <div key={index} className="text-center w-60">
             {/* Title */}
             <h3 className=" text-3xl font-extrabold">{setting.title}</h3>
 
@@ -76,11 +76,11 @@ export default function FitnessSettings() {
             <Button
               onClick={() => handleSettingClick(setting.type, (setting.value ?? "").toString())}
               className="
-                bg-flame-orange-500 w-60 h-12 rounded-2xl border 
-                border-dark-gray-800 dark:border-white flex justify-between items-center
-                px-4 capitalize font-bold text-base transition-all duration-250
-                text-dark-gray-800 dark:text-white hover:bg-transparent hover:text-flame-orange-500 hover:border-flame-orange-500
-              "
+              bg-flame-orange-500 w-full max-w-60 h-12 rounded-2xl border 
+              border-dark-gray-800 dark:border-white flex justify-between items-center
+              px-4 capitalize font-bold text-base transition-all duration-250
+              text-dark-gray-800 dark:text-white hover:bg-transparent hover:text-flame-orange-500 hover:border-flame-orange-500
+            "
             >
               {isLoading ? (
                 <FaSpinner className="animate-spin" />
