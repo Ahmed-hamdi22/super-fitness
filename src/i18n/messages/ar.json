@@ -223,5 +223,7 @@
   "type-your-email-here": "اكتب بريدك الإلكتروني هنا",
   "type-your-name-here": "اكتب اسمك هنا",
   "enter-your-current-weight": "أدخل وزنك الحالي",
-  "mood": "الوضع"
+  "mood": "الوضع",
+  "dialog-title": "الحوار",
+  "dialog-description": "وصف"
 }
