@@ -95,23 +95,23 @@ export default function NewPasswordForm() {
                     control={form.control}
                     name="newpassword"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="w-full flex justify-center">
                         <FormControl>
-                          <div className="relative w-[311px] h-[48px] ">
-                            {/* Mail icon */}
-                            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                          <div className="relative w-full md:w-[311px] h-[48px]">
+                            {/* Lock icon */}
+                            <div className="absolute inset-y-0 start-4 flex items-center pointer-events-none rtl:right-4 rtl:left-auto">
                               <Lock className="w-5 h-5 text-soft-gray-400" />
                             </div>
 
                             {/* Toggle visibility icon */}
                             <div
-                              className="absolute inset-y-0 right-4 flex items-center cursor-pointer"
+                              className="absolute inset-y-0 end-4 flex items-center cursor-pointer rtl:left-4 rtl:right-auto"
                               onClick={() => setHidePassword(!hidePassword)}
                             >
                               {hidePassword ? (
-                                <EyeOff className="w-5 h-5  text-soft-gray-400" />
+                                <EyeOff className="w-5 h-5 text-soft-gray-400" />
                               ) : (
-                                <Eye className="w-5 h-5  text-soft-gray-400 " />
+                                <Eye className="w-5 h-5 text-soft-gray-400" />
                               )}
                             </div>
 
@@ -120,11 +120,10 @@ export default function NewPasswordForm() {
                               type={hidePassword ? "password" : "text"}
                               {...field}
                               placeholder={t("new-password")}
-                              className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
+                              className="w-full h-full ps-12 pe-12 border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
                             />
                           </div>
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
@@ -135,23 +134,23 @@ export default function NewPasswordForm() {
                     control={form.control}
                     name="confirmpassword"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="w-full flex justify-center">
                         <FormControl>
-                          <div className="relative w-[311px] h-[48px] ">
-                            {/* Mail icon */}
-                            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                              <Lock className="w-5 h-5 text-soft-gray-400 " />
+                          <div className="relative w-full md:w-[311px] h-[48px]">
+                            {/* Lock icon */}
+                            <div className="absolute inset-y-0 start-4 flex items-center pointer-events-none rtl:right-4 rtl:left-auto">
+                              <Lock className="w-5 h-5 text-soft-gray-400" />
                             </div>
 
                             {/* Toggle visibility icon */}
                             <div
-                              className="absolute inset-y-0 right-4 flex items-center cursor-pointer"
+                              className="absolute inset-y-0 end-4 flex items-center cursor-pointer rtl:left-4 rtl:right-auto"
                               onClick={() => setHidePassword(!hidePassword)}
                             >
                               {hidePassword ? (
-                                <EyeOff className="w-5 h-5  text-soft-gray-400" />
+                                <EyeOff className="w-5 h-5 text-soft-gray-400" />
                               ) : (
-                                <Eye className="w-5 h-5 text-soft-gray-400 " />
+                                <Eye className="w-5 h-5 text-soft-gray-400" />
                               )}
                             </div>
 
@@ -160,11 +159,10 @@ export default function NewPasswordForm() {
                               type={hidePassword ? "password" : "text"}
                               {...field}
                               placeholder={t("confirm-password")}
-                              className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent "
+                              className="w-full h-full ps-12 pe-12 border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
                             />
                           </div>
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}

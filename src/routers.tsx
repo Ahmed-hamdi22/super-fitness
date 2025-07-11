@@ -14,6 +14,7 @@ import ChangePasswordPage from "./app/[locale]/auth/_components/change-password"
 import SettingsPage from "./app/[locale]/(homepage)/_components/settings/page";
 import ExercisesPage from "./app/[locale]/classes/_components/[primeMoverMuscleId]/page";
 import Mealdetails from "./app/[locale]/healthy/_components/meal-details";
+import ProtectedRoute from "./components/common/protectedroute";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,14 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "healthy", element: <HealthyPage /> },
       { path: "/mealdetails/:id", element: <Mealdetails /> },
-      { path: "classes", element: <Classes /> },
+      {
+        path: "classes",
+        element: (
+          <ProtectedRoute>
+            <Classes />
+          </ProtectedRoute>
+        ),
+      },
       { path: "account", element: <AccountModal /> },
       { path: "settings", element: <SettingsPage /> },
       { path: "classes/:primeMoverMuscleId", element: <ExercisesPage /> },
