@@ -1,7 +1,7 @@
 import CategoriesTabs from "@/components/common/categories-tabs";
 import { extractIngredients, IngredientItem } from "@/components/common/Ingredients";
 import QueryStateHandler from "@/components/common/query-state-handler";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import Header from "@/components/layout/header";
 import useCategoriesCarousel from "@/hooks/use-categories-carousel";
 import useMealDetails from "@/lib/apis/meals/meal-details.api";
@@ -14,7 +14,7 @@ export default function Mealdetails() {
 
   // Navigation
   const navigate = useNavigate();
-  
+
   const { id } = useParams<{ id: string }>();
 
   // Hooks
@@ -95,19 +95,21 @@ export default function Mealdetails() {
                     <div className="flex flex-wrap justify-center gap-4 mb-2">
                       <div className="text-center border border-soft-gray-400 w-20 h-16 flex flex-col justify-center items-center rounded-3xl">
                         <span className="text-sm">100 kC</span>
-                        <p className="font-semibold text-sm text-flame-orange-500">{t('energy')}</p>
+                        <p className="font-semibold text-sm text-flame-orange-500">{t("energy")}</p>
                       </div>
                       <div className="text-center border border-soft-gray-400 w-20 h-16 flex flex-col justify-center items-center rounded-3xl">
                         <span className="text-sm">15 g</span>
-                        <p className="font-semibold text-sm text-flame-orange-500">{t('protein')}</p>
+                        <p className="font-semibold text-sm text-flame-orange-500">
+                          {t("protein")}
+                        </p>
                       </div>
                       <div className="text-center border border-soft-gray-400 w-20 h-16 flex flex-col justify-center items-center rounded-3xl">
                         <span className="text-sm">36 g</span>
-                        <p className="font-semibold text-sm text-flame-orange-500">{t('carbs')}</p>
+                        <p className="font-semibold text-sm text-flame-orange-500">{t("carbs")}</p>
                       </div>
                       <div className="text-center border border-soft-gray-400 w-20 h-16 flex flex-col justify-center items-center rounded-3xl">
                         <span className="text-sm">20 g</span>
-                        <p className="font-semibold text-sm text-flame-orange-500">{t('fat')}</p>
+                        <p className="font-semibold text-sm text-flame-orange-500">{t("fat")}</p>
                       </div>
                     </div>
                   </div>
@@ -116,7 +118,7 @@ export default function Mealdetails() {
             </QueryStateHandler>
 
             {/* Ingredients */}
-            <h2 className="text-2xl font-bold mb-3">{t('ingredients')}</h2>
+            <h2 className="text-2xl font-bold mb-3">{t("ingredients")}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2 text-sm">
               {extractIngredients(meal).map((item, i) => (
                 <IngredientItem key={i} ingredient={item.ingredient} measure={item.measure} />

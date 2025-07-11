@@ -4,7 +4,7 @@ import QueryStateHandler from "@/components/common/query-state-handler";
 import useMealsCategories from "@/lib/apis/meals/meals-categories.api";
 import { useTranslations } from "use-intl";
 import ArrowRight from "@/components/common/arrow-right";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import DumbbellIcon from "@/components/common/dumbbell";
 
 export default function HealthyNutrltions() {
@@ -20,7 +20,7 @@ export default function HealthyNutrltions() {
     <div className="relative w-full">
       <div className="absolute inset-0">
         {/* Healthy logo */}
-        <div className="absolute top-12 left-0 right-0 z-10 flex justify-center items-center gap-2 mb-8">
+        <div className="absolute top-12 left-0 right-0  flex justify-center items-center gap-2 mb-8">
           <WorkoutsLogo text={t("healthy")} />
 
           {/* Healthy nutrltions icon */}

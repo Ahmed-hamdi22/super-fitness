@@ -8,7 +8,7 @@ import QueryStateHandler from "@/components/common/query-state-handler";
 import { useTranslations } from "use-intl";
 import ArrowRight from "@/components/common/arrow-right";
 import { useNavigate } from "react-router-dom";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import DumbbellIcon from "@/components/common/dumbbell";
 import Header from "@/components/layout/header";
 

@@ -1,5 +1,5 @@
 import DumbbellIcon from "@/components/common/dumbbell";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import Header from "@/components/layout/header";
 import ProfileInformation from "./_components/profile-information";
 import DeleteAccount from "./_components/delete-account";

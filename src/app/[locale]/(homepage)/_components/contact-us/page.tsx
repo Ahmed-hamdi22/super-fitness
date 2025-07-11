@@ -1,5 +1,5 @@
 import DumbbellIcon from "@/components/common/dumbbell";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import Header from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import {

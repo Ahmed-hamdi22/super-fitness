@@ -1,5 +1,5 @@
 import DumbbellIcon from "@/components/common/dumbbell";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import { useTranslations } from "use-intl";
 
 export default function WhyUs() {

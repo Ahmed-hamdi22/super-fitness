@@ -7,13 +7,13 @@ import VideoSection from "./video-ui";
 import { Play } from "lucide-react";
 import Icons from "./icons-ui";
 import Header from "@/components/layout/header";
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import { useTranslations } from "use-intl";
 import TabFitness from "@/components/common/tab-transform";
 
-type ExercisesPageProps=  {
+type ExercisesPageProps = {
   primeMoverMuscleId: string;
-}
+};
 
 export default function ExercisesByLevel({ primeMoverMuscleId }: ExercisesPageProps) {
   // Translation

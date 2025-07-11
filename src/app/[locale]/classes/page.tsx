@@ -1,4 +1,4 @@
-import WorkoutsLogo from "@/components/common/workouts-logo";
+import WorkoutsLogo from "@/components/common/logo";
 import DumbbellIcon from "@/components/common/dumbbell";
 import TransformTitle from "@/components/common/transform-title";
 import MuscleGroupList from "../../../components/common/transform-workout";
