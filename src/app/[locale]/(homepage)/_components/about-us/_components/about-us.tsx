@@ -121,7 +121,7 @@ export default function AboutUs() {
             {/* Button */}
 
             <div className="relative">
-              <Button className=" w-36 me-8 text-light-silver-300 rounded-3xl bg-flame-orange-500 relative capitalize font-baloo">
+              <Button className=" w-36 me-8 text-light-silver-300 rounded-3xl bg-flame-orange-500 hover:bg-flame-orange-500 relative capitalize font-baloo">
                 {t("get-started")}
               </Button>
               <ArrowUpRight className="absolute top-1 p-[2px] left-32 rtl:-right-5 ms-2 w-6 h-6 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
