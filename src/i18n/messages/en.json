@@ -202,5 +202,11 @@
   "height": "Height",
   "saving": "Saving...",
   "save-changes": "Save Changes",
-  "oops-something-went-wrong": "Oops! Something went wrong"
+  "oops-something-went-wrong": "Oops! Something went wrong",
+  "how-old-are-you-0": "How Old Are You",
+  "years-old-0": "Years old",
+  "what-is-your-weight-0": "What is your weight",
+  "kg-0": "Kg",
+  "what-is-your-height-0": "What is your height",
+  "cm-0": "CM"
 }

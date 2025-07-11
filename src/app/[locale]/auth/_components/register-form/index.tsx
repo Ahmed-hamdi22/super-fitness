@@ -4,10 +4,11 @@ import GoalForm from "./_components/goal-form";
 import LevelForm from "./_components/level-form";
 import Slider from "@/components/common/slider";
 import { SelectGender } from "@/components/common/select-gender";
+import { useTranslations } from "use-intl";
 
 export default function RegisterPage() {
   const { currentStep } = useRegistration();
-
+  const t = useTranslations()
   const renderStep = () => {
     switch (currentStep) {
       case 0:
@@ -17,8 +18,8 @@ export default function RegisterPage() {
       case 2:
         return (
           <Slider
-            title="How Old Are You?"
-            measure="Years old"
+            title={t('how-old-are-you-0')}
+            measure={t('years-old-0')}
             min={20}
             max={100}
             initialValue={25}
@@ -31,8 +32,8 @@ export default function RegisterPage() {
       case 3:
         return (
           <Slider
-            title="What is your weight"
-            measure="Kg"
+            title={t('what-is-your-weight-0')}
+            measure={t('kg-0')}
             min={30}
             max={150}
             initialValue={40}
@@ -45,8 +46,8 @@ export default function RegisterPage() {
       case 4:
         return (
           <Slider
-            title="What is your height?"
-            measure="CM"
+            title={t('what-is-your-height-0')}
+            measure={t('cm-0')}
             min={30}
             max={200}
             initialValue={55}

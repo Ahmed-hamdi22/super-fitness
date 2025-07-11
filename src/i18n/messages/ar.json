@@ -192,5 +192,11 @@
   "saving": "حفظ...",
   "save-changes": "حفظ التعديلات",
   "why-us": "لماذا نحن",
-  "oops-something-went-wrong": "أُووبس! \nحدث خطأ ما"
+  "oops-something-went-wrong": "أُووبس! \nحدث خطأ ما",
+  "how-old-are-you-0": "كم عمرك",
+  "years-old-0": "سنوات",
+  "what-is-your-weight-0": "ما هو وزنك",
+  "kg-0": "كجم",
+  "what-is-your-height-0": "ما هو طولك",
+  "cm-0": "سم"
 }
