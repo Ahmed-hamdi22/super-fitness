@@ -1,11 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --font-inter: "Inter", sans-serif;
   --font-roboto: "Roboto", sans-serif;
-  --font-baloo: "Baloo Thambi 2", "scursive";
+  --font-baloo: "Baloo Thambi 2", system-ui;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -15,15 +16,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 @layer base {
@@ -89,4 +81,37 @@ a:hover {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bg-healthy-nutrltions {
+  background-image: url("/src/assets/418cb3d22952473ef67f8b1f550941935220e8e6.jpg");
+}
+.bg-healthy {
+  background-image: url("/src/assets/images/transform-bg.jpg");
+}
+
+.chat-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/chat-image.jpg"); /* remove /public — Next.js serves /public as root */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9; /* Adjust opacity */
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.chat-image > * {
+  position: relative;
+  z-index: 1;
 }

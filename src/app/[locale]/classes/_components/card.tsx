@@ -1,0 +1,43 @@
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Card from "@/components/common/card";
+import { IoCloseSharp } from "react-icons/io5";
+import useMealsCategories from "@/lib/apis/meals/meals-categories.api";
+import QueryStateHandler from "@/components/common/query-state-handler";
+import { useTranslations } from "use-intl";
+import ArrowRight from "@/components/common/arrow-right";
+
+export default function ClassesCard() {
+  // Translation
+  const t = useTranslations();
+
+  // Hook
+  const { data: categories, isLoading, error } = useMealsCategories();
+
+  return (
+    // Handling loading and error
+    <QueryStateHandler isLoading={isLoading} error={error}>
+      {/* Heading */}
+      <h3 className="text-soft-gray-60 text-3xl font-medium pl-7 mt-5">{t('recommendation-for-you')}</h3>
+
+      {/* Card */}
+      <Carousel className="w-full max-w-5xl mx-auto">
+        <CarouselContent>
+          {categories?.map((category: Meals) => (
+            <CarouselItem className="basis-[75%] sm:basis-1/2 lg:basis-2/5">
+              <Card
+                key={category.idCategory}
+                title={category.strCategory}
+                image={category.strCategoryThumb}
+                description={category.strCategoryDescription}
+                actionLabel={t("read-more")}
+                actionIcon={<ArrowRight />}
+                hideIcon={<IoCloseSharp />}
+                className="h-[397px] w-full sm:w-[403px] bg-light-silver-300/50 backdrop-blur-md"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </QueryStateHandler>
+  );
+}

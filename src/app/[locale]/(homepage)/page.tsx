@@ -1,26 +1,30 @@
 import AboutUsPage from "./_components/about-us/page";
-import FitnessClassPage from "./_components/fitness-class/page";
 import HealthyNutrltioPage from "./_components/healthy-nutrltions/page";
 import HeroPage from "./_components/hero/page";
 import WhyUsPage from "./_components/why-us/page";
+import TransformWorkout from "./_components/transform-workout/page";
+import AutoScrollBanner from "@/components/common/auto-scroll";
 
 export default function App() {
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className="">
       {/* Hero */}
       <HeroPage />
+
+      {/* Auto Scroll */}
+      <AutoScrollBanner />
 
       {/* About us */}
       <AboutUsPage />
 
-      {/* Fitness class */}
-      <FitnessClassPage />
-
-      {/* Healthy nutrltio */}
-      <HealthyNutrltioPage />
+      {/* Transform workout */}
+      <TransformWorkout />
 
       {/* Why us */}
       <WhyUsPage />
+
+      {/* Healthy nutrltio */}
+      <HealthyNutrltioPage />
     </main>
   );
 }

@@ -1,20 +1,37 @@
 import { Outlet } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
-const queryClient = new QueryClient();
+import Footer from "@/components/layout/footer";
+import Chat from "@/components/common/gemini-ai";
+import AutoScrollBanner from "@/components/common/auto-scroll";
+import { Toaster } from "@/components/ui/sonner";
+import Providers from "@/context";
+import { ErrorBoundary } from "@/components/layout/error";
 
 export default function RootLayout() {
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* React Query Developer tools */}
-      <ReactQueryDevtools initialIsOpen={false} />
+    <>
+      {/* Error boundary */}
+      <ErrorBoundary>
+        {/* Providers */}
+        <Providers>
+          {/* Main content */}
+          <main className="">
+            {/* Outlet */}
+            <Outlet />
 
-      <>
-        <main>
-          <Outlet />
-        </main>
-      </>
-    </QueryClientProvider>
+            {/* Toaster */}
+            <Toaster position="top-center" />
+
+            {/* Scroll banner */}
+            <AutoScrollBanner />
+
+            {/* Chatbot */}
+            <Chat />
+
+            {/* Footer */}
+            <Footer />
+          </main>
+        </Providers>
+      </ErrorBoundary>
+    </>
   );
 }
