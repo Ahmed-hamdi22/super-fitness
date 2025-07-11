@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "@/components/layout/error";
 import Providers from "@/context";
 import { Outlet } from "react-router-dom";
 
@@ -32,9 +33,11 @@ export default function AuthLayout() {
       {/* Main content area for forms */}
       <div className="flex items-center justify-center p-4 md:p-8  bg-main-color bg-opacity-90 backdrop-blur-2xl">
         <div className="w-full max-w-md">
-          <Providers>
-          <Outlet />
-          </Providers>
+          <ErrorBoundary>
+            <Providers>
+              <Outlet />
+            </Providers>
+          </ErrorBoundary>
         </div>
       </div>
     </div>

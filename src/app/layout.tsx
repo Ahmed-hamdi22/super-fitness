@@ -4,31 +4,34 @@ import Chat from "@/components/common/gemini-ai";
 import AutoScrollBanner from "@/components/common/auto-scroll";
 import { Toaster } from "@/components/ui/sonner";
 import Providers from "@/context";
+import { ErrorBoundary } from "@/components/layout/error";
 
 export default function RootLayout() {
   return (
     <>
-      {/* Providers */}
-      <Providers>
-        {/* Main content */}
-        <main className="">
+      {/* Error boundary */}
+      <ErrorBoundary>
+        {/* Providers */}
+        <Providers>
+          {/* Main content */}
+          <main className="">
+            {/* Outlet */}
+            <Outlet />
 
-          {/* Outlet */}
-          <Outlet />
+            {/* Toaster */}
+            <Toaster position="top-center" />
 
-        {/* Toaster */}
-        <Toaster position="top-center" />
+            {/* Scroll banner */}
+            <AutoScrollBanner />
 
-        {/* Scroll banner */}
-        <AutoScrollBanner />
+            {/* Chatbot */}
+            <Chat />
 
-        {/* Chatbot */}
-        <Chat />
-
-        {/* Footer */}
-        <Footer />
-        </main>
-      </Providers>
+            {/* Footer */}
+            <Footer />
+          </main>
+        </Providers>
+      </ErrorBoundary>
     </>
   );
 }

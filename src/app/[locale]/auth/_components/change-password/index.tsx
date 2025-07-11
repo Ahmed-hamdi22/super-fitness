@@ -15,11 +15,12 @@ export default function NewPasswordForm() {
   // Translation
   const t = useTranslations();
 
+  // State
+  const [hidePassword, setHidePassword] = useState<boolean>(true);
+  const [hideConfirmPassword, setHideConfirmPassword] = useState<boolean>(true);
+
   // Mutation
   const { changePassword, isPending } = useChangePassword();
-
-  // State
-  const [hidePassword, setHidePassword] = useState(true);
 
   // Validation
   const formSchema = z.object({
@@ -58,16 +59,15 @@ export default function NewPasswordForm() {
 
   return (
     <Form {...form}>
-      <div className="container mx-auto flex flex-col gap-5 justify-center items-center ">
+      <div className="container mx-auto flex flex-col gap-5 justify-center items-center">
         {/* Heading */}
         <Heading question={t("create-new-password")} />
 
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-[493px] h-[291px] bg-transparent flex flex-col  gap-5 justify-center items-center  border-[1px] rounded-[50px] border-soft-gray-400"
+          className="w-full md:w-[493px] h-auto p-5 bg-transparent flex flex-col gap-5 justify-center items-center border-[1px] rounded-[50px] border-soft-gray-400 px-4 md:px-0"
         >
           {/* Heading */}
-
           <Heading mainTitle={t("make-sure-to-create-a-strong-password")} />
 
           {/* New password field */}
@@ -77,21 +77,21 @@ export default function NewPasswordForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <div className="relative w-[311px] h-[48px] ">
-                    {/* Mail icon */}
-                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                  <div className="relative w-full md:w-[311px] h-[48px]">
+                    {/* Lock icon */}
+                    <div className="absolute inset-y-0 start-4 flex items-center pointer-events-none rtl:right-4 rtl:left-auto">
                       <Lock className="w-5 h-5 text-soft-gray-400" />
                     </div>
 
                     {/* Toggle visibility icon */}
                     <div
-                      className="absolute inset-y-0 right-4 flex items-center cursor-pointer"
+                      className="absolute inset-y-0 end-4 flex items-center cursor-pointer rtl:left-4 rtl:right-auto"
                       onClick={() => setHidePassword(!hidePassword)}
                     >
                       {hidePassword ? (
-                        <EyeOff className="w-5 h-5  text-soft-gray-400" />
+                        <EyeOff className="w-5 h-5 text-soft-gray-400" />
                       ) : (
-                        <Eye className="w-5 h-5  text-soft-gray-400 " />
+                        <Eye className="w-5 h-5 text-soft-gray-400" />
                       )}
                     </div>
 
@@ -100,12 +100,11 @@ export default function NewPasswordForm() {
                       type={hidePassword ? "password" : "text"}
                       {...field}
                       placeholder={t("new-password")}
-                      className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent"
+                      className="w-full h-full ps-12 pe-12 border placeholder:soft-gray-500 text-soft-gray-400 rounded-2xl border-soft-gray-400 bg-transparent"
                     />
                   </div>
                 </FormControl>
-
-                <FormMessage />
+                <FormMessage className="text-center" />
               </FormItem>
             )}
           />
@@ -115,47 +114,42 @@ export default function NewPasswordForm() {
             control={form.control}
             name="newPassword"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="">
                 <FormControl>
-                  <div className="relative w-[311px] h-[48px] ">
-                    {/* Mail icon */}
-                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                      <Lock className="w-5 h-5 text-soft-gray-400 " />
+                  <div className="relative w-full md:w-[311px] h-[48px]">
+                    {/* Lock icon */}
+                    <div className="absolute inset-y-0 start-4 flex items-center pointer-events-none rtl:right-4 rtl:left-auto">
+                      <Lock className="w-5 h-5 text-soft-gray-400" />
                     </div>
 
                     {/* Toggle visibility icon */}
                     <div
-                      className="absolute inset-y-0 right-4 flex items-center cursor-pointer"
-                      onClick={() => setHidePassword(!hidePassword)}
+                      className="absolute inset-y-0 end-4 flex items-center cursor-pointer rtl:left-4 rtl:right-auto"
+                      onClick={() => setHideConfirmPassword(!hideConfirmPassword)}
                     >
-                      {hidePassword ? (
-                        <EyeOff className="w-5 h-5  text-soft-gray-400" />
+                      {hideConfirmPassword ? (
+                        <EyeOff className="w-5 h-5 text-soft-gray-400" />
                       ) : (
-                        <Eye className="w-5 h-5 text-soft-gray-400 " />
+                        <Eye className="w-5 h-5 text-soft-gray-400" />
                       )}
                     </div>
 
                     {/* Password input */}
                     <Input
-                      type={hidePassword ? "password" : "text"}
+                      type={hideConfirmPassword ? "password" : "text"}
                       {...field}
                       placeholder={t("confirm-password")}
-                      className=" w-full h-full pl-12  border-[1px] placeholder:soft-gray-500 text-soft-gray-400 rounded-[20px] border-soft-gray-400 bg-transparent "
+                      className="w-full h-full ps-12 pe-12 border placeholder:soft-gray-500 text-soft-gray-400 rounded-2xl border-soft-gray-400 bg-transparent"
                     />
                   </div>
                 </FormControl>
-
-                <FormMessage />
+                <FormMessage className="text-center" />
               </FormItem>
             )}
           />
 
           {/* Create new password button */}
-          <AuthButton
-            type="submit"
-            disabled={isPending}
-            label={t("create-new-password")}
-          />
+          <AuthButton type="submit" disabled={isPending} label={t("create-new-password")} />
         </form>
       </div>
     </Form>

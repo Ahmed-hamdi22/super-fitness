@@ -12,7 +12,7 @@ import WorkoutsLogo from "@/components/common/workouts-logo";
 import DumbbellIcon from "@/components/common/dumbbell";
 import Header from "@/components/layout/header";
 
-export default function CategoriesCarousel() {
+export default function Healthy() {
   // Translation
   const t = useTranslations();
 
@@ -101,8 +101,8 @@ export default function CategoriesCarousel() {
                             actionIcon={<ArrowRight />}
                             className="h-[397px] w-full sm:w-[403px] cursor-pointer"
                             mode="Exploer"
-                            onClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
-                            onActionClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
+                            onClick={() => navigate(`/healthy/${meal.idMeal}`)}
+                            onActionClick={() => navigate(`/healthy/${meal.idMeal}`)}
                           />
                         ))}
                       </div>

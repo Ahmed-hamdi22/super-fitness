@@ -48,6 +48,10 @@ const config = {
           "custom-x": "80.5px",
         },
       },
+      width: {
+        "settings-grid": "707px",
+        "settings-container": "800px",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

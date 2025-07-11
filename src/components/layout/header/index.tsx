@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="relative z-20 px-8 mx-auto flex justify-between items-center dark:bg-dark-gray-900 backdrop:bg-inherit font-baloo">
+      <header className="relative z-20 px-8 mx-auto flex justify-between items-center backdrop:bg-inherit font-baloo">
         <Link to={`/`}>
           <img src={LogoImg} className="w-[100px] h-[100px]" />
         </Link>
@@ -111,9 +111,9 @@ export default function Header() {
         <div className="md:hidden flex gap-5">
           {
             user && (
-              <button onClick={() => setIsAccountSheetOpen(true)} className="focus:outline-none">
-                <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
-              </button>
+            <button onClick={() => setIsAccountSheetOpen(true)} className="focus:outline-none">
+              <User className="w-[47px] h-[47px] bg-flame-orange-500 rounded-full text-white p-3 cursor-pointer" />
+            </button>
             )
           }
           <DropdownMenu>
@@ -154,14 +154,18 @@ export default function Header() {
                   {t("healthy")}
                 </NavLink>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <NavLink
-                  className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
-                  to={`/login`}
-                >
-                  {t("login")}
-                </NavLink>
-              </DropdownMenuItem>
+              {
+                !user && (
+                  <DropdownMenuItem>
+                    <NavLink
+                      className={({ isActive }) => (isActive ? "text-flame-orange-500" : "text-black")}
+                      to={`/login`}
+                    >
+                      {t("login")}
+                    </NavLink>
+                  </DropdownMenuItem>
+                )
+              }
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

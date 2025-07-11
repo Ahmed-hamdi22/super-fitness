@@ -8,7 +8,7 @@ import useMealDetails from "@/lib/apis/meals/meal-details.api";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslations } from "use-intl";
 
-export default function Modal() {
+export default function Mealdetails() {
   // Translations
   const t = useTranslations();
 
@@ -55,7 +55,7 @@ export default function Modal() {
                 {limitedMeals.map((meal) => (
                   <div
                     key={meal.idMeal}
-                    onClick={() => navigate(`/mealsdetails/${meal.idMeal}`)}
+                    onClick={() => navigate(`/healthy/${meal.idMeal}`)}
                     className="flex items-center gap-4 px-2 py-4 cursor-pointer"
                   >
                     <img
