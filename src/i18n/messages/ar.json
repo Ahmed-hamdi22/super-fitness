@@ -223,5 +223,12 @@
   "type-your-email-here": "اكتب بريدك الإلكتروني هنا",
   "type-your-name-here": "اكتب اسمك هنا",
   "enter-your-current-weight": "أدخل وزنك الحالي",
-  "mood": "الوضع"
+  "mood": "الوضع",
+  "ingredients": "المكونات",
+  "fat": "دهون",
+  "carbs": "كربوهيدرات",
+  "protein": "بروتين",
+  "energy": "طاقة",
+  "expertly-designed-workout": "تمرين مُصمم باحتراف.",
+  "recommendation-for-you": "توصية لك"
 }

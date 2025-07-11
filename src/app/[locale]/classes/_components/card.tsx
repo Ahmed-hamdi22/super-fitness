@@ -17,7 +17,7 @@ export default function ClassesCard() {
     // Handling loading and error
     <QueryStateHandler isLoading={isLoading} error={error}>
       {/* Heading */}
-      <h3 className="text-soft-gray-60 text-3xl font-medium pl-7 mt-5">Recommendation For You</h3>
+      <h3 className="text-soft-gray-60 text-3xl font-medium pl-7 mt-5">{t('recommendation-for-you')}</h3>
 
       {/* Card */}
       <Carousel className="w-full max-w-5xl mx-auto">

@@ -1,6 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "use-intl";
 
 export default function Icons() {
+
+   // Translations
+    const t = useTranslations()
+    
   return (
     <div className="flex items-center gap-8 ">
       {[...Array(3)].map((_, index) => (
@@ -15,7 +20,7 @@ export default function Icons() {
 
           {/* Text */}
           <p className="text-base font-bold text-black dark:text-light-silver-300">
-            Expertly designed workout.
+            {t('expertly-designed-workout')}
           </p>
         </div>
       ))}

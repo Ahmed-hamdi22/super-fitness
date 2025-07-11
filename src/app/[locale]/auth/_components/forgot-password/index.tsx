@@ -8,9 +8,9 @@ import { useEffect } from "react";
 export default function ForgotPasswordPage() {
   const {  currentStep, setCurrentStep } = useEmail();
 
-  //  useEffect(() => {
-  //   setCurrentStep(0); 
-  // }, [setCurrentStep]);
+   useEffect(() => {
+    setCurrentStep(0); 
+  }, [setCurrentStep]);
 
   const renderStep = () => {
     switch (currentStep) {

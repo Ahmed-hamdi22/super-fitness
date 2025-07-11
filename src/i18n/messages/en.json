@@ -232,5 +232,12 @@
   "send-message": "Send Message",
   "type-your-email-here": "Type your Email here",
   "type-your-name-here": "Type your Name here",
-  "enter-your-current-weight": "Enter your current weight"
+  "enter-your-current-weight": "Enter your current weight",
+  "ingredients": "Ingredients",
+  "fat": "Fat",
+  "carbs": "Carbs",
+  "protein": "Protein",
+  "energy": "Energy",
+  "expertly-designed-workout": "Expertly designed workout.",
+  "recommendation-for-you": "Recommendation For You"
 }
