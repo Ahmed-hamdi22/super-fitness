@@ -10,10 +10,15 @@ import Heading from "@/components/common/heading";
 // import AuthButton from "@/components/ui/auth-button";
 import { useChangePassword } from "@/hooks/auth/use-change-password";
 import AuthButton from "@/components/common/auth-button";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function NewPasswordForm() {
   // Translation
   const t = useTranslations();
+
+  // Navigation
+  const navigate = useNavigate();
 
   // State
   const [hidePassword, setHidePassword] = useState<boolean>(true);
@@ -147,7 +152,16 @@ export default function NewPasswordForm() {
               </FormItem>
             )}
           />
-
+          {/* Forget button */}
+          <div className="flex ">
+            <Button
+              variant="link"
+              className="text-flame-orange-500 underline ml-auto"
+              onClick={() => navigate("/forgot-password")}
+            >
+              {t("forgot-password")}
+            </Button>
+          </div>
           {/* Create new password button */}
           <AuthButton type="submit" disabled={isPending} label={t("create-new-password")} />
         </form>
