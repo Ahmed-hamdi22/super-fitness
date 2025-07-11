@@ -48,7 +48,7 @@ export default function Hero() {
             {/* Get start btn */}
             <div className="mt-8 flex space-y-2 items-center  gap-6">
               <div className="relative">
-                <Button className="w-36 h-12 text-base rounded-full me-8 text-light-silver-300 bg-flame-orange-500 relative capitalize">
+                <Button className="w-36 h-12 text-base rounded-full me-8 text-light-silver-300 bg-flame-orange-500   hover:bg-flame-orange-500 relative  capitalize">
                   {t("get-started")}
                 </Button>
                 <ArrowUpRight className="absolute top-1 p-1 right-4 rtl:-right-4 ml-2 w-7 h-7 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
@@ -56,7 +56,7 @@ export default function Hero() {
 
               {/* Explore classes btn */}
               <div className="relative">
-                <Button className="w-36 h-12 text-base rounded-full border-2 border-flame-orange-500 relative text-flame-orange-500 bg-transparent">
+                <Button className="w-36 h-12 text-base rounded-full border-2 border-flame-orange-500 relative text-flame-orange-500 bg-transparent hover:bg-transparent">
                   {t("explore-classes")}
                 </Button>
                 <ArrowUpRight className="absolute top-1 p-1 -right-4 rtl:-right-4 ml-2 w-7 h-7 text-whit  bg-flame-orange-500 rounded-full border-2 border-light-silver-300 text-light-silver-300 " />
