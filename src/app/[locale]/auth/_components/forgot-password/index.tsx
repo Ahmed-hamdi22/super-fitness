@@ -3,9 +3,14 @@ import ForgotPasswordForm from "./_components/forgot-password-form";
 import VerifyOTPForm from "./_components/verify-otp-form";
 import NewPasswordForm from "./_components/new-password-form";
 import LoginForm from "../login-form";
+import { useEffect } from "react";
 
 export default function ForgotPasswordPage() {
-  const { currentStep } = useEmail();
+  const {  currentStep, setCurrentStep } = useEmail();
+
+  //  useEffect(() => {
+  //   setCurrentStep(0); 
+  // }, [setCurrentStep]);
 
   const renderStep = () => {
     switch (currentStep) {

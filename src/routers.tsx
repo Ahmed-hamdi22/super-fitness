@@ -15,6 +15,7 @@ import ExercisesPage from "./app/[locale]/classes/_components/[primeMoverMuscleI
 import ContactUsPage from "./app/[locale]/(homepage)/_components/contact-us/page";
 import Mealdetails from "./app/[locale]/healthy/_components/meal-details";
 import ProtectedRoute from "./components/common/protectedroute";
+import AccountModal from "./components/features/account";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,15 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
-      { path: "healthy", element: <HealthyPage /> },
+      {
+        path: "healthy",
+        element: (
+          <ProtectedRoute>
+            <HealthyPage />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/healthy/:id", element: <Mealdetails /> },
-      { path: "classes", element: <Classes /> },
       { path: "/mealdetails/:id", element: <Mealdetails /> },
       {
         path: "classes",
@@ -35,7 +42,15 @@ const router = createBrowserRouter([
         ),
       },
       { path: "account", element: <AccountModal /> },
-      { path: "settings", element: <SettingsPage /> },
+
+      {
+        path: "settings",
+        element: (
+          <ProtectedRoute>
+            <SettingsPage />
+          </ProtectedRoute>
+        ),
+      },
       { path: "classes/:primeMoverMuscleId", element: <ExercisesPage /> },
       { path: "contact-us", element: <ContactUsPage /> },
     ],
@@ -46,7 +61,14 @@ const router = createBrowserRouter([
       { path: "login", element: <LoginForm /> },
       { path: "forgot-password", element: <ForgotPasswordPage /> },
       { path: "register", element: <RegisterPage /> },
-      { path: "change-password", element: <ChangePasswordPage /> },
+      {
+        path: "change-password",
+        element: (
+          <ProtectedRoute>
+            <ChangePasswordPage />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
   { path: "*", element: <NotFound /> },
