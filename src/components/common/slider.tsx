@@ -29,18 +29,15 @@ const Slider = ({
   field,
 }: SliderProps) => {
   const t = useTranslations();
-
   const { setCurrentStep, setFormData } = useRegistration();
 
   const [selected, setSelected] = useState(initialValue);
   const [translateX, setTranslateX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  void isDragging;
-  void setIsDragging;
+
   const dragStartSelected = useRef(initialValue);
-  const dragStartX = useRef(0);
   const numberWidth = 60; // Width per number (including margins) in pixels
-  const half = Math.floor(windowSize / 2); // 3 for windowSize=7
+  const half = Math.floor(windowSize / 2);
 
   // Calculate the start index for the window
   const start = Math.max(min, Math.min(selected - half, max - windowSize + 1));
@@ -59,19 +56,17 @@ const Slider = ({
     onSwipeStart: () => {
       setIsDragging(true);
       dragStartSelected.current = selected;
-      dragStartX.current = 0; // Not needed, but kept for clarity
     },
     onSwiping: (eventData) => {
       const deltaX = eventData.deltaX;
       setTranslateX(deltaX);
-      // Calculate new selected value based on drag distance
       const steps = Math.round(deltaX / numberWidth);
       const newSelected = Math.max(min, Math.min(max, dragStartSelected.current - steps));
       setSelected(newSelected);
     },
     onSwiped: () => {
       setIsDragging(false);
-      setTranslateX(0); // Snap back to aligned position
+      setTranslateX(0); // Snap back
     },
     onSwipedLeft: () => {
       if (selected < max) setSelected(selected + 1);
@@ -79,7 +74,7 @@ const Slider = ({
     onSwipedRight: () => {
       if (selected > min) setSelected(selected - 1);
     },
-    trackMouse: true, // Enable mouse events for dragging
+    trackMouse: true,
   });
 
   const handleSubmit = () => {
@@ -102,12 +97,15 @@ const Slider = ({
         <div className="text-center mb-2">
           <span className="text-[#FF4100] text-lg font-medium">{measure}</span>
         </div>
+
         <div
-          className="relative mb-8 py-6 cursor-pointer select-none overflow-hidden"
+          className={`relative mb-8 py-6 cursor-pointer select-none overflow-hidden ${
+            isDragging ? "opacity-70" : "opacity-100"
+          }`}
           {...handlers}
         >
           <div
-            className="flex justify-center items-center space-x-3 mb-6"
+            className="flex justify-center items-center space-x-3 mb-6 transition-opacity duration-200"
             style={{ transform: `translateX(${translateX}px)` }}
           >
             {displayedNumbers.map((num) => {
@@ -136,17 +134,14 @@ const Slider = ({
                 <button
                   key={num}
                   onClick={() => handleClick(num)}
-                  className={`
-                    ${textSize} ${fontWeight} ${textColor} 
-                    transition-all duration-300 ease-out
-                    hover:text-flame-orange-700
-                  `}
+                  className={`${textSize} ${fontWeight} ${textColor} transition-all duration-300 ease-out hover:text-flame-orange-700`}
                 >
                   {num}
                 </button>
               );
             })}
           </div>
+
           <div className="flex justify-center">
             <div className="w-0 h-0 border-l-[10px] border-r-[10px] border-b-[14px] border-l-transparent border-r-transparent border-b-flame-orange-500 drop-shadow-sm"></div>
           </div>
