@@ -12,7 +12,7 @@ type SliderProps = {
   max: number;
   initialValue: number;
   windowSize: number;
-  nextStep:number;
+  nextStep: number;
   measure: string;
   field: "age" | "weight" | "height";
 };
@@ -30,9 +30,8 @@ const Slider = ({
 }: SliderProps) => {
   const t = useTranslations();
 
-      const { setCurrentStep, setFormData } = useRegistration();
+  const { setCurrentStep, setFormData } = useRegistration();
 
-  
   const [selected, setSelected] = useState(initialValue);
   const [translateX, setTranslateX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -45,10 +44,7 @@ const Slider = ({
   const start = Math.max(min, Math.min(selected - half, max - windowSize + 1));
 
   // Generate displayed numbers
-  const displayedNumbers = Array.from(
-    { length: windowSize },
-    (_, i) => start + i
-  );
+  const displayedNumbers = Array.from({ length: windowSize }, (_, i) => start + i);
 
   // Handle click on a number
   const handleClick = (value: number) => {
@@ -58,23 +54,17 @@ const Slider = ({
 
   // Handle swipe and drag gestures
   const handlers = useSwipeable({
-    onSwipeStart: eventData => {
+    onSwipeStart: () => {
       setIsDragging(true);
       dragStartSelected.current = selected;
-      dragStartX.current =
-        eventData.event.clientX || eventData.event.touches[0].clientX;
+      dragStartX.current = 0; // Not needed, but kept for clarity
     },
-    onSwiping: eventData => {
-      const currentX =
-        eventData.event.clientX || eventData.event.touches[0].clientX;
-      const deltaX = currentX - dragStartX.current;
+    onSwiping: (eventData) => {
+      const deltaX = eventData.deltaX;
       setTranslateX(deltaX);
       // Calculate new selected value based on drag distance
       const steps = Math.round(deltaX / numberWidth);
-      const newSelected = Math.max(
-        min,
-        Math.min(max, dragStartSelected.current - steps)
-      );
+      const newSelected = Math.max(min, Math.min(max, dragStartSelected.current - steps));
       setSelected(newSelected);
     },
     onSwiped: () => {
@@ -91,9 +81,9 @@ const Slider = ({
   });
 
   const handleSubmit = () => {
-    setFormData(prev => ({ ...prev, [field]: selected }))
-    setCurrentStep(nextStep)
-  }
+    setFormData((prev) => ({ ...prev, [field]: selected }));
+    setCurrentStep(nextStep);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
@@ -104,9 +94,7 @@ const Slider = ({
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-white text-3xl font-bold mb-2">{title}</h1>
-          <p className="text-gray-300">
-            {t("this-helps-us-create-your-personalized-plan")}
-          </p>
+          <p className="text-gray-300">{t("this-helps-us-create-your-personalized-plan")}</p>
         </div>
 
         <div className="text-center mb-2">
@@ -120,7 +108,7 @@ const Slider = ({
             className="flex justify-center items-center space-x-3 mb-6"
             style={{ transform: `translateX(${translateX}px)` }}
           >
-            {displayedNumbers.map(num => {
+            {displayedNumbers.map((num) => {
               const distance = Math.abs(num - selected);
               let textSize = "text-sm";
               let textColor = "text-gray-500";
@@ -174,4 +162,4 @@ const Slider = ({
   );
 };
 
-export default Slider
+export default Slider;

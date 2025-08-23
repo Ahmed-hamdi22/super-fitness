@@ -12,25 +12,19 @@ export function useLogout() {
   const { token, logout: logoutContext } = useToken();
 
   // Mutation
-  const { mutate, error } = useMutation({
+  const { mutate, error } = useMutation<{ message: string }, Error>({
     mutationFn: async () => {
       if (!token) {
         throw new Error("No token available");
       }
-      const payload = await logout(token);
-
-      if ("error" in payload) {
-        throw new Error(payload.error);
-      }
-
-      return payload;
+      return await logout(token);
     },
-    onSuccess: () => {
-      toast.success("Logout Succeeded");
+    onSuccess: (data) => {
+      toast.success(data.message || "Logout Succeeded");
       logoutContext();
       navigate("/login");
     },
-    onError: (error: Error) => {
+    onError: (error) => {
       toast.error(error.message);
     },
   });
