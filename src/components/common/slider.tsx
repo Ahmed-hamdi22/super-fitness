@@ -35,6 +35,8 @@ const Slider = ({
   const [selected, setSelected] = useState(initialValue);
   const [translateX, setTranslateX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  void isDragging;
+  void setIsDragging;
   const dragStartSelected = useRef(initialValue);
   const dragStartX = useRef(0);
   const numberWidth = 60; // Width per number (including margins) in pixels

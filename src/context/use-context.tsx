@@ -9,15 +9,14 @@ type AuthContextType = {
   isAuthenticated: boolean;
 };
 
-
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
-  const [token, setToken] = useState<string | null>(
-    localStorage.getItem("token") || null
-  );
+  void email;
+  void setEmail;
+  const [token, setToken] = useState<string | null>(localStorage.getItem("token") || null);
 
   const login = (token: string) => {
     setToken(token);
