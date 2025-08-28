@@ -3,6 +3,9 @@ import DumbbellIcon from "@/components/common/dumbbell";
 import WorkoutsLogo from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
+import trainer1 from "@/assets/images/trainer-1.png";
+import trainer2 from "@/assets/images/trainer-2.png";
+import trainer3 from "@/assets/images/trainer-3.png";
 
 export default function AboutUs() {
   // Translations
@@ -37,7 +40,7 @@ export default function AboutUs() {
             {/* Big image */}
             <div>
               <img
-                src="/src/assets/images/trainer-1.png"
+                src={trainer1}
                 alt="Trainer 1"
                 className="w-[203.41px] h-[307.96px] rounded-[10.23px] md:w-[300px] md:h-[540px] md:rounded-xl"
               />
@@ -45,12 +48,12 @@ export default function AboutUs() {
 
             {/* Small images */}
             <img
-              src="/src/assets/images/trainer-2.png"
+              src={trainer2}
               alt="Trainer 2"
               className="w-[126.14px] h-[106.84px] rounded-[10.23px] mt-10 md:w-56 md:h-44 md:rounded-xl"
             />
             <img
-              src="/src/assets/images/trainer-3.png"
+              src={trainer3}
               alt="Trainer 3"
               className="w-[200.57px] h-[256.93px] md:w-[345px] md:h-[400px] rounded-xl absolute top-40 md:top-60 -end-1 rtl:end-0 z-10"
             />

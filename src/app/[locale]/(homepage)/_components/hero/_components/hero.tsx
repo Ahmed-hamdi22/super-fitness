@@ -2,6 +2,7 @@ import ArrowUpRight from "@/components/common/arrow-long-right";
 import Header from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "use-intl";
+import heroImg from "@/assets/images/hero.png";
 
 export default function Hero() {
   // Translation
@@ -67,7 +68,7 @@ export default function Hero() {
           {/* Image */}
           <div className="flex justify-center md:justify-end  lg:mt-0 mt-8">
             <img
-              src="/src/assets/images/hero.png"
+              src={heroImg}
               alt="Trainer in gym"
               className="w-80 h-96 opacity-90 md:w-[460px] md:h-[650px]"
             />

@@ -1,6 +1,10 @@
 import DumbbellIcon from "@/components/common/dumbbell";
 import WorkoutsLogo from "@/components/common/logo";
 import { useTranslations } from "use-intl";
+import img1 from "@/assets/Figure [image-anime].png";
+import img2 from "@/assets/Image.png";
+import img3 from "@/assets/Image (1).png";
+import img4 from "@/assets/Figure [image-anime] (1).png";
 
 export default function WhyUs() {
   // Translation
@@ -104,7 +108,7 @@ export default function WhyUs() {
           <div className="grid grid-cols-2 gap-x-2 relative mb-5">
             <div>
               <img
-                src="/src/assets/Figure [image-anime].png"
+                src={img1}
                 alt="Fitness 1"
                 className="w-full object-cover mt-3 sm:mt-0 rounded-lg"
               />
@@ -112,29 +116,17 @@ export default function WhyUs() {
 
             {/* Image two */}
             <div className="relative top-[5rem] sm:top-[6.2rem]">
-              <img
-                src="/src/assets/Image.png"
-                alt="Fitness 2"
-                className="w-full object-cover rounded-lg"
-              />
+              <img src={img2} alt="Fitness 2" className="w-full object-cover rounded-lg" />
             </div>
 
             {/* Image three */}
             <div className=" relative top-2">
-              <img
-                src="/src/assets/Image (1).png"
-                alt="Fitness 3"
-                className="w-full object-cover rounded-lg"
-              />
+              <img src={img3} alt="Fitness 3" className="w-full object-cover rounded-lg" />
             </div>
 
             {/* Image four */}
             <div>
-              <img
-                src="/src/assets/Figure [image-anime] (1).png"
-                alt="Fitness 4"
-                className="w-full object-cover rounded-lg"
-              />
+              <img src={img4} alt="Fitness 4" className="w-full object-cover rounded-lg" />
             </div>
           </div>
         </div>
